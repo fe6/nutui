@@ -20,7 +20,7 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   .text {
-    margin-left: 5px;
+    margin-left: 6px;
   }
   &::before {
     position: absolute;
@@ -122,22 +122,22 @@
   }
 
   &--large {
-    width: 100%;
-    height: $button-large-height;
-    line-height: $button-large-line-height;
-    font-size: $button-large-font-size;
+    padding: 0 20px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 18px;
   }
 
   &--normal {
-    padding: $button-default-padding;
-    font-size: $button-default-font-size;
+    padding: 0 16px;
+    font-size: 16px;
   }
 
   &--small {
     height: $button-small-height;
     line-height: $button-small-line-height;
     padding: $button-small-padding;
-    font-size: $button-small-font-size;
+    font-size: 14px;
   }
   &--mini {
     height: $button-mini-height;
@@ -166,6 +166,6 @@
   }
 
   &--square {
-    border-radius: 0;
+    border-radius: 4px;
   }
 }

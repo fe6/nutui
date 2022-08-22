@@ -29,7 +29,7 @@ export default create({
     color: String,
     shape: {
       type: String as PropType<import('./type').ButtonShape>,
-      default: 'round'
+      default: 'square'
     },
     plain: {
       type: Boolean,

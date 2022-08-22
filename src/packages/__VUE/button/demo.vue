@@ -25,8 +25,8 @@
     </div>
     <h2>{{ translate('title3') }}</h2>
     <div class="demo-button-row2">
-      <nut-button shape="square" type="primary"> {{ translate('square') }}</nut-button>
-      <nut-button type="info"> {{ translate('round') }}</nut-button>
+      <nut-button type="primary"> {{ translate('square') }}</nut-button>
+      <nut-button type="info" shape="round"> {{ translate('round') }}</nut-button>
     </div>
     <h2>{{ translate('title4') }}</h2>
     <div class="demo-button-row2">
@@ -44,10 +44,10 @@
 
     <h2>{{ translate('title7') }}</h2>
     <div class="demo-button-row2">
-      <nut-button size="large" type="primary" style="margin-bottom: 10px">{{ translate('large') }}</nut-button>
+      <nut-button size="large" type="primary">{{ translate('large') }}</nut-button>
       <nut-button type="primary">{{ translate('normal') }}</nut-button>
       <nut-button size="small" type="primary">{{ translate('small') }}</nut-button>
-      <nut-button size="mini" type="primary">{{ translate('mini') }}</nut-button>
+      <!-- <nut-button size="mini" type="primary">{{ translate('mini') }}</nut-button> -->
     </div>
     <h2>{{ translate('title8') }}</h2>
     <div class="demo-button-row2">
