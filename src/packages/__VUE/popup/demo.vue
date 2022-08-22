@@ -1,5 +1,10 @@
 <template>
   <div class="demo">
+    <h2>{{ translate('circle') }}</h2>
+    <nut-cell :title="translate('circle')" is-link @click="state.showRound = true"></nut-cell>
+    <nut-popup position="bottom" title="标题" closeable round v-model:visible="state.showRound">
+      <div style="height: 1000px; background: red"> dddkdk </div>
+    </nut-popup>
     <h2>{{ translate('basic') }}</h2>
     <nut-cell :title="translate('cell1')" is-link @click="state.showBasic = true"></nut-cell>
     <nut-popup
@@ -37,15 +42,6 @@
       close-icon="heart"
       :style="{ height: '20%' }"
       v-model:visible="state.showCloseIcon"
-    ></nut-popup>
-    <h2>{{ translate('circle') }}</h2>
-    <nut-cell :title="translate('circle')" is-link @click="state.showRound = true"></nut-cell>
-    <nut-popup
-      position="bottom"
-      closeable
-      round
-      :style="{ height: '30%' }"
-      v-model:visible="state.showRound"
     ></nut-popup>
     <h2>{{ translate('teleport') }}</h2>
     <nut-cell :title="translate('teleport')" is-link @click="state.showTeleport = true"></nut-cell>

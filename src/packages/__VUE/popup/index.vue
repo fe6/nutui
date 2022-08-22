@@ -13,7 +13,10 @@
     />
     <Transition :name="transitionName" @after-enter="onOpened" @after-leave="onClosed">
       <view v-show="visible" :class="classes" :style="popStyle" @click="onClick" ref="popupRef">
-        <slot v-if="showSlot"></slot>
+        <view class="nutui-popup__title">{{ title }}</view>
+        <view class="nutui-popup__content-wrapper" :style="wrapperStyle" v-if="showSlot">
+          <slot></slot>
+        </view>
         <view
           v-if="closed"
           @click="onClickCloseIcon"
@@ -38,8 +41,10 @@
       @click="onClickOverlay"
     />
     <Transition :name="transitionName" @after-enter="onOpened" @after-leave="onClosed">
-      <view v-show="visible" :class="classes" :style="popStyle" @click="onClick">
-        <slot v-if="showSlot"></slot>
+      <view v-show="visible" :class="classes" :style="popStyle" @click="onClick" ref="popupRef">
+        <view class="nutui-popup__content-wrapper" :style="wrapperStyle" v-if="showSlot">
+          <slot></slot>
+        </view>
         <view
           v-if="closed"
           @click="onClickCloseIcon"
@@ -135,7 +140,11 @@ export const popupProps = {
   },
   safeAreaInsetBottom: {
     type: Boolean,
-    default: false
+    default: true
+  },
+  title: {
+    type: String,
+    default: ''
   }
 };
 export default create({
@@ -260,11 +269,15 @@ export default create({
       }
     });
 
+    const wrapperStyle = ref({});
     watch(
       () => props.visible,
       (value) => {
         if (value) {
           open();
+          setTimeout(() => {
+            wrapperStyle.value = { height: `${popupRef.value.clientHeight - 64}px` };
+          }, Number(props.duration));
         } else {
           close();
         }
@@ -294,7 +307,8 @@ export default create({
       onClickOverlay,
       onOpened,
       onClosed,
-      popupRef
+      popupRef,
+      wrapperStyle
     };
   }
 });

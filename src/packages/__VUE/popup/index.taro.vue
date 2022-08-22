@@ -14,6 +14,7 @@
     <Transition :name="transitionName" @after-enter="onOpened" @after-leave="onClosed">
       <view v-show="visible" :class="classes" :style="popStyle" @click="onClick">
         <div class="nutui-popup__content-wrapper" v-show="showSlot"><slot></slot></div>
+        <view class="nutui-popup__title">{{ title }}</view>
         <view
           v-if="closed"
           @click="onClickCloseIcon"
@@ -92,7 +93,11 @@ export const popupProps = {
   },
   safeAreaInsetBottom: {
     type: Boolean,
-    default: false
+    default: true
+  },
+  title: {
+    type: String,
+    default: ''
   }
 };
 export default create({
