@@ -106,17 +106,17 @@ $button-plain-background-color: $white !default;
 
 // cell
 
-$cell-color: $title-color2 !default;
+$cell-color: rgba(0, 0, 0, 0.85) !default;
 $cell-title-font: $font-size-2 !default;
 $cell-title-desc-font: $font-size-1 !default;
 $cell-desc-font: $font-size-2 !default;
 $cell-desc-color: $disable-color !default;
 $cell-border-radius: 6px !default;
-$cell-padding: 13px 16px !default;
-$cell-line-height: 20px !default;
+$cell-padding: 16px !default;
+$cell-line-height: 22px !default;
 $cell-after-right: 16px !default;
 $cell-after-border-bottom: 1px solid #f5f6f7 !default;
-$cell-default-icon-margin: 0 4px 0 0px !default;
+$cell-default-icon-margin: 0 12px 0 0px !default;
 $cell-large-title-font: $font-size-large !default;
 $cell-large-title-desc-font: $font-size-base !default;
 $cell-large-padding: 15px 16px !default;

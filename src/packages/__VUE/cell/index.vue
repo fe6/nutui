@@ -19,8 +19,9 @@ export default create({
     url: { type: String, default: '' },
     icon: { type: String, default: '' },
     rightIcon: { type: String, default: 'right' },
+    card: { type: Boolean, default: false },
     center: { type: Boolean, default: false },
-    size: { type: String, default: '' } // large
+    ellipsis: { type: Boolean, default: true }
   },
   emits: ['click'],
   setup(props, { emit }) {
@@ -30,7 +31,7 @@ export default create({
         [prefixCls]: true,
         [`${prefixCls}--clickable`]: props.isLink || props.to,
         [`${prefixCls}--center`]: props.center,
-        [`${prefixCls}--large`]: props.size == 'large'
+        [`${prefixCls}--card`]: props.card
       };
     });
     const router = useRouter();

@@ -1,5 +1,5 @@
 <template>
-  <div class="demo">
+  <div class="demo" style="padding: 57px 0 15px">
     <h2>{{ translate('basic') }}</h2>
     <nut-cell :title="translate('title')" :desc="translate('desc')"></nut-cell>
     <nut-cell :title="translate('title')" :sub-title="translate('title1')" :desc="translate('desc')"></nut-cell>
@@ -7,13 +7,8 @@
     <nut-cell :title="translate('title4')" round-radius="0"></nut-cell>
 
     <h2>{{ translate('title9') }}</h2>
-    <nut-cell size="large" :title="translate('title')" :desc="translate('desc')"></nut-cell>
-    <nut-cell
-      size="large"
-      :title="translate('title')"
-      :sub-title="translate('title1')"
-      :desc="translate('desc')"
-    ></nut-cell>
+    <nut-cell card :title="translate('title')" :desc="translate('desc')"></nut-cell>
+    <nut-cell card :title="translate('title')" :sub-title="translate('title1')" :desc="translate('desc')"></nut-cell>
 
     <h2>{{ translate('title2') }}</h2>
 
@@ -84,7 +79,7 @@ const initTranslate = () =>
       title6: '只展示 desc ，可通过 desc-text-align 调整内容位置',
       title7: '垂直居中',
       title8: '直接使用插槽(slot title)',
-      title9: '尺寸设置 large',
+      title9: '卡片模式',
       link: '链接',
       urlJump: 'URL 跳转',
       routerJump: '路由跳转 ’/‘ ',
@@ -108,7 +103,7 @@ const initTranslate = () =>
       title6: 'Only display desc , you can adjust the content position through desc-text-align',
       title7: 'Vertical Center',
       title8: 'Use Slots title',
-      title9: 'Size setting large',
+      title9: 'Card type',
       link: 'Link',
       urlJump: 'URL Jump',
       routerJump: 'Router Jump ’/‘ ',

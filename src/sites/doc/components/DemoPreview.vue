@@ -50,8 +50,7 @@ export default defineComponent({
 <style lang="scss">
 .doc {
   &-demo-preview {
-    height: 667px;
-    // height: 637px;
+    height: calc(100vh - 261px);
     width: 375px;
     position: absolute;
     right: 30px;

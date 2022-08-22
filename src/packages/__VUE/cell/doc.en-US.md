@@ -213,7 +213,6 @@ You can center the left and right contents of the cell vertically through the 'c
 | to                      | Target route of the link, same as to of vue-router                                                       | String ｜ Object | -                |
 | replace                 | If true, the navigation will not leave a history record                                                  | Boolean          | false            |
 | center`v3.1.21`         | Whether to center content vertically                                                                     | Boolean          | false            |
-| size`v3.1.22`           | Size, can be set to `large`                                                                              | String           | ''               |
 | font-class-name`v3.2.1` | Custom icon font base class name                                                                         | String           | `nutui-iconfont` |
 | class-prefix`v3.2.1`    | Custom icon class name prefix for using custom icons                                                     | String           | `nut-icon`       |
 

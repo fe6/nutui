@@ -4,6 +4,12 @@
     color: $dark-color;
     box-shadow: none;
   }
+
+  &--card {
+    &__inner {
+      background: $dark-background2;
+    }
+  }
 }
 .nut-cell {
   position: relative;
@@ -12,23 +18,36 @@
   line-height: $cell-line-height;
   padding: $cell-padding;
   background: $cell-background;
-  border-radius: $cell-border-radius;
-  box-shadow: 0px 1px 7px 0px rgba(237, 238, 241, 1);
+  // border-radius: $cell-border-radius;
+  // box-shadow: 0px 1px 7px 0px rgba(237, 238, 241, 1);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
   font-size: $cell-title-font;
   color: $cell-color;
-  margin: 10px 0;
+  // margin: 10px 0;
   box-sizing: border-box;
+
+  &--card {
+    background: transparent;
+    padding: 0 16px;
+    border: none;
+    margin-bottom: 8px;
+
+    &__inner {
+      background: $cell-background;
+      padding: 16px;
+      width: calc(100% - 32px);
+      border-radius: 4px;
+      display: flex;
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    display: flex;
+  }
 
   &--center {
     align-items: center;
-  }
-
-  &--large {
-    font-size: $cell-large-title-font;
-    padding: $cell-large-padding;
-    .nut-cell__title-desc {
-      font-size: $cell-large-title-desc-font;
-    }
   }
 
   &:last-child {
@@ -72,24 +91,63 @@
   &__icon {
     display: flex;
     flex-direction: row;
-    margin-right: $cell-default-icon-margin;
+    margin: $cell-default-icon-margin;
   }
 
   &__title {
     display: flex;
     flex-direction: column;
     flex: 1;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+
+    &-width {
+      flex-shrink: 0;
+      width: 59%;
+
+      &-inner {
+        flex-shrink: 0;
+        width: 100%;
+      }
+
+      &-all {
+        flex-shrink: 0;
+        width: 100%;
+      }
+    }
+
+    &-ellipsis {
+      height: 22px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
     &-desc {
-      font-size: $cell-title-desc-font;
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      line-height: 20px;
+      color: rgba(0, 0, 0, 0.45);
+      padding-top: 10px;
     }
   }
   &__value {
     display: inline-block;
     text-align: right;
-    font-size: $cell-desc-font;
-    color: $cell-desc-color;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.45);
+    flex-shrink: 0;
+    width: 39%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-left: 8px;
+
     &--alone {
       color: $cell-color;
+      padding-left: 0;
     }
   }
   &__link {
