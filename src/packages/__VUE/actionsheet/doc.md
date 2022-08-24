@@ -154,7 +154,6 @@ export default {
     <nut-actionsheet
       v-model:visible="state.isVisible"
       cancel-txt="取消"
-      description="这是一段展示信息"
       :menu-items="menuItems"
       @choose="chooseItem"
     >
@@ -271,7 +270,6 @@ export default {
 | choose-tag-value | 设置选中项的值，和'option-tag'的值对应 | String  | ''        |
 | color            | 选中项颜色，当 choose-tag-value == option-tag的值 生效  | String  | '#ee0a24' |
 | title            | 设置列表项标题                         | String  | ''        |
-| description      | 设置列表项副标题/描述                  | String  | ''        |
 | cancel-txt       | 取消文案                               | String  | '取消'   |
 | close-abled      | 遮罩层是否可关闭                       | Boolean | true      |
 

@@ -153,7 +153,6 @@ export default {
     <nut-actionsheet
       v-model:visible="state.isVisible"
       cancel-txt="cancel"
-      description="This is a presentation"
       :menu-items="menuItems"
       @choose="chooseItem"
     >
@@ -270,7 +269,6 @@ export default {
 | choose-tag-value | Set the value of the selected item | String  | ''        |
 | color            | selected item color，when choose-tag-value == option-tag   | String  | '#ee0a24' |
 | title            | set list item title                         | String  | ''        |
-| description      | set list item description                | String  | ''        |
 | cancel-txt       | Text of cancel button                               | String  | '取消'   |
 | close-abled      | Whether the mask layer can be closed                       | Boolean | true      |
 

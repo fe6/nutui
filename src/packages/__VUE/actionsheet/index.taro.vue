@@ -1,19 +1,24 @@
 <template>
   <view :class="classes">
     <nut-popup
-      pop-class="popclass"
+      pop-class="nut-actionsheet-popup"
       :visible="visible"
       position="bottom"
       round
       @click-overlay="close"
       :closeOnClickOverlay="closeAbled"
+      @opend="popupOpend"
     >
       <view class="nut-actionsheet-panel">
-        <view v-if="title" class="nut-actionsheet-title">{{ title }}</view>
+        <view v-if="title || subTitle" style="display: block" ref="titleNode">
+          <view v-if="title" class="nut-actionsheet-title" :class="{ ['nut-actionsheet-title2']: subTitle }">{{
+            title
+          }}</view>
+          <view v-if="subTitle" class="nut-actionsheet-title-sub">{{ subTitle }}</view>
+        </view>
         <slot></slot>
         <view v-if="!slotDefault">
-          <view class="nut-actionsheet-item desc" v-if="description">{{ description }}</view>
-          <view class="nut-actionsheet-menu" v-if="menuItems.length">
+          <view class="nut-actionsheet-menu" ref="menuNode" :style="menuStyles" v-if="menuItems.length">
             <view
               v-for="(item, index) of menuItems"
               class="nut-actionsheet-item"
@@ -23,8 +28,8 @@
               @click="chooseItem(item, index)"
             >
               <nut-icon v-if="item.loading" name="loading"> </nut-icon>
-              <view v-else> {{ item[optionTag] }}</view>
-              <view class="subdesc">{{ item[optionSubTag] }}</view>
+              <view v-else class="label"> {{ item[optionTag] }}</view>
+              <view class="subdesc" v-if="item[optionSubTag]">{{ item[optionSubTag] }}</view>
             </view>
           </view>
           <view class="nut-actionsheet-cancel" v-if="cancelTxt" @click="cancelActionSheet">
@@ -37,7 +42,7 @@
 </template>
 <script lang="ts">
 import { createComponent } from '@/packages/utils/create';
-import { computed, useSlots } from 'vue';
+import { computed, reactive, ref, useSlots } from 'vue';
 const { componentName, create } = createComponent('actionsheet');
 import { popupProps } from '../popup/index.vue';
 export default create({
@@ -60,6 +65,10 @@ export default create({
       default: ''
     },
     title: {
+      type: String,
+      default: ''
+    },
+    subTitle: {
       type: String,
       default: ''
     },
@@ -107,6 +116,24 @@ export default create({
       }
     };
 
+    const menuNode = ref();
+    const titleNode = ref();
+    const menuStyles = reactive({
+      height: '100%'
+    });
+    const popupOpend = (_: any, popupRef: any) => {
+      if (menuNode.value && props.cancelTxt) {
+        menuStyles.height =
+          menuNode.value.clientHeight > popupRef.value.clientHeight
+            ? `${
+                popupRef.value.clientHeight -
+                64 -
+                (titleNode.value && titleNode.value.clientHeight ? titleNode.value.clientHeight : 0)
+              }px`
+            : '100%';
+      }
+    };
+
     const close = (e: Event) => {
       emit('close', e);
       emit('update:visible', false);
@@ -118,7 +145,11 @@ export default create({
       cancelActionSheet,
       chooseItem,
       close,
-      classes
+      classes,
+      popupOpend,
+      menuNode,
+      menuStyles,
+      titleNode
     };
   }
 });

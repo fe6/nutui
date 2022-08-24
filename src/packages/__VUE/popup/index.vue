@@ -235,7 +235,7 @@ export default create({
     };
 
     const onOpened = (e: Event) => {
-      emit('opend', e);
+      emit('opend', e, popupRef);
     };
 
     const onClosed = (e: Event) => {

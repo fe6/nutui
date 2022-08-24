@@ -191,10 +191,10 @@ $inputnumber-input-border: 0 !default;
 
 // actionsheet
 $actionsheet-light-color: #f6f6f6 !default;
-$actionsheet-item-border-bottom: 1px solid rgba(0, 0, 0, 0.1) !default;
+$actionsheet-item-border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !default;
 $actionsheet-item-font-size: $font-size-4 !default;
 $actionsheet-item-subdesc-font-size: $font-size-1 !default;
-$actionsheet-item-cancel-border-top: none !default;
+$actionsheet-item-cancel-border-top: 8px solid #f2f2f2 !default;
 $actionsheet-item-line-height: 28px !default;
 $actionsheet-item-font-color: #4e5969 !default;
 
