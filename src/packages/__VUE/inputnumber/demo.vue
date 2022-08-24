@@ -30,7 +30,7 @@
     </nut-cell>
     <h2>{{ translate('size') }}</h2>
     <nut-cell>
-      <nut-inputnumber v-model="state.val7" button-size="30" input-width="50" />
+      <nut-inputnumber v-model="state.val7" button-size="38" input-width="50" />
     </nut-cell>
     <h2>{{ translate('icon') }}</h2>
     <nut-cell>
