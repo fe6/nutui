@@ -6,6 +6,12 @@
             <view class="nut-tabs__titles-item" :style="titleStyle" @click="tabChange(item, index)"
                 :class="{ active: item.paneKey == modelValue, disabled: item.disabled }" v-for="(item, index) in titles"
                 :key="item.paneKey">
+                <view class="nut-tabs__titles-item__top" v-if="item.paneKey - modelValue === 1 && type == 'line' && direction == 'vertical' && index > 0">
+                  <img class="nut-tabs__titles-item__arrow" src="./img/top.png" />
+                </view>
+                <view class="nut-tabs__titles-item__bottom" v-if="modelValue - item.paneKey === 1 && type == 'line' && direction == 'vertical' && index < titles.length -1">
+                  <img class="nut-tabs__titles-item__arrow" src="./img/bottom.png" />
+                </view>
                 <view class="nut-tabs__titles-item__line" :style="tabsActiveStyle" v-if="type == 'line'"></view>
                 <view class="nut-tabs__titles-item__smile" :style="tabsActiveStyle" v-if="type == 'smile'">
                     <nut-icon :color="color" name="joy-smile" />

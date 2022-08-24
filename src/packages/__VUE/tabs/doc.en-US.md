@@ -346,7 +346,7 @@ export default {
 | ellipsis             | Whether to omit too long title text                                                                                                | boolean       | true       |
 | animated-time        | Switch animation duration, unit ms 0 means no animation                                                                            | number,string | 300        |
 | title-gutter         | Label gap                                                                                                                          | number,string | 0          |
-| size`v3.1.13`        | Tab bar font size optional value  `large` `normal` `small`                                                                         | string        | normal     |
+| size`v3.1.13`        | Tab bar font size optional value  `large` `normal` `small`                                                                         | string        | large     |
 | auto-height`v3.1.21` | Automatic height. When set to `true`, `nut-tabs` and `nut-tabs__content` will change with the height of the current `nut-tabpane`. | boolean       | false      |
 
 ## Tabs Slots

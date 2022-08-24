@@ -24,7 +24,7 @@ export const component = {
     },
     size: {
       type: String as import('vue').PropType<TabsSize>,
-      default: 'normal'
+      default: 'large'
     },
     type: {
       type: String,
@@ -52,7 +52,7 @@ export const component = {
     },
     titleGutter: {
       type: [Number, String],
-      default: 0
+      default: 16
     }
   },
 
@@ -139,10 +139,12 @@ export const component = {
       };
     });
     const titleStyle = computed(() => {
-      return {
-        marginLeft: pxCheck(props.titleGutter),
-        marginRight: pxCheck(props.titleGutter)
-      };
+      return props.direction == 'horizontal'
+        ? {
+            marginLeft: pxCheck(props.titleGutter),
+            marginRight: pxCheck(props.titleGutter)
+          }
+        : {};
     });
     const methods = {
       tabChange: (item: Title, index: number) => {

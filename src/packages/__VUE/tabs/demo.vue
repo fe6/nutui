@@ -21,10 +21,10 @@
     <h2>{{ translate('title9') }}</h2>
     <nut-tabs v-model="state.tab2value" :auto-height="true">
       <nut-tabpane title="Tab 1" pane-key="0">
-        <p>Tab 1</p>
-        <p>Tab 1</p>
-        <p>Tab 1</p>
-        <p>Tab 1</p>
+        <div>Tab 1</div>
+        <div>Tab 1</div>
+        <div>Tab 1</div>
+        <div>Tab 1</div>
       </nut-tabpane>
       <nut-tabpane title="Tab 2" pane-key="1"> Tab 2 </nut-tabpane>
       <nut-tabpane title="Tab 3" pane-key="2"> Tab 3 </nut-tabpane>
@@ -39,8 +39,13 @@
       <nut-tabpane v-for="item in state.list4" :title="'Tab ' + item"> Tab {{ item }} </nut-tabpane>
     </nut-tabs>
     <h2>{{ translate('title5') }}</h2>
-    <nut-tabs style="height: 300px" v-model="state.tab5value" title-scroll direction="vertical">
-      <nut-tabpane v-for="item in state.list5" :title="'Tab ' + item"> Tab {{ item }} </nut-tabpane>
+    <nut-tabs style="height: 300px" size="normal" v-model="state.tab5value" title-scroll direction="vertical">
+      <nut-tabpane
+        v-for="item in state.list5"
+        :title="item === 0 ? '一行最多' : '一行最多一行最多一行最多一行最多' + item"
+      >
+        Tab {{ item }}
+      </nut-tabpane>
     </nut-tabs>
     <h2>{{ translate('title6') }}</h2>
     <nut-tabs style="height: 300px" v-model="state.tab6value" type="smile" title-scroll direction="vertical">
@@ -134,7 +139,7 @@ export default createDemo({
       tab7value: 'c1',
       list3: Array.from(new Array(2).keys()),
       list4: Array.from(new Array(10).keys()),
-      list5: Array.from(new Array(2).keys()),
+      list5: Array.from(new Array(4).keys()),
       list6: computed(() => [
         {
           title: translate('custom', 1),

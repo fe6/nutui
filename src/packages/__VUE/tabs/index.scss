@@ -32,14 +32,15 @@
     .nut-tabs__titles {
       flex-direction: column;
       height: 100%;
-      padding: 10px 0 !important;
+      padding: 0 !important;
+      background: #f2f2f2;
       width: $tabs-vertical-titles-width;
       flex-shrink: 0;
       &.scrollable {
         overflow-x: hidden;
         overflow-y: auto;
         .nut-tabs__titles-item {
-          padding: 0 10px 0 15px;
+          padding: 8px;
         }
       }
       &-item {
@@ -49,14 +50,11 @@
           transition: width 0.3s ease;
         }
         &__line {
-          bottom: none;
-          transform: translate(0, -50%);
-          transition: height 0.3s ease;
-          width: 0;
-          height: 0;
+          display: none;
         }
         &.active {
           background-color: #fff;
+          color: $primary-color;
 
           .nut-tabs__titles-item__line {
             left: 10px;
@@ -73,6 +71,33 @@
             height: $tabs-vertical-titles-item-active-line-height;
           }
         }
+        &__text {
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          display: -webkit-box;
+          max-height: 40px;
+          white-space: break-spaces;
+        }
+
+        &__arrow {
+          display: block;
+          width: 6px;
+          height: 6px;
+        }
+
+        &__top,
+        &__bottom {
+          position: absolute;
+          right: 0;
+        }
+
+        &__top {
+          top: 0;
+        }
+
+        &__bottom {
+          bottom: 0;
+        }
       }
     }
     .nut-tabs__content {
@@ -86,11 +111,12 @@
 
   &__titles {
     height: $tabs-horizontal-titles-height;
-    padding: 0 10px;
+    padding: 0 16px;
     display: flex;
     user-select: none;
     background: $tabs-titles-background-color;
     border-radius: $tabs-titles-border-radius;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
     &.large {
       .nut-tabs__titles-item {
@@ -139,6 +165,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: PingFangSC-Regular;
       color: $tabs-titles-item-color;
       &__text {
         &.ellipsis {
@@ -153,7 +180,7 @@
         width: 0;
         height: 0;
         content: ' ';
-        bottom: 15%;
+        bottom: 0;
         left: 50%;
         transform: translate(-50%, 0);
         overflow: hidden;
