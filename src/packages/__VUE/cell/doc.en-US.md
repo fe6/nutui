@@ -215,6 +215,7 @@ You can center the left and right contents of the cell vertically through the 'c
 | center`v3.1.21`         | Whether to center content vertically                                                                     | Boolean          | false            |
 | font-class-name`v3.2.1` | Custom icon font base class name                                                                         | String           | `nutui-iconfont` |
 | class-prefix`v3.2.1`    | Custom icon class name prefix for using custom icons                                                     | String           | `nut-icon`       |
+| border    | has border | boolean           | true      |
 
 ### Cell Event
 

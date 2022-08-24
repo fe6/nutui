@@ -52,6 +52,7 @@
         :title="translate('multiple')"
         :desc="date7 && date7.length ? `${translate('selected')}${date7.length}` : translate('please')"
         @click="openSwitch('isVisible7')"
+        :border="false"
       >
       </nut-cell>
       <nut-calendar
@@ -92,6 +93,7 @@
         :title="translate('range')"
         @click="openSwitch('isVisible4')"
         :desc="date4 ? `${date4[0]}${translate('conjunction')}${date4[1]}` : translate('please')"
+        :border="false"
       >
       </nut-cell>
       <nut-calendar
@@ -149,6 +151,7 @@
         :title="translate('timeText')"
         :desc="date6 && date6[0] ? `${date6[0]}${translate('conjunction')}${date6[1]}` : translate('please')"
         @click="openSwitch('isVisible6')"
+        :border="false"
       >
       </nut-cell>
       <nut-calendar

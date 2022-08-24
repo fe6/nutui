@@ -218,6 +218,7 @@ app.use(Cell).use(CellGroup).use(Icon);
 | center`v3.1.21`         | 是否使内容垂直居中                                                                             | Boolean          | false            |
 | font-class-name`v3.2.1` | 自定义icon 字体基础类名                                                                        | string           | `nutui-iconfont` |
 | class-prefix`v3.2.1`    | 自定义icon 类名前缀，用于使用自定义图标                                                        | string           | `nut-icon`       |
+| border    | 是否有边框 | boolean           | true      |
 
 
 ### Cell Event

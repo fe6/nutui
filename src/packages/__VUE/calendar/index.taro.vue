@@ -7,6 +7,8 @@
     closeable
     @click-overlay="closePopup"
     @click-close-icon="closePopup"
+    popClass="nut-calendar-popup"
+    :title="title"
     :style="{ height: '85vh' }"
   >
     <nut-calendar-item
@@ -14,7 +16,6 @@
       :type="type"
       :is-auto-back-fill="isAutoBackFill"
       :poppable="poppable"
-      :title="title"
       :default-value="defaultValue"
       :start-date="startDate"
       :end-date="endDate"
@@ -27,7 +28,7 @@
       :start-text="startText"
       :end-text="endText"
       :show-today="showToday"
-      :show-title="showTitle"
+      :show-title="false"
       :to-date-animation="toDateAnimation"
       :show-sub-title="showSubTitle"
     >
@@ -127,7 +128,7 @@ export default create({
     },
     title: {
       type: String,
-      default: ''
+      default: '日历选择'
     },
     confirmText: {
       type: String,

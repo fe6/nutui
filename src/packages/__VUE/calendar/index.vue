@@ -8,7 +8,9 @@
     @click-overlay="closePopup"
     @click-close-icon="closePopup"
     :destroy-on-close="true"
+    popClass="nut-calendar-popup"
     :style="{ height: '85vh' }"
+    :title="title"
   >
     <nut-calendar-item
       v-if="visible"
@@ -17,7 +19,6 @@
       :type="type"
       :is-auto-back-fill="isAutoBackFill"
       :poppable="poppable"
-      :title="title"
       :confirm-text="confirmText"
       :start-text="startText"
       :end-text="endText"
@@ -29,7 +30,7 @@
       @choose="choose"
       @select="select"
       :show-today="showToday"
-      :show-title="showTitle"
+      :show-title="false"
       :show-sub-title="showSubTitle"
       :to-date-animation="toDateAnimation"
     >
@@ -86,7 +87,7 @@
 <script lang="ts">
 import { PropType, ref, computed } from 'vue';
 import { createComponent } from '@/packages/utils/create';
-const { create } = createComponent('calendar');
+const { create, translate } = createComponent('calendar');
 import CalendarItem from '../calendaritem/index.vue';
 import Utils from '@/packages/utils/date';
 import { useExpose } from '@/packages/utils/useExpose/index';
@@ -131,7 +132,7 @@ export default create({
     },
     title: {
       type: String,
-      default: ''
+      default: '日历选择'
     },
     confirmText: {
       type: String,

@@ -21,7 +21,8 @@ export default create({
     rightIcon: { type: String, default: 'right' },
     card: { type: Boolean, default: false },
     center: { type: Boolean, default: false },
-    ellipsis: { type: Boolean, default: true }
+    ellipsis: { type: Boolean, default: true },
+    border: { type: Boolean, default: true }
   },
   emits: ['click'],
   setup(props, { emit }) {
@@ -30,6 +31,7 @@ export default create({
       return {
         [prefixCls]: true,
         [`${prefixCls}--clickable`]: props.isLink || props.to,
+        [`${prefixCls}--border`]: props.border,
         [`${prefixCls}--center`]: props.center,
         [`${prefixCls}--card`]: props.card
       };

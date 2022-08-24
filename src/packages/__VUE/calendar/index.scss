@@ -28,7 +28,7 @@
   position: relative;
   display: flex;
   flex: 1;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.85);
   font-size: 16px;
   background-color: $white;
   overflow: hidden;
@@ -82,7 +82,7 @@
       justify-content: space-around;
       height: 36px;
       border-radius: 0px 0px 12px 12px;
-      box-shadow: 0px 4px 10px 0px rgba($color: #000000, $alpha: 0.06);
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
 
       .calendar-week-item {
         &:first-of-type,
@@ -155,6 +155,9 @@
           justify-content: center;
           flex-direction: column;
           position: relative;
+          font-family: PingFangSC-Medium;
+          font-size: 20px;
+          color: rgba(0, 0, 0, 0.85);
 
           .calendar-curr-tips {
             position: absolute;
@@ -228,11 +231,17 @@
       height: 44px;
       width: 100%;
       margin: 10px 18px;
-      border-radius: 22px;
+      border-radius: 4px;
       background: $button-primary-background-color;
       color: $white;
       text-align: center;
       line-height: 44px;
+    }
+  }
+
+  &-popup {
+    & .nutui-popup__content-wrapper {
+      padding: 0;
     }
   }
 }
