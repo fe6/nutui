@@ -7,6 +7,7 @@
       position="bottom"
       round
       @click-overlay="close"
+      :showTitle="false"
       :closeOnClickOverlay="closeAbled"
     >
       <view class="nut-actionsheet-panel">

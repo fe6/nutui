@@ -12,9 +12,9 @@
       @click="onClickOverlay"
     />
     <Transition :name="transitionName" @after-enter="onOpened" @after-leave="onClosed">
-      <view v-show="visible" :class="classes" :style="popStyle" @click="onClick">
-        <div class="nutui-popup__content-wrapper" v-show="showSlot"><slot></slot></div>
-        <view class="nutui-popup__title">{{ title }}</view>
+      <view v-show="visible" :class="classes" :style="popStyle" @click="onClick" ref="popupRef">
+        <view class="nutui-popup__content-wrapper" v-show="showSlot"><slot></slot></view>
+        <view class="nutui-popup__title" v-if="showTitle">{{ title }}</view>
         <view
           v-if="closed"
           @click="onClickCloseIcon"
@@ -40,7 +40,8 @@ import {
   PropType,
   CSSProperties,
   toRefs,
-  getCurrentInstance
+  getCurrentInstance,
+  ref
 } from 'vue';
 import { useLockScroll } from '../popup/use-lock-scroll';
 import { overlayProps } from '../overlay/index.taro.vue';
@@ -98,6 +99,10 @@ export const popupProps = {
   title: {
     type: String,
     default: ''
+  },
+  showTitle: {
+    type: Boolean,
+    default: true
   }
 };
 export default create({
@@ -111,6 +116,7 @@ export default create({
   },
   emits: ['click', 'click-close-icon', 'open', 'close', 'opend', 'closed', 'update:visible', 'click-overlay'],
   setup(props, { emit }) {
+    const popupRef = ref();
     const state = reactive({
       zIndex: props.zIndex ? (props.zIndex as number) : _zIndex,
       showSlot: true,
@@ -206,11 +212,15 @@ export default create({
         state.keepAlive = true;
       }
     });
+    const wrapperStyle = ref({});
     watch(
       () => props.visible,
       (value) => {
         if (value) {
           open();
+          setTimeout(() => {
+            wrapperStyle.value = { height: props.showTitle ? `${popupRef.value.clientHeight - 64}px` : 'auto' };
+          }, Number(props.duration));
         } else {
           close();
         }

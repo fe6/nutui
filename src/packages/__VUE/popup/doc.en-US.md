@@ -214,6 +214,7 @@ app.use(Popup).use(OverLay)
 | round                  | Show fillet                                                | Boolean        | `false`       |
 | teleport               | Specify the mount node (`not supported by miniProgram')   | String         | `"body"`      |
 | safe-area-inset-bottom `v3.1.19`	| Whether to enable iPhone series full screen bottom safety zone adaptation, which is only valid when `position` is  `bottom` |	Boolean	|`true`     |
+| showTitle                  | display title                                                | Boolean        | `true`       |
 
 ### Events
 
