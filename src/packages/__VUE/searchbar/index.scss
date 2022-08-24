@@ -24,7 +24,7 @@
   align-items: center;
   width: $searchbar-width;
   padding: $searchbar-padding;
-  background: $searchbar-background;
+  background: transparent;
   box-sizing: border-box;
   &__search-label {
     padding: 0 5px;
@@ -34,12 +34,11 @@
     display: flex;
     align-items: center;
     width: $searchbar-input-width;
-    height: $searchbar-input-height;
+    height: 36px;
     flex: 1;
     padding: $searchbar-input-padding;
-    border-radius: $searchbar-input-border-radius;
-    box-shadow: $searchbar-input-box-shadow;
-    background: $searchbar-input-background;
+    border-radius: 4px;
+    background: #fff;
 
     .nut-searchbar__input-inner {
       display: flex;
@@ -58,6 +57,11 @@
         height: 100%;
         min-width: 214px;
         padding-left: 4px;
+        color: rgba(0, 0, 0, 0.85);
+
+        &::-webkit-input-placeholder {
+          color: rgba(0, 0, 0, 0.25);
+        }
       }
       .nut-searchbar__input-clear {
         display: flex;
@@ -113,11 +117,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    & .nut-icon {
+      color: rgba(0, 0, 0, 0.45);
+    }
   }
 
   &__right-search-icon {
     margin-left: 16px;
-    font-size: 14px;
-    color: $searchbar-right-out-color;
+    color: $primary-color;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
   }
 }

@@ -209,7 +209,7 @@ export default create({
     },
     clearIcon: {
       type: String,
-      default: 'mask-close'
+      default: 'circle-close'
     },
     clearSize: {
       type: [String, Number],
