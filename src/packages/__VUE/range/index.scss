@@ -25,8 +25,9 @@
   align-items: center;
   .min,
   .max {
-    font-size: $font-size-1;
-    color: $range-tip-font-color;
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.85);
     user-select: none;
   }
   &-vertical {
@@ -164,8 +165,9 @@
       align-items: center;
       justify-content: center;
       user-select: none;
-      font-size: $font-size-1;
-      color: $range-tip-font-color;
+      font-family: PingFangSC-Regular;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.85);
       transform: translate3d(0, -100%, 0);
     }
   }
