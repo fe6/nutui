@@ -30,7 +30,6 @@ app.use(Dialog).use(Popup).use(OverLay)
   <nut-cell title="异步关闭" @click="beforeCloseClick"></nut-cell>
   <nut-cell title="无标题弹框" @click="noTitleClick"></nut-cell>
   <nut-cell title="提示弹框" @click="tipsClick"></nut-cell>
-  <nut-cell title="底部按钮 垂直调用" @click="verticalClick"></nut-cell>
  </nut-cell-group>
 </template>
 <script lang="ts">
@@ -101,15 +100,6 @@ export default {
             onOk
           });
         };
-        const verticalClick = () => {
-          Dialog({
-            title: '温馨提示',
-            content: '支持底部按钮纵向排列。',
-            footerDirection: 'vertical',
-            onCancel,
-            onOk
-          });
-        };
         return {
           baseClick,
           transparentClick,
@@ -117,7 +107,6 @@ export default {
           beforeCloseClick,
           noTitleClick,
           tipsClick,
-          verticalClick
         };
     }
 }

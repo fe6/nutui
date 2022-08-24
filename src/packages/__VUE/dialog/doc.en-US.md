@@ -30,7 +30,6 @@ app.use(Dialog).use(Popup).use(OverLay)
   <nut-cell title="Before Close" @click="beforeCloseClick"></nut-cell>
   <nut-cell title="No Title" @click="noTitleClick"></nut-cell>
   <nut-cell title="Tips Dialog" @click="tipsClick"></nut-cell>
-  <nut-cell title="Bottom button vertical use" @click="verticalClick"></nut-cell>
  </nut-cell-group>
 </template>
 <script lang="ts">
@@ -101,15 +100,6 @@ export default {
             onOk
           });
         };
-        const verticalClick = () => {
-          Dialog({
-            title: 'Title',
-            content: 'Support vertical arrangement of bottom buttons.',
-            footerDirection: 'vertical',
-            onCancel,
-            onOk
-          });
-        };
         return {
           baseClick,
           transparentClick,
@@ -117,7 +107,6 @@ export default {
           beforeCloseClick,
           noTitleClick,
           tipsClick,
-          verticalClick
         };
     }
 }

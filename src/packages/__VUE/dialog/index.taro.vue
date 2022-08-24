@@ -4,27 +4,32 @@
     v-model:visible="showPopup"
     :close-on-click-overlay="closeOnClickOverlay"
     :lock-scroll="lockScroll"
-    :pop-class="popClass"
     :style="popStyle"
     :overlay-class="overlayClass"
     :overlay-style="overlayStyle"
     round
     @click-overlay="closed"
     @click-close-icon="closed"
+    pop-class="nut-dialog-popup"
+    :showTitle="false"
   >
     <view :class="classes">
-      <view v-if="title" class="nut-dialog__header">
+      <view v-if="title || $slots.header" class="nut-dialog__header">
         <slot v-if="$slots.header" name="header"></slot>
         <template v-else>{{ title }}</template>
       </view>
 
-      <view class="nut-dialog__content" :style="{ textAlign }">
+      <view
+        class="nut-dialog__content"
+        :class="!title && !$slots.header ? 'nut-dialog__content-only' : ''"
+        :style="{ textAlign }"
+      >
         <slot v-if="$slots.default" name="default"></slot>
         <view v-else-if="typeof content === 'string'" v-html="content"></view>
         <component v-else :is="content" />
       </view>
 
-      <view class="nut-dialog__footer" :class="{ [footerDirection]: footerDirection }" v-if="!noFooter">
+      <view class="nut-dialog__footer" v-if="!noFooter">
         <slot v-if="$slots.footer" name="footer"></slot>
         <template v-else>
           <nut-button
@@ -32,12 +37,20 @@
             plain
             type="primary"
             class="nut-dialog__footer-cancel"
+            :class="noOkBtn ? 'nut-dialog__footer-cancel-only' : ''"
             v-if="!noCancelBtn"
             @click="onCancel"
           >
             {{ cancelText || translate('cancel') }}
           </nut-button>
-          <nut-button v-if="!noOkBtn" size="small" type="primary" class="nut-dialog__footer-ok" @click="onOk">
+          <nut-button
+            v-if="!noOkBtn"
+            size="small"
+            type="primary"
+            class="nut-dialog__footer-ok"
+            :class="noCancelBtn ? 'nut-dialog__footer-ok-only' : ''"
+            @click="onOk"
+          >
             {{ okText || translate('confirm') }}
           </nut-button>
         </template>
@@ -103,10 +116,6 @@ export default create({
     closeOnPopstate: {
       type: Boolean,
       default: false
-    },
-    footerDirection: {
-      type: String,
-      default: 'horizontal' //vertical
     },
     customClass: {
       type: String,

@@ -27,9 +27,6 @@ app.use(Dialog).use(Popup).use(OverLay)
 <nut-cell title="提示弹框" @click="tipsClick"></nut-cell>
 <nut-dialog no-cancel-btn title="温馨提示" content="这是提示弹框。" v-model:visible="visible3" @cancel="onCancel" @ok="onOk" />
 
-<nut-cell title="底部按钮 垂直调用" @click="verticalClick"></nut-cell>
-<nut-dialog footer-direction="vertical" teleport="#app" title="温馨提示" content="这是提示弹框。" v-model:visible="visible5" />
-
 <nut-cell title="异步关闭" @click="componentClick"></nut-cell>
 <nut-dialog title="异步关闭" :content="closeContent" :visible="visible4" @cancel="onCancel" @ok="onOkAsync" />
 ```
@@ -42,7 +39,6 @@ export default {
     const visible2 = ref(false);
     const visible3 = ref(false);
     const visible4 = ref(false);
-    const visible5 = ref(false);
     const closeContent = ref('');
     const sleep = () => new Promise((resolve) => setTimeout(resolve, 1000));
     const countDown = (second: number) => `倒计时 ${second} 秒`;
@@ -86,17 +82,12 @@ export default {
       visible4.value = true;
     };
 
-    const verticalClick = () => {
-      visible5.value = true;
-    };
-
 
     return {
       visible1,
       visible2,
       visible3,
       visible4,
-      visible5,
       onCancel,
       onOk,
       closeContent,
@@ -105,7 +96,6 @@ export default {
       noTitleClick,
       componentClick,
       tipsClick,
-      verticalClick
     };
   }
 };
@@ -129,7 +119,6 @@ export default {
 | text-align             | 文字对齐方向，可选值同css的text-align                         | String                   | "center"   |
 | close-on-popstate      | 是否在页面回退时自动关闭                                      | Boolean                  | false      |
 | lock-scroll            | 背景是否锁定                                                  | Boolean                  | false      |
-| footer-direction       | 使用横纵方向 可选值 horizontal、vertical                      | string                   | horizontal |
 | overlay-class`v3.1.22` | 自定义遮罩类名                                                | String                   | -          |
 | overlay-style`v3.1.22` | 自定义遮罩样式                                                | CSSProperties            | -          |
 | pop-class  `v3.1.22`   | 自定义popup弹框类名                                           | String                   | -          |

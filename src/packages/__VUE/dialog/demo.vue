@@ -7,7 +7,7 @@
       <nut-cell :title="translate('beforeClose')" @click="beforeCloseClick"></nut-cell>
       <nut-cell :title="translate('noTitle')" @click="noTitleClick"></nut-cell>
       <nut-cell :title="translate('tipDialog')" @click="tipsClick"></nut-cell>
-      <nut-cell :title="translate('title')" @click="verticalClick"></nut-cell>
+      <!-- <nut-cell :title="translate('title')" @click="verticalClick"></nut-cell> -->
     </nut-cell-group>
     <nut-cell-group :title="translate('title1')">
       <nut-cell :title="translate('title1')" @click="componentClick"></nut-cell>
@@ -45,11 +45,11 @@ const initTranslate = () =>
   useTranslate({
     'zh-CN': {
       funUse: '函数式调用',
-      basic: '基础弹框',
+      basic: '基础弹框基础弹框基础弹框基础弹框基础弹框',
       transparent: '透明弹框',
       html: '支持富文本 html',
       beforeClose: '异步关闭',
-      noTitle: '无标题弹框',
+      noTitle: '无标题弹框无标题弹框无标题弹框无标题弹框无标题弹框无标题弹框无标题弹框无标题弹框',
       tipDialog: '提示弹框',
       tips: '提示',
       title: '底部按钮 垂直使用',
@@ -154,15 +154,15 @@ export default createDemo({
         onOk
       });
     };
-    const verticalClick = () => {
-      Dialog({
-        title: translate('tips'),
-        content: translate('content1'),
-        footerDirection: 'vertical',
-        onCancel,
-        onOk
-      });
-    };
+    // const verticalClick = () => {
+    //   Dialog({
+    //     title: translate('tips'),
+    //     content: translate('content1'),
+    //     footerDirection: 'vertical',
+    //     onCancel,
+    //     onOk
+    //   });
+    // };
 
     const componentClick = () => {
       visible.value = true;
@@ -192,7 +192,7 @@ export default createDemo({
       componentClick,
       componentvVrticalClick,
       tipsClick,
-      verticalClick,
+      // verticalClick,
       teleportClick,
       translate
     };
