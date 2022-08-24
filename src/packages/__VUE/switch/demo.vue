@@ -22,7 +22,7 @@
 
     <h2>{{ translate('title3') }}</h2>
     <nut-cell>
-      <nut-switch v-model="checked" loading color="red" />
+      <nut-switch v-model="checked" loading color="blue" />
     </nut-cell>
 
     <h2>{{ translate('title4') }}</h2>

@@ -60,7 +60,7 @@ export default create({
     },
     size: {
       type: [String, Number],
-      default: '12px'
+      default: '22px'
     },
     color: {
       type: String,
