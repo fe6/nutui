@@ -1,5 +1,5 @@
 <template>
-  <nut-popup pop-class="custom-pop" v-model:visible="showPop" @click="onClose" style="width: 100%">
+  <nut-popup pop-class="custom-pop" v-model:visible="showPop" @click="onClose" style="width: 100%" :showTitle="false">
     <!-- @click.stop="closeOnImg" -->
     <view class="nut-imagepreview" @touchstart.capture="onTouchStart">
       <nut-swiper

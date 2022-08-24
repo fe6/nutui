@@ -8,6 +8,7 @@
     :lock-scroll="lockScroll"
     @click-overlay="close"
     @click-close-icon="close"
+    :showTitle="false"
   >
     <view :class="classes">
       <view class="nut-timeselect__title">

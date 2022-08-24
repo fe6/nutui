@@ -9,6 +9,7 @@
     :pop-class="classes"
     v-model:visible="showPopup"
     :overlay="false"
+    :showTitle="false"
     @clickOverlay="clickOverlay"
   >
     <!-- 气泡弹出层  箭头 -->

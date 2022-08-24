@@ -8,6 +8,7 @@
     @click-overlay="closePopup('overlay')"
     @close="closePopup('close')"
     style="height: 75%"
+    :showTitle="false"
   >
     <view class="nut-sku">
       <slot name="sku-header"></slot>

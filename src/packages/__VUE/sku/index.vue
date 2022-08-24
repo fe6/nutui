@@ -10,6 +10,7 @@
     style="height: 75%"
     :isWrapTeleport="isWrapTeleport"
     :teleport="teleport"
+    :showTitle="false"
   >
     <view class="nut-sku">
       <slot name="sku-header"></slot>
