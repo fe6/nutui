@@ -26,11 +26,13 @@ textarea {
 .nut-input {
   position: relative;
   width: 100%;
-  padding: 10px 25px;
+  padding: 16px;
   display: flex;
   line-height: 24px;
   background: $white;
-  font-size: $input-font-size;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  font-family: PingFangSC-Regular;
   box-sizing: border-box;
   &.center {
     align-items: center;
@@ -51,6 +53,11 @@ textarea {
     text-decoration: none;
     background: transparent;
     resize: none;
+    color: rgba(0, 0, 0, 0.85);
+
+    &::-webkit-input-placeholder {
+      color: rgba(0, 0, 0, 0.25);
+    }
   }
 
   &-label {
@@ -62,6 +69,9 @@ textarea {
       // overflow: hidden;
       // white-space: nowrap;
       // text-overflow: ellipsis;
+    }
+    .label-required {
+      color: $input-required-color;
     }
   }
   &-value {
@@ -125,22 +135,32 @@ textarea {
   .nut-button {
     margin-left: 10px;
   }
-  &.nut-input-required {
-    &::before {
-      position: absolute;
-      left: 14px;
-      color: $input-required-color;
-      content: '*';
-    }
-  }
+  // &.nut-input-required {
+  //   &::before {
+  //     position: absolute;
+  //     left: 14px;
+  //     color: $input-required-color;
+  //     content: '*';
+  //   }
+  // }
   &-disabled {
-    color: $input-disabled-color !important;
+    color: rgba(0, 0, 0, 0.25) !important;
     input:disabled {
       background: none;
-      color: $input-disabled-color;
+      color: rgba(0, 0, 0, 0.25);
       cursor: not-allowed;
       opacity: 1;
-      -webkit-text-fill-color: $input-disabled-color;
+      -webkit-text-fill-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+  &-readonly {
+    color: rgba(0, 0, 0, 0.45) !important;
+    input[readonly] {
+      background: none;
+      color: rgba(0, 0, 0, 0.45);
+      cursor: not-allowed;
+      opacity: 1;
+      -webkit-text-fill-color: rgba(0, 0, 0, 0.45);
     }
   }
   &-error,

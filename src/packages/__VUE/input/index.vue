@@ -12,6 +12,7 @@
       >
         <view class="label-string">
           {{ label }}
+          <view class="label-required" v-if="required">*</view>
           {{ colon ? ':' : '' }}
         </view>
       </view>
@@ -36,6 +37,7 @@
       >
         <view class="label-string">
           {{ label }}
+          <view class="label-required" v-if="required">*</view>
           {{ colon ? ':' : '' }}
         </view>
       </view>
@@ -283,7 +285,8 @@ export default create({
         [prefixCls]: true,
         center: props.center,
         [`${prefixCls}-disabled`]: props.disabled,
-        [`${prefixCls}-required`]: props.required,
+        [`${prefixCls}-readonly`]: props.readonly,
+        // [`${prefixCls}-required`]: props.required,
         [`${prefixCls}-error`]: props.error,
         [`${prefixCls}-border`]: props.border
       };

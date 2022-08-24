@@ -7,7 +7,7 @@
     </nut-form-item>
     </nut-form> -->
     <h2>{{ translate('basic') }}</h2>
-    <nut-input v-model="state.val1" :label="translate('text')" :placeholder="translate('text')" />
+    <nut-input v-model="state.val1" :label="translate('text')" :placeholder="translate('text')" :border="false" />
 
     <h2>{{ translate('title1') }}</h2>
     <nut-input v-model="state.text" :label="translate('text')" :placeholder="translate('text')" />
