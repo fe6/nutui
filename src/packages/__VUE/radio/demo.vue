@@ -1,13 +1,17 @@
 <template>
   <div class="demo full">
     <nut-cell-group :title="translate('basic')">
-      <nut-cell>
-        <nut-radiogroup v-model="radioVal">
-          <nut-radio label="1">{{ translate('option1') }}</nut-radio>
-          <nut-radio disabled label="2">{{ translate('option2') }}</nut-radio>
-          <nut-radio label="3">{{ translate('option3') }}</nut-radio>
-        </nut-radiogroup>
-      </nut-cell>
+      <nut-radiogroup v-model="radioVal">
+        <nut-cell
+          ><nut-radio label="1">{{ translate('option1') }}</nut-radio></nut-cell
+        >
+        <nut-cell
+          ><nut-radio disabled label="2">{{ translate('option2') }}</nut-radio></nut-cell
+        >
+        <nut-cell
+          ><nut-radio label="3">{{ translate('option3') }}</nut-radio></nut-cell
+        >
+      </nut-radiogroup>
       <nut-cell>
         <nut-radiogroup v-model="radioVal" text-position="left">
           <nut-radio label="1">{{ translate('option1') }}</nut-radio>
