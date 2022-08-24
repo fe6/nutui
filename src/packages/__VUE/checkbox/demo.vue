@@ -2,9 +2,9 @@
   <div class="demo">
     <nut-cell-group :title="translate('basic')">
       <nut-cell>
-        <nut-checkbox v-model="checkbox1" :label="translate('checkbox')" @change="changeBox1">{{
-          translate('checkbox')
-        }}</nut-checkbox>
+        <nut-checkbox v-model="checkbox1" @change="changeBox1"
+          >dddddddsssdddddddsssdddddddsssdddddddsssdddddddsssdddddddsssdddddddsssdddddddsssdddddddsssdddddddsssdddddddsssdddddddsss</nut-checkbox
+        >
       </nut-cell>
       <nut-cell>
         <nut-checkbox v-model="checkbox1" text-position="left" @change="changeBox1">{{
@@ -281,11 +281,11 @@ export default createDemo({
   display: flex;
   flex-wrap: wrap;
 }
-.nut-checkbox {
-  display: flex;
-  margin-right: 20px;
-  .nut-checkbox__label {
-    margin-left: 10px;
-  }
-}
+// .nut-checkbox {
+//   display: flex;
+//   margin-right: 20px;
+//   .nut-checkbox__label {
+//     margin-left: 10px;
+//   }
+// }
 </style>

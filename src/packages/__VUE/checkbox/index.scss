@@ -11,6 +11,7 @@
 .nut-checkbox {
   display: flex;
   align-items: center;
+  width: 100%;
   &--reverse {
     flex-direction: row-reverse;
     .nut-checkbox__label {
@@ -22,12 +23,18 @@
     margin-left: $checkbox-label-margin-left;
     font-size: $checkbox-label-font-size;
     color: $checkbox-label-color;
+    width: calc(100% - 37px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     &--disabled {
       color: $checkbox-label-disable-color;
     }
   }
   &__icon {
     color: $primary-color;
+    height: $checkbox-icon-font-size;
+    width: $checkbox-icon-font-size;
     font-size: $checkbox-icon-font-size;
     transition-duration: 0.3s;
     transition-property: color, border-color, background-color;
