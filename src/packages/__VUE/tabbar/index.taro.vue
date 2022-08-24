@@ -24,7 +24,7 @@ export default create({
     },
     size: {
       type: String,
-      default: '20px'
+      default: '22px'
     },
     unactiveColor: {
       type: String,
