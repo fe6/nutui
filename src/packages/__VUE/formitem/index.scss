@@ -52,6 +52,7 @@
     flex: 1;
     display: flex !important;
     flex-direction: column;
+    overflow: inherit;
     &__slots {
       text-align: $form-item-body-slots-text-align;
       .nut-input-text {
