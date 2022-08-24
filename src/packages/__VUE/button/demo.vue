@@ -11,6 +11,17 @@
       <nut-button type="warning">{{ translate('warning') }}</nut-button>
       <nut-button type="success">{{ translate('success') }}</nut-button>
     </div>
+    <h2>{{ translate('edge') }}</h2>
+    <div class="demo-button-row">
+      <nut-button type="primary" shape="edge">{{ translate('primary') }}</nut-button>
+      <nut-button type="info" shape="edge">{{ translate('info') }}</nut-button>
+      <nut-button type="default" shape="edge">{{ translate('default') }}</nut-button>
+    </div>
+    <div class="demo-button-row2">
+      <nut-button type="danger" shape="edge">{{ translate('danger') }}</nut-button>
+      <nut-button type="warning" shape="edge">{{ translate('warning') }}</nut-button>
+      <nut-button type="success" shape="edge">{{ translate('success') }}</nut-button>
+    </div>
     <h2>{{ translate('title1') }}</h2>
     <div class="demo-button-row2">
       <nut-button plain type="primary">{{ translate('plain') }}</nut-button>
@@ -74,6 +85,7 @@ const initTranslate = () =>
       title1: '朴素按钮',
       title2: '禁用状态',
       title3: '按钮形状',
+      edge: '直角形状',
       title4: '加载状态',
       title5: '图标按钮',
       title6: '自定义图标',
@@ -106,6 +118,7 @@ const initTranslate = () =>
       title1: 'Plain',
       title2: 'Disabled',
       title3: 'Shape',
+      edge: '直角形状',
       title4: 'Loading',
       title5: 'Icon',
       title6: 'Custom Icon',

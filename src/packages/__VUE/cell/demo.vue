@@ -15,6 +15,8 @@
     <nut-cell>
       <div>{{ translate('content') }}</div>
     </nut-cell>
+    <h2>{{ translate('title10') }}</h2>
+    <nut-cell round-radius="0" :desc="translate('leftDel')" />
 
     <h2>{{ translate('title8') }}</h2>
 
@@ -80,6 +82,7 @@ const initTranslate = () =>
       title7: '垂直居中',
       title8: '直接使用插槽(slot title)',
       title9: '卡片模式',
+      title10: '只有一个文字类型',
       link: '链接',
       urlJump: 'URL 跳转',
       routerJump: '路由跳转 ’/‘ ',
@@ -104,6 +107,7 @@ const initTranslate = () =>
       title7: 'Vertical Center',
       title8: 'Use Slots title',
       title9: 'Card type',
+      title10: '只有一个文字类型',
       link: 'Link',
       urlJump: 'URL Jump',
       routerJump: 'Router Jump ’/‘ ',

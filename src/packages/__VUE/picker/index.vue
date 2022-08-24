@@ -9,6 +9,7 @@
       @close="close"
       :round="true"
       :isWrapTeleport="isWrapTeleport"
+      :showTitle="false"
     >
       <view class="nut-picker__bar">
         <view class="nut-picker__cancel nut-picker__left nut-picker__button" @click="close">{{
