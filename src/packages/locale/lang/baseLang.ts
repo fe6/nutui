@@ -46,9 +46,8 @@ export abstract class BaseLang {
     second: string;
   };
   abstract address: {
-    selectRegion: string;
-    deliveryTo: string;
-    chooseAnotherAddress: string;
+    title: string;
+    tabPlaceholder: string;
   };
   abstract signature: {
     reSign: string;

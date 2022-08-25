@@ -47,9 +47,8 @@ class Lang extends BaseLang {
     second: ' Detik '
   };
   address = {
-    selectRegion: 'Pilih Daerah',
-    deliveryTo: 'Kirim Ke',
-    chooseAnotherAddress: 'Pilih alamat lain'
+    title: '选择地区',
+    tabPlaceholder: '请选择'
   };
   signature = {
     reSign: 'Masuk Kembali',

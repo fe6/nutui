@@ -539,7 +539,7 @@ If you want to select a province, you need to set the region ID in the order of 
 | exist-address | Exist address list data | Array | []
 | default-icon | Exist address default icon | String | ''
 | selected-icon | Exist address selected icon | String | ''
-| close-btn-icon | Custom close button icon | string | -
+|closeable | 是否显示关闭按钮 | boolean | true 
 | back-btn-icon | Custom back button icon | String | -
 | is-show-custom-address | Whether to change custom address | Boolean | true
 | custom-address-title  | Custom address title | String | 'Select Region'

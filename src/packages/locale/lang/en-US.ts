@@ -47,9 +47,8 @@ class Lang extends BaseLang {
     second: ' Second '
   };
   address = {
-    selectRegion: 'Select Region',
-    deliveryTo: 'Delivery To',
-    chooseAnotherAddress: 'Choose Another Address'
+    title: '选择地区',
+    tabPlaceholder: '请选择'
   };
   signature = {
     reSign: 'Re Sign',
