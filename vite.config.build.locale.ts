@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
 const banner = `/*!
 * ${config.name} v${config.version} ${new Date()}
-* (c) 2022 @jdf2e.
+* (c) 2022 @fe6.
 * Released under the MIT License.
 */`;
 
