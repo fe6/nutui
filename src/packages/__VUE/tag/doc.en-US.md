@@ -145,6 +145,9 @@ export default {
 | round      | Whether it is round                                   | Boolean | `false`   |
 | mark       | Whether it is mark                                   | Boolean | `false`   |
 | closeable  | Whether it is a closeable tag       | Boolean | `false`   |
+| ellipsis  | 是否为超出10个字省略                                 | Boolean | `false`   |
+| content  | 当 ellipsis=true 使用的内容                                 | String | -   |
+| maxTextLength  | 当 ellipsis=true 时每个标签内容的长度                                 | Number | 10   |
 
 
 ### Slots

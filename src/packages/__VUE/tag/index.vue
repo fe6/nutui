@@ -1,6 +1,11 @@
 <template>
   <view :class="classes" :style="getStyle()" @click="onClick">
-    <slot></slot>
+    <view :class="[`${prefixCls}-inner`, size ? `${prefixCls}-inner--${size}` : '']">
+      <template v-if="theContent.length">
+        {{ theContent }}
+      </template>
+      <slot v-if="$slots.default"></slot>
+    </view>
     <nut-icon
       class="nut-tag--close"
       v-if="closeable"
@@ -12,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { PropType, CSSProperties, computed, toRefs } from 'vue';
+import { PropType, CSSProperties, computed, toRefs, onMounted } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { componentName, create } = createComponent('tag');
 
@@ -43,11 +48,23 @@ export default create({
     size: {
       type: String,
       default: ''
+    },
+    ellipsis: {
+      type: Boolean,
+      default: true
+    },
+    content: {
+      type: String,
+      default: ''
+    },
+    maxTextLength: {
+      type: Number,
+      default: 10
     }
   },
   emits: ['close', 'click'],
   setup(props, { emit }) {
-    const { type, color, plain, round, mark, textColor, size } = toRefs(props);
+    const { type, color, plain, round, mark, textColor, size, ellipsis, content, maxTextLength } = toRefs(props);
 
     const classes = computed(() => {
       const prefixCls = componentName;
@@ -57,8 +74,17 @@ export default create({
         [`${prefixCls}--plain`]: plain.value,
         [`${prefixCls}--round`]: round.value,
         [`${prefixCls}--mark`]: mark.value,
-        [`${prefixCls}--${size.value}`]: !!size.value
+        [`${prefixCls}--${size.value}`]: !!size.value,
+        [`${prefixCls}--ellipsis`]: ellipsis.value
       };
+    });
+    const theContent = computed(() => {
+      let newContent = content.value;
+      if (content.value.length > maxTextLength.value) {
+        newContent = newContent.substring(0, maxTextLength.value);
+        newContent = `${newContent}...`;
+      }
+      return newContent;
     });
 
     // 综合考虑 textColor、color、plain 组合使用时的效果
@@ -94,7 +120,9 @@ export default create({
       classes,
       getStyle,
       onClose,
-      onClick
+      onClick,
+      prefixCls: componentName,
+      theContent
     };
   }
 });

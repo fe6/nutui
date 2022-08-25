@@ -2,14 +2,14 @@
   display: inline-flex;
   align-items: center;
   font-size: $tag-font-size;
-  line-height: 1;
+  line-height: 14px;
   font-family: PingFangSC-Regular;
   padding: 4px 6px;
   border-radius: $tag-default-border-radius;
+  height: 14px;
   &--default {
     color: $tag-default-color;
     background: $tag-default-background-color;
-    border: $tag-border-width solid transparent;
     &.nut-tag--plain {
       color: $tag-default-background-color;
       border: $tag-border-width solid $tag-default-background-color;
@@ -19,7 +19,6 @@
   &--primary {
     color: $tag-default-color;
     background: $tag-primary-background-color;
-    border: $tag-border-width solid transparent;
     &.nut-tag--plain {
       color: $tag-primary-background-color;
       border: $tag-border-width solid $tag-primary-background-color;
@@ -29,7 +28,6 @@
   &--success {
     color: $tag-default-color;
     background: $tag-success-background-color;
-    border: $tag-border-width solid transparent;
     &.nut-tag--plain {
       color: $tag-success-background-color;
       border: $tag-border-width solid $tag-success-background-color;
@@ -39,7 +37,6 @@
   &--danger {
     color: $tag-default-color;
     background: $tag-danger-background-color;
-    border: $tag-border-width solid transparent;
     &.nut-tag--plain {
       color: $tag-danger-background-color-plain;
       border: $tag-border-width solid $tag-danger-background-color-plain;
@@ -49,7 +46,6 @@
   &--warning {
     color: $tag-default-color;
     background: $tag-warning-background-color;
-    border: $tag-border-width solid transparent;
     &.nut-tag--plain {
       color: $tag-warning-background-color;
       border: $tag-border-width solid $tag-warning-background-color;
@@ -70,11 +66,16 @@
   &--small {
     padding: 2px;
     font-size: 12px;
-    transform: scale(0.8);
 
     &.nut-tag--mark,
     &.nut-tag--round {
       padding: 2px 4px;
+    }
+  }
+
+  &-inner {
+    &--small {
+      transform: scale(0.8);
     }
   }
 }

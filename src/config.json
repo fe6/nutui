@@ -1010,6 +1010,17 @@
         },
         {
           "version": "3.0.0",
+          "name": "TagGroup",
+          "type": "component",
+          "cName": "标签组",
+          "desc": "标签组",
+          "sort": 18,
+          "show": true,
+          "taro": true,
+          "author": "limenglong"
+        },
+        {
+          "version": "3.0.0",
           "name": "Popover",
           "type": "component",
           "cName": "气泡弹出框",

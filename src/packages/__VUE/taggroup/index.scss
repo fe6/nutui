@@ -1,0 +1,15 @@
+.nut-taggroup {
+  & .nut-tag {
+    margin: 0 6px 6px 0;
+  }
+
+  & .nut-tag--small {
+    margin: 0 2px;
+  }
+
+  &-inner {
+    &--small {
+      margin: 0 4px 4px 0;
+    }
+  }
+}
