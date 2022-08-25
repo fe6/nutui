@@ -1,5 +1,5 @@
 {
-  "name": "@nutui/nutui",
+  "name": "@fe6/nutui",
   "version": "0.0.0",
   "description": "京东风格的轻量级移动端 Vue2、Vue3 组件库（支持小程序开发）",
   "main": "dist/nutui.umd.js",
@@ -24,7 +24,7 @@
     "jdc",
     "jdcfe"
   ],
-  "author": "jdcfe",
+  "author": "iq9891",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
