@@ -486,9 +486,9 @@ $timeselect-timedetail-time-font-size: $font-size-1 !default;
 
 //tag
 $tag-font-size: 12px !default;
-$tag-default-border-radius: 4px !default;
-$tag-round-border-radius: 8px !default;
-$tag-default-background-color: #000000 !default;
+$tag-default-border-radius: 2px !default;
+$tag-round-border-radius: 12px !default;
+$tag-default-background-color: rgba(0, 0, 0, 0.85) !default;
 $tag-primary-background-color: #3460fa !default;
 $tag-success-background-color: #4fc08d !default;
 $tag-danger-background-color: linear-gradient(
@@ -500,7 +500,7 @@ $tag-danger-background-color: linear-gradient(
 $tag-danger-background-color-plain: #df3526 !default;
 $tag-warning-background-color: #f3812e !default;
 $tag-default-color: #ffffff !default;
-$tag-border-width: 1px !default;
+$tag-border-width: 0.5px !default;
 $tag-plain-background-color: #fff !default;
 
 //badge

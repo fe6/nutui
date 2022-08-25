@@ -35,11 +35,15 @@ export default create({
     closeable: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: ''
     }
   },
   emits: ['close', 'click'],
   setup(props, { emit }) {
-    const { type, color, plain, round, mark, textColor } = toRefs(props);
+    const { type, color, plain, round, mark, textColor, size } = toRefs(props);
 
     const classes = computed(() => {
       const prefixCls = componentName;
@@ -48,7 +52,8 @@ export default create({
         [`${prefixCls}--${type.value}`]: type.value,
         [`${prefixCls}--plain`]: plain.value,
         [`${prefixCls}--round`]: round.value,
-        [`${prefixCls}--mark`]: mark.value
+        [`${prefixCls}--mark`]: mark.value,
+        [`${prefixCls}--${size.value}`]: !!size.value
       };
     });
 

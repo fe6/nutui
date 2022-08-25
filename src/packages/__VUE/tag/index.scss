@@ -1,8 +1,10 @@
 .nut-tag {
-  padding: 0 4px;
   display: inline-flex;
   align-items: center;
   font-size: $tag-font-size;
+  line-height: 1;
+  font-family: PingFangSC-Regular;
+  padding: 4px 6px;
   border-radius: $tag-default-border-radius;
   &--default {
     color: $tag-default-color;
@@ -64,5 +66,15 @@
   &--close {
     margin-left: 4px;
     cursor: pointer;
+  }
+  &--small {
+    padding: 2px;
+    font-size: 12px;
+    transform: scale(0.8);
+
+    &.nut-tag--mark,
+    &.nut-tag--round {
+      padding: 2px 4px;
+    }
   }
 }

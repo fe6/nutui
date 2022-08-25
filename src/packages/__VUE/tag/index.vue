@@ -1,7 +1,13 @@
 <template>
   <view :class="classes" :style="getStyle()" @click="onClick">
     <slot></slot>
-    <nut-icon class="nut-tag--close" v-if="closeable" name="close" size="12" @click="onClose"></nut-icon>
+    <nut-icon
+      class="nut-tag--close"
+      v-if="closeable"
+      name="close"
+      :size="size === 'small' ? '6' : '12'"
+      @click="onClose"
+    ></nut-icon>
   </view>
 </template>
 
@@ -33,11 +39,15 @@ export default create({
     closeable: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: ''
     }
   },
   emits: ['close', 'click'],
   setup(props, { emit }) {
-    const { type, color, plain, round, mark, textColor } = toRefs(props);
+    const { type, color, plain, round, mark, textColor, size } = toRefs(props);
 
     const classes = computed(() => {
       const prefixCls = componentName;
@@ -46,7 +56,8 @@ export default create({
         [`${prefixCls}--${type.value}`]: type.value,
         [`${prefixCls}--plain`]: plain.value,
         [`${prefixCls}--round`]: round.value,
-        [`${prefixCls}--mark`]: mark.value
+        [`${prefixCls}--mark`]: mark.value,
+        [`${prefixCls}--${size.value}`]: !!size.value
       };
     });
 
