@@ -7,6 +7,7 @@
     :closeable="!closeable"
     :close-icon="closeIcon"
     :destroy-on-close="false"
+    :show-title="false"
     :close-icon-position="closeIconPosition"
   >
     <template v-if="title">

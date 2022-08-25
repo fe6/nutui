@@ -13,8 +13,8 @@
     />
     <Transition :name="transitionName" @after-enter="onOpened" @after-leave="onClosed">
       <view v-show="visible" :class="classes" :style="popStyle" @click="onClick" ref="popupRef">
-        <view class="nutui-popup__content-wrapper" v-show="showSlot"><slot></slot></view>
         <view class="nutui-popup__title" v-if="showTitle">{{ title }}</view>
+        <view class="nutui-popup__content-wrapper" v-show="showSlot"><slot></slot></view>
         <view
           v-if="closed"
           @click="onClickCloseIcon"
@@ -219,7 +219,9 @@ export default create({
         if (value) {
           open();
           setTimeout(() => {
-            wrapperStyle.value = { height: props.showTitle ? `${popupRef.value.clientHeight - 64}px` : 'auto' };
+            if (popupRef.value) {
+              wrapperStyle.value = { height: props.showTitle ? `${popupRef.value.clientHeight - 64}px` : 'auto' };
+            }
           }, Number(props.duration));
         } else {
           close();

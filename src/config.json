@@ -1015,8 +1015,9 @@
           "cName": "标签组",
           "desc": "标签组",
           "sort": 18,
-          "show": true,
+          "show": false,
           "taro": true,
+          "exportEmpty": true,
           "author": "limenglong"
         },
         {

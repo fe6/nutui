@@ -1,6 +1,11 @@
 <template>
   <div class="demo">
-    <h2>基础用法</h2>
+    <h2>圆角弹框</h2>
+    <nut-cell title="圆角弹框" is-link @click="state.showRound = true"></nut-cell>
+    <nut-popup position="bottom" title="标题" closeable round v-model:visible="state.showRound">
+      <div style="height: 1000px; background: red"> dddkdk </div>
+    </nut-popup>
+    <h2>基本用法</h2>
     <nut-cell title="展示弹出层" is-link @click="state.showBasic = true"></nut-cell>
     <nut-popup pop-class="popclass" :style="{ padding: '30px 50px' }" v-model:visible="state.showBasic" :z-index="100"
       >正文</nut-popup
@@ -15,7 +20,7 @@
     <nut-cell title="右侧弹出" is-link @click="state.showRight = true"></nut-cell>
     <nut-popup position="right" :style="{ width: '20%', height: '100%' }" v-model:visible="state.showRight"></nut-popup>
     <h2>关闭图标</h2>
-    <nut-cell title="关闭图标" is-link @click="state.showIcon = true"></nut-cell>
+    <nut-cell :title="关闭图标" is-link @click="state.showIcon = true"></nut-cell>
     <nut-popup position="bottom" closeable :style="{ height: '20%' }" v-model:visible="state.showIcon"></nut-popup>
     <nut-cell title="图标位置" is-link @click="state.showIconPosition = true"></nut-cell>
     <nut-popup
@@ -34,15 +39,6 @@
       :style="{ height: '20%' }"
       v-model:visible="state.showCloseIcon"
     ></nut-popup>
-    <h2>圆角弹框</h2>
-    <nut-cell title="圆角弹框" is-link @click="state.showRound = true"></nut-cell>
-    <nut-popup
-      position="bottom"
-      closeable
-      round
-      :style="{ height: '30%' }"
-      v-model:visible="state.showRound"
-    ></nut-popup>
     <h2>多层堆叠</h2>
     <nut-cell title="多层堆叠" is-link @click="state.showPop1 = true"></nut-cell>
     <nut-popup :style="{ padding: '30px 50px' }" v-model:visible="state.showPop1">
@@ -54,6 +50,7 @@
 
 <script lang="ts">
 import { reactive } from 'vue';
+
 export default {
   props: {},
   setup() {
@@ -76,4 +73,4 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped></style>
