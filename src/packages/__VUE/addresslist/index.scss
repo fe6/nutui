@@ -3,7 +3,7 @@
     .nut-long-press-shell {
       &__contain {
         background-color: $dark-background2;
-        border-bottom: 1px solid $dark-color-gray;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         color: $dark-color;
         &-mask {
           background-color: $dark-color3;
@@ -17,7 +17,7 @@
     .nut-swipe-shell,
     .nut-general-shell {
       background-color: $dark-background2;
-      border-bottom: 1px solid $dark-color-gray;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       color: $dark-color;
     }
     .nut-item-contents {
@@ -43,10 +43,9 @@
   .nut-long-press-shell {
     &__contain {
       width: 100%;
-      min-height: 76px;
-      padding: 5px 10px;
+      padding: 16px;
       background-color: $addresslist-bg;
-      border-bottom: 1px solid $addresslist-border;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       color: $addresslist-font-color;
       font-size: $addresslist-font-size;
       display: flex;
@@ -107,8 +106,7 @@
   .nut-swipe-shell,
   .nut-general-shell {
     // width:100%;
-    min-height: 76px;
-    padding: 5px 10px;
+    padding: 16px;
     background-color: $addresslist-bg;
     border-bottom: 1px solid $addresslist-border;
     color: $addresslist-font-color;
@@ -128,41 +126,65 @@
     &__info {
       display: flex;
       justify-content: space-between;
+      line-height: 22px;
+      height: 22px;
       &-contact {
         display: flex;
         justify-content: flex-start;
         font-weight: bold;
         align-items: center;
         &-name {
-          max-width: 145px;
+          max-width: 118px;
           word-wrap: break-word;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-family: PingFangSC-Medium;
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.85);
         }
         &-tel {
           margin-left: 8px;
           max-width: 110px;
           word-wrap: break-word;
+          font-family: PingFangSC-Medium;
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.85);
         }
         &-default {
           margin-left: 5px;
-          padding: 0 6px;
-          height: 16px;
-          line-height: 16px;
           background: $addresslist-contnts-contact-default;
-          border-radius: 2px;
-          font-size: 12px;
           color: $addresslist-contnts-contact-color;
         }
       }
       &-handle {
         &-edit {
-          margin-left: 15px;
+          margin-left: 20px;
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          color: #333;
+        }
+
+        &-del {
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          color: #333;
         }
       }
     }
     &__addr {
       color: $addresslist-addr-font-color;
       font-size: $addresslist-addr-font-size;
-      margin-top: 5px;
+      margin-top: 10px;
+      max-width: 270px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: PingFangSC-Regular;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.45);
     }
   }
   &__bottom {

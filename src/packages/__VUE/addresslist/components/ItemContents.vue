@@ -5,9 +5,9 @@
         <slot name="contentTop">
           <div class="nut-item-contents__info-contact-name">{{ item.addressName }}</div>
           <div class="nut-item-contents__info-contact-tel">{{ item.phone }}</div>
-          <div class="nut-item-contents__info-contact-default" v-if="item.defaultAddress">{{
+          <nut-tag type="primary" class="nut-item-contents__info-contact-default" v-if="item.defaultAddress">{{
             translate('default')
-          }}</div>
+          }}</nut-tag>
         </slot>
       </div>
       <div class="nut-item-contents__info-handle">

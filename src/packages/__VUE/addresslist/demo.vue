@@ -24,7 +24,7 @@
       :dataMapOptions="dataMapOptions"
     >
     </nut-addresslist>
-    <h2>{{ translate('title1') }}</h2>
+    <h2>滑动功能</h2>
     <nut-addresslist
       :data="data"
       swipeEdition
@@ -66,9 +66,9 @@ export default createDemo({
     const data = ref([
       {
         testid: 3,
-        testaddressName: '姓名',
+        testaddressName: '姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名',
         phone: '123****4567',
-        defaultAddress: false,
+        defaultAddress: true,
         fullAddress: '北京市通州区测试测试测试测试测试测试测试测试测试'
       },
       {
