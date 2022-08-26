@@ -112,7 +112,7 @@
     </nut-form>
     <h2>{{ translate('title3') }}</h2>
     <nut-form>
-      <nut-form-item :label="translate('switch')">
+      <nut-form-item :label="translate('switch')" center>
         <nut-switch v-model="formData2.switch"></nut-switch>
       </nut-form-item>
       <nut-form-item :label="translate('checkbox')">

@@ -357,6 +357,7 @@ setup(){
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right`                  | string           | `left`  |
 | show-error-line     | 是否在校验不通过时标红输入框                                     | boolean          | `true`  |
 | show-error-message  | 是否在校验不通过时在输入框下方展示错误提示                       | boolean          | `true`  |
+| center     | 是否居中 | boolean                                  |
 
 ### FormItem Rule 数据结构
 

@@ -11,6 +11,11 @@
 }
 .nut-form-item {
   display: flex;
+
+  &-center {
+    align-items: center;
+  }
+
   &::before {
     position: absolute;
     box-sizing: border-box;

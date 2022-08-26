@@ -96,7 +96,7 @@
     </nut-form>
     <h2>表单类型</h2>
     <nut-form>
-      <nut-form-item label="开关">
+      <nut-form-item label="开关" center>
         <nut-switch v-model="formData2.switch"></nut-switch>
       </nut-form-item>
       <nut-form-item label="复选框">
@@ -185,7 +185,6 @@ export default {
           dynamicForm.state.tels.splice(dynamicForm.state.tels.length - 1, 1);
         },
         add() {
-          let newIndex = dynamicForm.state.tels.length;
           dynamicForm.state.tels.push({
             key: Date.now(),
             value: ''
@@ -253,7 +252,7 @@ export default {
             formData2.address = '';
           }
         },
-        onChange({ custom, next, value }: any) {
+        onChange({ next, value }: any) {
           formData2.address += value.name;
           const name = addressModule.state[next];
           if (name.length < 1) {

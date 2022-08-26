@@ -1,7 +1,14 @@
 <template>
   <nut-cell
     class="nut-form-item"
-    :class="[{ error: parent[prop], line: showErrorLine }, $attrs.class]"
+    :class="[
+      {
+        error: parent[prop],
+        line: showErrorLine,
+        ['nut-form-item-center']: center
+      },
+      $attrs.class
+    ]"
     :style="$attrs.style"
   >
     <view class="nut-cell__title nut-form-item__label" :style="labelStyle" v-if="label" :class="{ required: required }">
@@ -45,6 +52,10 @@ export default create({
       type: Boolean,
       default: false
     },
+    center: {
+      type: Boolean,
+      default: false
+    },
     showErrorMessage: {
       type: Boolean,
       default: true
@@ -82,7 +93,7 @@ export default create({
 
     const labelStyle = computed(() => {
       return {
-        width: pxCheck(props.labelWidth),
+        width: props.labelWidth ? pxCheck(props.labelWidth) : '',
         textAlign: props.labelAlign
       } as CSSProperties;
     });

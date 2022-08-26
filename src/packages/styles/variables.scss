@@ -348,8 +348,8 @@ $rate-icon-void-color: $disable-color !default;
 // tabbar
 $tabbar-active-color: $primary-color !default;
 $tabbar-unactive-color: $primary-color !default;
-$tabbar-border-top: 1px solid #eee !default;
-$tabbar-border-bottom: 1px solid #eee !default;
+$tabbar-border-top: 0.5px solid rgba(0, 0, 0, 0.1) !default;
+$tabbar-border-bottom: 0.5px solid rgba(0, 0, 0, 0.1) !default;
 $tabbar-box-shadow: none !default;
 $tabbar-item-text-font-size: $font-size-0 !default;
 $tabbar-item-text-line-height: initial !default;
