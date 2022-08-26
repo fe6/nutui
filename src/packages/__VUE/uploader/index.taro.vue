@@ -13,10 +13,10 @@
           <view class="nut-uploader__preview__progress__msg">{{ item.message }}</view>
         </view>
         <view class="nut-uploader__preview__progress" v-else-if="item.status != 'success'">
-          <nut-icon color="#fff" :name="item.status == 'error' ? 'failure' : 'loading1'"></nut-icon>
+          <nut-icon color="#fff" size="14" :name="item.status == 'error' ? 'failure' : 'loading1'"></nut-icon>
           <view class="nut-uploader__preview__progress__msg">{{ item.message }}</view>
         </view>
-        <nut-icon v-if="isDeletable" @click="onDelete(item, index)" class="close" name="failure"></nut-icon>
+        <nut-icon v-if="isDeletable" @click="onDelete(item, index)" class="close" name="check-disabled"></nut-icon>
         <img
           class="nut-uploader__preview-img__c"
           @click="fileItemClick(item)"
@@ -25,7 +25,7 @@
         />
         <view v-else class="nut-uploader__preview-img__file">
           <view class="nut-uploader__preview-img__file__name" @click="fileItemClick(item)">
-            <nut-icon color="#808080" name="link"></nut-icon>&nbsp;{{ item.name }}
+            <nut-icon color="#808080" size="14" name="link"></nut-icon>&nbsp;{{ item.name }}
           </view>
         </view>
         <view class="tips">{{ item.name }}</view>
@@ -38,6 +38,7 @@
           class="nut-uploader__preview-img__file__del"
           @click="onDelete(item, index)"
           color="#808080"
+          size="14"
           name="del"
         />
         <nut-progress
@@ -55,7 +56,7 @@
       :class="[listType]"
       v-if="listType == 'picture' && !$slots.default && maximum - fileList.length"
     >
-      <nut-icon v-bind="$attrs" :size="uploadIconSize" color="#808080" :name="uploadIcon"></nut-icon>
+      <nut-icon v-bind="$attrs" :size="uploadIconSize" color="rgba(0,0,0,0.45)" :name="uploadIcon"></nut-icon>
       <nut-button class="nut-uploader__input" @click="chooseImage" />
     </view>
   </view>
@@ -96,7 +97,7 @@ export default create({
     headers: { type: Object, default: {} },
     data: { type: Object, default: {} },
     uploadIcon: { type: String, default: 'photograph' },
-    uploadIconSize: { type: [String, Number], default: '' },
+    uploadIconSize: { type: [String, Number], default: '28' },
     xhrState: { type: [Number, String], default: 200 },
     disabled: { type: Boolean, default: false },
     autoUpload: { type: Boolean, default: true },

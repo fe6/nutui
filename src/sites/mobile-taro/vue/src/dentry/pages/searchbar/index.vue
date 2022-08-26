@@ -9,7 +9,7 @@
     <h2>显示搜索 icon</h2>
     <nut-searchbar v-model="searchValue2">
       <template v-slot:leftin>
-        <nut-icon size="14" name="search2"></nut-icon>
+        <nut-icon size="14" name="search"></nut-icon>
       </template>
     </nut-searchbar>
 
@@ -29,10 +29,10 @@
     <h2>显示全部 icon</h2>
     <nut-searchbar v-model="searchValue5">
       <template v-slot:leftout>
-        <nut-icon @click="clickLeft" size="20" name="left"></nut-icon>
+        <nut-icon @click="clickLeft" size="20" name="arrow-left"></nut-icon>
       </template>
       <template v-slot:leftin>
-        <nut-icon size="14" name="search2"></nut-icon>
+        <nut-icon size="14" name="search"></nut-icon>
       </template>
       <template v-slot:rightin>
         <nut-icon size="20" name="photograph"></nut-icon>

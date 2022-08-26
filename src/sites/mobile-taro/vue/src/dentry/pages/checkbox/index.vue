@@ -35,7 +35,7 @@
     </nut-cell-group>
     <nut-cell-group title="自定义图标">
       <nut-cell>
-        <nut-checkbox v-model="checkbox7" icon-name="checklist" icon-active-name="checklist">自定义图标</nut-checkbox>
+        <nut-checkbox v-model="checkbox7" icon-name="check1" icon-active-name="check">自定义图标</nut-checkbox>
       </nut-cell>
     </nut-cell-group>
     <nut-cell-group title="点击触发change事件">
@@ -84,9 +84,9 @@
     <nut-cell-group title="checkboxGroup使用，限制最大可选数（2个）">
       <nut-cell>
         <nut-checkboxgroup v-model="checkboxgroup4" :max="2">
-          <nut-checkbox label="1" style="margin: 2px 20px 0 0">组合复选框</nut-checkbox>
+          <nut-checkbox label="1">组合复选框</nut-checkbox>
           <nut-checkbox label="2">组合复选框</nut-checkbox>
-          <nut-checkbox label="3" style="margin: 2px 20px 0 0">组合复选框</nut-checkbox>
+          <nut-checkbox label="3">组合复选框</nut-checkbox>
           <nut-checkbox label="4">组合复选框</nut-checkbox>
         </nut-checkboxgroup>
       </nut-cell>

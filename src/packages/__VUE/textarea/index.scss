@@ -12,8 +12,10 @@
   box-sizing: border-box;
   display: flex;
   background: $white;
-  font-size: $textarea-font;
-  padding: 10px 25px;
+  padding: 16px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  font-family: PingFangSC-Regular;
 
   &--disabled {
     .nut-textarea__textarea,

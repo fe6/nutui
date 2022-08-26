@@ -1,0 +1,9 @@
+.nut-checkboxgroup {
+  & .nut-checkbox {
+    margin: 0 0 16px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

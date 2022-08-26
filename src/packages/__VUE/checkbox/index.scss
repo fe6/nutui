@@ -14,15 +14,15 @@
   width: 100%;
   &--reverse {
     flex-direction: row-reverse;
-    .nut-checkbox__label {
-      margin-right: $checkbox-label-margin-left;
-      margin-left: 0;
+    & .nut-checkbox__label {
+      margin-right: $checkbox-label-margin-left !important;
+      margin-left: 0 !important;
     }
   }
   &__label {
     margin-left: $checkbox-label-margin-left;
-    font-size: $checkbox-label-font-size;
-    color: $checkbox-label-color;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.85);
     width: calc(100% - 37px);
     overflow: hidden;
     white-space: nowrap;

@@ -2,14 +2,14 @@
   display: flex;
   align-items: center;
   font-size: $divider-text-font-size;
-  color: $divider-text-color;
+  color: rgba(0, 0, 0, 0.45);
   margin: $divider-margin;
 
   &::before,
   &::after {
     content: '';
-    border: $divider-line-height solid $divider-line-color;
-    border-width: $divider-line-height 0 0;
+    border: 0.5px solid rgba(0, 0, 0, 0.45);
+    border-width: 0.5px 0 0;
     height: $divider-line-height;
     flex: 1;
   }
@@ -45,19 +45,12 @@
     }
   }
 
-  &.nut-divider-hairline {
-    &::before,
-    &::after {
-      transform: scaleY(0.5);
-    }
-  }
-
   &.nut-divider-vertical {
     position: relative;
     top: $divider-vertical-top;
     display: inline-block;
     height: $divider-vertical-height;
-    border-left: 1px solid $divider-vertical-border-left;
+    border-left: 0.5px solid rgba(0, 0, 0, 0.45);
     margin: $divider-vertical-margin;
   }
 }

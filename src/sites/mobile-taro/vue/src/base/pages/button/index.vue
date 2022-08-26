@@ -75,9 +75,7 @@ export default {
     return {
       isLoading,
       changeLoading,
-      styles: `
-  --color-primary: #0f0;
-`
+      styles: `--color-primary: #07C160;`
     };
   }
 };

@@ -52,7 +52,7 @@
           class="nutui-popup__close-icon"
           :class="'nutui-popup__close-icon--' + closeIconPosition"
         >
-          <nut-icon :name="closeIcon" size="16" />
+          <nut-icon :name="closeIcon" size="18" />
         </view>
       </view>
     </Transition>

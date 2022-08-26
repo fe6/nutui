@@ -1,13 +1,12 @@
 <template>
   <div class="demo full">
     <h2>基础用法</h2>
-
-    <nut-navbar fixed placeholder @on-click-back="back" @on-click-title="title" title="订单详情">
+    <nut-navbar @on-click-back="back" @on-click-title="title" :title="navTitle1">
       <template #left>
         <div>返回</div>
       </template>
       <template #right>
-        <nut-icon class="right" name="share-n"></nut-icon>
+        <nut-icon class="right" name="share"></nut-icon>
       </template>
     </nut-navbar>
 
@@ -26,7 +25,7 @@
       @on-click-icon="icon"
       @on-click-right="rightClick"
       title="购物车"
-      titIcon="cart2"
+      titIcon="cart"
       desc="编辑"
     >
       <template #right>
@@ -38,8 +37,8 @@
     <nut-navbar @on-click-back="back" @on-click-title="title" @on-click-right="rightClick" desc="编辑">
       <template #content>
         <nut-tabs v-model="tab1value" @click="changeTab">
-          <nut-tabpane title="商品"> </nut-tabpane>
-          <nut-tabpane title="店铺"> </nut-tabpane>
+          <nut-tabpane title="标题1"> </nut-tabpane>
+          <nut-tabpane title="标题2"> </nut-tabpane>
         </nut-tabs>
       </template>
 
@@ -48,14 +47,13 @@
       </template>
     </nut-navbar>
 
-    <h2>多tab切换导航</h2>
+    <h2>购物车</h2>
     <nut-navbar @on-click-back="back">
       <template #content>
         <nut-tabs v-model="tab2value" @click="changeTabList">
-          <nut-tabpane title="商品"> </nut-tabpane>
-          <nut-tabpane title="评价"> </nut-tabpane>
-          <nut-tabpane title="详情"> </nut-tabpane>
-          <nut-tabpane title="推荐"> </nut-tabpane>
+          <nut-tabpane title="标题1"> </nut-tabpane>
+          <nut-tabpane title="标题2"> </nut-tabpane>
+          <nut-tabpane title="标题3"> </nut-tabpane>
         </nut-tabs>
       </template>
       <template #icons>
@@ -63,7 +61,7 @@
       </template>
 
       <template #right>
-        <nut-icon class="right" name="horizontal-n"></nut-icon>
+        <nut-icon class="right" name="menu-3"></nut-icon>
       </template>
     </nut-navbar>
   </div>

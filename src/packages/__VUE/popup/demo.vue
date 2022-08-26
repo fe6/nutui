@@ -67,7 +67,7 @@
       position="bottom"
       closeable
       close-icon-position="top-left"
-      close-icon="heart"
+      close-icon="arrow-left"
       :style="{ height: '20%' }"
       :show-title="false"
       v-model:visible="state.showCloseIcon"

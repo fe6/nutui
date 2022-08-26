@@ -139,7 +139,10 @@ export default create({
         return;
       }
 
-      state.showPopup = show;
+      // FIX 弹出来的时候从上面掉下来能看出来
+      setTimeout(() => {
+        state.showPopup = show;
+      }, 300);
       state.isShowPlaceholderElement = show;
       // state.transition = !options.immediate;
 

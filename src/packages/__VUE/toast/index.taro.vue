@@ -152,8 +152,8 @@ export default create({
         return {
           success: 'success',
           fail: 'failure',
-          warn: 'tips',
-          loading: 'loading'
+          warn: 'issue',
+          loading: 'loading1'
         }[props.type];
       }
     });

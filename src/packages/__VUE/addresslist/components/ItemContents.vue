@@ -13,7 +13,7 @@
       <div class="nut-item-contents__info-handle">
         <slot name="contentIcon">
           <nut-icon name="del" class="nut-item-contents__info-handle-del" @click="delClick"></nut-icon>
-          <nut-icon name="edit" class="nut-item-contents__info-handle-edit" @click="editClick"></nut-icon>
+          <nut-icon name="a-bianzu31" class="nut-item-contents__info-handle-edit" @click="editClick"></nut-icon>
         </slot>
       </div>
     </div>

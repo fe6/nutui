@@ -42,6 +42,7 @@ textarea {
   }
 
   .input-text,
+  &__text,
   &__text--readonly {
     width: 90%;
     padding: 0;
@@ -53,7 +54,9 @@ textarea {
     text-decoration: none;
     background: transparent;
     resize: none;
+    font-size: 16px;
     color: rgba(0, 0, 0, 0.85);
+    font-family: PingFangSC-Regular;
 
     &::-webkit-input-placeholder {
       color: rgba(0, 0, 0, 0.25);

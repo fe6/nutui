@@ -1,12 +1,7 @@
 <template>
-  <div class="demo">
-    <h2>基础用法</h2>
-    <nut-cell>
-      <nut-image></nut-image>
-    </nut-cell>
-  </div>
+  <div class="demo"> 用 taro 的 Image </div>
 </template>
-<script lang="ts">
+<!--<script lang="ts">
 import { defineComponent } from 'vue';
 export default defineComponent({
   props: {},
@@ -14,4 +9,4 @@ export default defineComponent({
     return {};
   }
 });
-</script>
+</script>-->

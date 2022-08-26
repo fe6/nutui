@@ -7,8 +7,8 @@
         srcset=""
       />
       <div class="info">
-        <h1>NutUI</h1>
-        <p>京东风格的轻量级小程序组件库</p>
+        <h1>FE6/NUTUI</h1>
+        <p>番知C端组件库 H5 / TAEO3</p>
       </div>
     </div>
     <div class="index-components">

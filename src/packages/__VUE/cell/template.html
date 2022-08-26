@@ -1,6 +1,9 @@
 <view :class="classes" :style="baseStyle" @click="handleClick">
     <slot>
-        <view :class="card? 'nut-cell--card__inner' : 'nut-cell__inner'">
+        <view :class="[
+          card? 'nut-cell--card__inner' : 'nut-cell__inner',
+          center? `nut-cell${card?'--card':''}__inner-center`:'',
+        ]">
             <view class="nut-cell__icon" v-if="icon || $slots.icon">
                 <slot name="icon">
                     <nut-icon v-bind="$attrs" v-if="icon" class="icon" :name="icon"></nut-icon>

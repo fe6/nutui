@@ -12,16 +12,16 @@
       @click="onClickOverlay"
     />
     <Transition :name="transitionName" @after-enter="onOpened" @after-leave="onClosed">
-      <view v-show="visible" :class="classes" :style="popStyle" @click="onClick" ref="popupRef">
+      <view :id="`popup-${refRandomId}`" v-show="visible" :class="classes" :style="popStyle" @click="onClick">
         <view class="nutui-popup__title" v-if="showTitle">{{ title }}</view>
-        <view class="nutui-popup__content-wrapper" v-show="showSlot"><slot></slot></view>
+        <view class="nutui-popup__content-wrapper" v-show="showSlot" :style="wrapperStyle"><slot></slot></view>
         <view
           v-if="closed"
           @click="onClickCloseIcon"
           class="nutui-popup__close-icon"
           :class="'nutui-popup__close-icon--' + closeIconPosition"
         >
-          <nut-icon v-bind="$attrs" :name="closeIcon" size="16" />
+          <nut-icon v-bind="$attrs" :name="closeIcon" size="18" />
         </view>
       </view>
     </Transition>
@@ -48,6 +48,7 @@ import { overlayProps } from '../overlay/index.taro.vue';
 import overlay from '../overlay/index.taro.vue';
 import icon from '../icon/index.taro.vue';
 import { createComponent } from '@/packages/utils/create';
+import Taro from '@tarojs/taro';
 const { componentName, create } = createComponent('popup');
 let _zIndex = 2000;
 export const popupProps = {
@@ -116,7 +117,7 @@ export default create({
   },
   emits: ['click', 'click-close-icon', 'open', 'close', 'opend', 'closed', 'update:visible', 'click-overlay'],
   setup(props, { emit }) {
-    const popupRef = ref();
+    const refRandomId = Math.random().toString(36).slice(-8);
     const state = reactive({
       zIndex: props.zIndex ? (props.zIndex as number) : _zIndex,
       showSlot: true,
@@ -219,10 +220,16 @@ export default create({
         if (value) {
           open();
           setTimeout(() => {
-            if (popupRef.value) {
-              wrapperStyle.value = { height: props.showTitle ? `${popupRef.value.clientHeight - 64}px` : 'auto' };
-            }
-          }, Number(props.duration));
+            const query = Taro.createSelectorQuery();
+            query
+              .select(`#popup-${refRandomId}`)
+              .boundingClientRect()
+              .exec((rec) => {
+                if (rec.length > 0 && rec[0].height > 0) {
+                  wrapperStyle.value = { height: props.showTitle ? `${rec[0].height - 64}px` : 'auto' };
+                }
+              });
+          }, Number(props.duration) + 10);
         } else {
           close();
         }
@@ -242,13 +249,15 @@ export default create({
     );
     return {
       ...toRefs(state),
+      refRandomId,
       popStyle,
       classes,
       onClick,
       onClickCloseIcon,
       onClickOverlay,
       onOpened,
-      onClosed
+      onClosed,
+      wrapperStyle
     };
   }
 });

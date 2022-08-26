@@ -6,6 +6,13 @@
   "description": "番知C端组件库",
   "glyphs": [
     {
+      "icon_id": "31504239",
+      "name": "edit",
+      "font_class": "a-bianzu31",
+      "unicode": "ea47",
+      "unicode_decimal": 59975
+    },
+    {
       "icon_id": "31434514",
       "name": "cart",
       "font_class": "cart",

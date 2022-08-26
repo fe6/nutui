@@ -20,7 +20,7 @@ export const component = (componentName: string, nutIcon: object) => {
       },
       iconSize: {
         type: [String, Number],
-        default: ''
+        default: '20'
       },
       iconName: {
         type: String,

@@ -47,6 +47,10 @@
   &__inner {
     width: 100%;
     display: flex;
+
+    &-center {
+      align-items: center;
+    }
   }
 
   &--center {
@@ -120,7 +124,7 @@
     }
 
     &-ellipsis {
-      height: 22px;
+      // height: 22px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;

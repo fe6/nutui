@@ -4,7 +4,7 @@
     <nut-cell :title="translate('title')" :desc="translate('desc')"></nut-cell>
     <nut-cell :title="translate('title')" :sub-title="translate('title1')" :desc="translate('desc')"></nut-cell>
     <nut-cell :title="translate('title3')" @click="testClick"></nut-cell>
-    <nut-cell :title="translate('title4')" round-radius="0"></nut-cell>
+    <nut-cell :title="translate('title4')" :border="false" round-radius="0"></nut-cell>
 
     <h2>{{ translate('title9') }}</h2>
     <nut-cell card :title="translate('title')" :desc="translate('desc')"></nut-cell>
@@ -32,7 +32,7 @@
       <nut-cell :title="translate('routerJump')" to="/"></nut-cell>
     </nut-cell-group>
 
-    <nut-cell-group :title="translate('customRight')">
+    <nut-cell-group center :title="translate('customRight')">
       <nut-cell title="Switch">
         <template v-slot:link>
           <nut-switch v-model="switchChecked" />

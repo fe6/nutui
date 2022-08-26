@@ -9,7 +9,7 @@
     <h2>{{ translate('basic3') }}</h2>
     <nut-searchbar v-model="searchValue2" @click-left-icon="clickLeftIcon">
       <template v-slot:leftin>
-        <nut-icon size="14" name="search2"></nut-icon>
+        <nut-icon size="14" name="search"></nut-icon>
       </template>
     </nut-searchbar>
 

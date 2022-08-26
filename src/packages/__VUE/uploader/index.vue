@@ -36,7 +36,7 @@
           <nut-icon color="#fff" :name="item.status == 'error' ? 'failure' : 'loading1'"></nut-icon>
           <view class="nut-uploader__preview__progress__msg">{{ item.message }}</view>
         </view>
-        <nut-icon v-if="isDeletable" @click="onDelete(item, index)" class="close" name="failure"></nut-icon>
+        <nut-icon v-if="isDeletable" @click="onDelete(item, index)" class="close" name="check-disabled"></nut-icon>
         <img
           class="nut-uploader__preview-img__c"
           @click="fileItemClick(item)"
@@ -127,7 +127,7 @@ export default create({
     headers: { type: Object, default: {} },
     data: { type: Object, default: {} },
     uploadIcon: { type: String, default: 'photograph' },
-    uploadIconSize: { type: [String, Number], default: '' },
+    uploadIconSize: { type: [String, Number], default: '28' },
     xhrState: { type: [Number, String], default: 200 },
     withCredentials: { type: Boolean, default: false },
     multiple: { type: Boolean, default: false },

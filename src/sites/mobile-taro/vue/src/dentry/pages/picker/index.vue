@@ -1,6 +1,7 @@
 <template>
   <div class="demo">
-    <h2>基础用法</h2>
+    <h1>用 taro 的 picker 组件</h1>
+    <!-- <h2>基础用法</h2>
     <nut-cell
       title="请选择城市"
       :desc="index"
@@ -126,10 +127,10 @@
       title="异步获取"
       @confirm="(options) => confirm('effect', options)"
       @change="portChange"
-    ></nut-picker>
+    ></nut-picker> -->
   </div>
 </template>
-<script lang="ts">
+<!--<script lang="ts">
 import { reactive, onMounted, ref, toRefs } from 'vue';
 import { PickerOption } from '../../../../../../../packages/__VUE/picker/types';
 export default {
@@ -364,4 +365,4 @@ export default {
     };
   }
 };
-</script>
+</script>-->
