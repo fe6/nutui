@@ -6,12 +6,6 @@
       <nut-tabpane title="Tab 2"> Tab 2 </nut-tabpane>
       <nut-tabpane title="Tab 3"> Tab 3 </nut-tabpane>
     </nut-tabs>
-    <h2>基础用法-微笑曲线</h2>
-    <nut-tabs v-model="state.tab11value" type="smile">
-      <nut-tabpane title="Tab 1"> Tab 1 </nut-tabpane>
-      <nut-tabpane title="Tab 2"> Tab 2 </nut-tabpane>
-      <nut-tabpane title="Tab 3"> Tab 3 </nut-tabpane>
-    </nut-tabs>
     <h2>通过 pane-key 匹配</h2>
     <nut-tabs v-model="state.tab2value">
       <nut-tabpane title="Tab 1" pane-key="0"> Tab 1 </nut-tabpane>
@@ -40,10 +34,6 @@
     </nut-tabs>
     <h2>左右布局</h2>
     <nut-tabs style="height: 300px" v-model="state.tab5value" title-scroll direction="vertical">
-      <nut-tabpane v-for="item in state.list5" :title="'Tab ' + item"> Tab {{ item }} </nut-tabpane>
-    </nut-tabs>
-    <h2>左右布局-微笑曲线</h2>
-    <nut-tabs style="height: 300px" v-model="state.tab6value" type="smile" title-scroll direction="vertical">
       <nut-tabpane v-for="item in state.list5" :title="'Tab ' + item"> Tab {{ item }} </nut-tabpane>
     </nut-tabs>
     <h2>标签栏字体尺寸 large normal small </h2>
@@ -110,7 +100,7 @@ export default {
         {
           title: '自定义 2',
           paneKey: 'c2',
-          icon: 'JD'
+          icon: 'github'
         },
         {
           title: '自定义 3',

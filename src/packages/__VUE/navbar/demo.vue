@@ -6,7 +6,7 @@
         <div>{{ translate('back') }}</div>
       </template>
       <template #right>
-        <nut-icon class="right" name="share-n"></nut-icon>
+        <nut-icon class="right" name="share"></nut-icon>
       </template>
     </nut-navbar>
 
@@ -25,7 +25,7 @@
       @on-click-icon="icon"
       @on-click-right="rightClick"
       :title="translate('navTitle3')"
-      titIcon="cart2"
+      titIcon="cart"
       :desc="translate('desc2')"
     >
       <template #right>
@@ -61,7 +61,7 @@
       </template>
 
       <template #right>
-        <nut-icon class="right" name="horizontal-n"></nut-icon>
+        <nut-icon class="right" name="menu-3"></nut-icon>
       </template>
     </nut-navbar>
   </div>

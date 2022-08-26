@@ -15,6 +15,7 @@
       :overlayStyle="
         parent.props.direction === 'down' ? { top: parent.offset.value + 'px' } : { bottom: parent.offset.value + 'px' }
       "
+      :show-title="false"
       v-bind="$attrs"
       v-model:visible="state.showPopup"
       :position="parent.props.direction === 'down' ? 'top' : 'bottom'"
@@ -80,7 +81,7 @@ export default create({
     inactiveTitleClass: String,
     optionIcon: {
       type: String,
-      default: 'Check'
+      default: 'check1'
     }
   },
   components: {

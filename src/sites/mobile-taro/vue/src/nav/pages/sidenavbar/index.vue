@@ -4,7 +4,12 @@
     <nut-cell @click="handleClick1">
       <span><label>右侧</label></span>
     </nut-cell>
-    <nut-popup position="right" v-model:visible="show1" :style="{ width, height }">
+    <nut-popup
+      position="right"
+      v-model:visible="show1"
+      :style="{ width, height, maxHeight: '100%' }"
+      :show-title="false"
+    >
       <nut-sidenavbar>
         <nut-subsidenavbar title="智能城市AI" ikey="6">
           <nut-subsidenavbar title="人体识别1" ikey="9">
@@ -21,7 +26,12 @@
     <nut-cell @click="handleClick2">
       <span><label>左侧</label></span>
     </nut-cell>
-    <nut-popup position="left" v-model:visible="show2" :style="{ width, height }">
+    <nut-popup
+      position="left"
+      v-model:visible="show2"
+      :style="{ width, height, maxHeight: '100%' }"
+      :show-title="false"
+    >
       <nut-sidenavbar>
         <nut-subsidenavbar title="图像理解" ikey="3" :open="false">
           <nut-sidenavbaritem ikey="4" title="菜品识别"></nut-sidenavbaritem>
@@ -38,7 +48,12 @@
       <nut-cell @click="handleClick3">
         <span><label>显示</label></span>
       </nut-cell>
-      <nut-popup position="right" v-model:visible="show3" :style="{ width, height }">
+      <nut-popup
+        position="right"
+        v-model:visible="show3"
+        :style="{ width, height, maxHeight: '100%' }"
+        :show-title="false"
+      >
         <nut-sidenavbar :show="show3">
           <nut-sidenavbaritem ikey="1" title="人脸识别" @click="handleClick4('人脸识别')"></nut-sidenavbaritem>
           <nut-sidenavbaritem ikey="2" title="云存自然语言处理"></nut-sidenavbaritem>

@@ -65,3 +65,12 @@
     text-align: center;
   }
 }
+
+.nut-notify-popup {
+  min-height: auto;
+
+  & .nutui-popup__content-wrapper {
+    padding: 0;
+    width: 100%;
+  }
+}

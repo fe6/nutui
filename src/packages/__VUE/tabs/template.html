@@ -13,9 +13,6 @@
                   <img class="nut-tabs__titles-item__arrow" src="./img/bottom.png" />
                 </view>
                 <view class="nut-tabs__titles-item__line" :style="tabsActiveStyle" v-if="type == 'line'"></view>
-                <view class="nut-tabs__titles-item__smile" :style="tabsActiveStyle" v-if="type == 'smile'">
-                    <nut-icon :color="color" name="joy-smile" />
-                </view>
                 <view class="nut-tabs__titles-item__text"
                     :class="{ ellipsis: ellipsis }">{{ item.title }}
                 </view>

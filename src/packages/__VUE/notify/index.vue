@@ -5,6 +5,7 @@
     :overlay="false"
     :isWrapTeleport="isWrapTeleport"
     :showTitle="false"
+    popClass="nut-notify-popup"
   >
     <div
       :class="['nut-notify', `nut-notify--${type}`, className]"

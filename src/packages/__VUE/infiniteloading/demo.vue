@@ -13,7 +13,6 @@
       <nut-cell>
         <ul class="infiniteUl" id="refreshScroll">
           <nut-infiniteloading
-            pull-icon="JD"
             container-id="refreshScroll"
             :use-window="false"
             :is-open-refresh="true"

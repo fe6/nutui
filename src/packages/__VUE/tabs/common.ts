@@ -28,7 +28,7 @@ export const component = {
     },
     type: {
       type: String,
-      default: 'line' //card、line、smile
+      default: 'line' //card、line
     },
     titleScroll: {
       type: Boolean,

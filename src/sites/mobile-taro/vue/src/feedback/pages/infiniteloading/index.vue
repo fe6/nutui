@@ -4,7 +4,6 @@
     <nut-cell>
       <view class="infiniteUl" id="scrollDemo">
         <nut-infiniteloading
-          pull-icon="JD"
           load-txt="loading"
           load-more-txt="没有啦～"
           :is-open-refresh="true"

@@ -56,7 +56,7 @@ export default create({
     },
     pullIcon: {
       type: String,
-      default: 'https://img10.360buyimg.com/imagetools/jfs/t1/169863/6/4565/6306/60125948E7e92774e/40b3a0cf42852bcb.png'
+      default: 'loading1'
     },
     pullTxt: {
       type: String,
@@ -64,7 +64,7 @@ export default create({
     },
     loadIcon: {
       type: String,
-      default: 'https://img10.360buyimg.com/imagetools/jfs/t1/169863/6/4565/6306/60125948E7e92774e/40b3a0cf42852bcb.png'
+      default: 'loading1'
     },
     loadTxt: {
       type: String,

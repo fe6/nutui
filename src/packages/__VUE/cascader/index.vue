@@ -5,6 +5,7 @@
     pop-class="nut-cascader__popup"
     round
     :closeable="!closeable"
+    :show-title="false"
     :close-icon="closeIcon"
     :destroy-on-close="false"
     :close-icon-position="closeIconPosition"

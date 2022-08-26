@@ -36,7 +36,7 @@
       <view class="nut-shortpsd-message">
         <view class="nut-shortpsd-error">{{ errorMsg }}</view>
         <view class="nut-shortpsd-forget" v-if="tips || translate('tips')">
-          <nut-icon class="icon" size="11px" name="tips"></nut-icon>
+          <nut-icon class="icon" size="11px" name="issue"></nut-icon>
           <view @click="onTips">{{ tips || translate('tips') }}</view>
         </view>
       </view>

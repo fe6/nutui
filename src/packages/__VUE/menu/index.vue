@@ -12,7 +12,7 @@
             <view class="nut-menu__title-text">{{ item.renderTitle() }}</view>
             <nut-icon
               v-bind="$attrs"
-              :name="titleIcon || (direction === 'up' ? 'arrow-up' : 'down-arrow')"
+              :name="titleIcon || (direction === 'up' ? 'arrow-up' : 'arrow-down')"
               size="10"
               class="nut-menu__title-icon"
             ></nut-icon>

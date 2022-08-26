@@ -14,8 +14,8 @@
             >
               <view class="nut-cascader-item__title">{{ node.text }}</view>
 
-              <nut-icon v-if="node.loading" class="nut-cascader-item__icon-loading" name="loading" />
-              <nut-icon v-else class="nut-cascader-item__icon-check" name="checklist" />
+              <nut-icon v-if="node.loading" class="nut-cascader-item__icon-loading" name="loading1" />
+              <nut-icon v-else class="nut-cascader-item__icon-check" name="check1" />
             </view>
           </template>
         </view>

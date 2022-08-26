@@ -19,7 +19,7 @@
           @change="events.change"
           @path-change="events.pathChange"
           :options="demo1.options"
-          close-icon="heart"
+          close-icon="microphone"
           close-icon-position="top-left"
         ></nut-cascader>
       </nut-form-item>
@@ -40,7 +40,6 @@
           :title="translate('addressTip')"
           v-model:visible="demo2.visible"
           v-model="demo2.value"
-          label-key="text"
           @change="events.change"
           @path-change="events.pathChange"
           value-key="text"

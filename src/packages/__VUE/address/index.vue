@@ -22,7 +22,7 @@
             >
               <view class="nut-address-text">{{ nowItem[theFields.label] }}</view>
               <nut-icon
-                name="checked"
+                name="check1"
                 class="nut-address-icon"
                 :class="
                   Number(theValues[tabsConf.index]) === Number(nowItem[theFields.value]) ? 'nut-address-icon-on' : ''

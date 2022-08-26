@@ -10,28 +10,56 @@
     <nut-popup
       pop-class="popclass"
       :style="{ padding: '30px 50px' }"
+      :show-title="false"
       v-model:visible="state.showBasic"
       :z-index="100"
       >{{ translate('text') }}</nut-popup
     >
     <h2>{{ translate('position') }}</h2>
     <nut-cell :title="translate('cell2')" is-link @click="state.showTop = true"></nut-cell>
-    <nut-popup position="top" :style="{ height: '20%' }" v-model:visible="state.showTop"></nut-popup>
+    <nut-popup
+      position="top"
+      :show-title="false"
+      :style="{ height: '20%' }"
+      v-model:visible="state.showTop"
+    ></nut-popup>
     <nut-cell :title="translate('cell3')" is-link @click="state.showBottom = true"></nut-cell>
-    <nut-popup position="bottom" :style="{ height: '20%' }" v-model:visible="state.showBottom"></nut-popup>
+    <nut-popup
+      position="bottom"
+      :show-title="false"
+      :style="{ height: '20%' }"
+      v-model:visible="state.showBottom"
+    ></nut-popup>
     <nut-cell :title="translate('cell4')" is-link @click="state.showLeft = true"></nut-cell>
-    <nut-popup position="left" :style="{ width: '20%', height: '100%' }" v-model:visible="state.showLeft"></nut-popup>
+    <nut-popup
+      position="left"
+      :show-title="false"
+      :style="{ width: '20%', height: '100%', maxHeight: '100%' }"
+      v-model:visible="state.showLeft"
+    ></nut-popup>
     <nut-cell :title="translate('cell5')" is-link @click="state.showRight = true"></nut-cell>
-    <nut-popup position="right" :style="{ width: '20%', height: '100%' }" v-model:visible="state.showRight"></nut-popup>
+    <nut-popup
+      position="right"
+      :show-title="false"
+      :style="{ width: '20%', height: '100%', maxHeight: '100%' }"
+      v-model:visible="state.showRight"
+    ></nut-popup>
     <h2>{{ translate('close') }}</h2>
     <nut-cell :title="translate('close')" is-link @click="state.showIcon = true"></nut-cell>
-    <nut-popup position="bottom" closeable :style="{ height: '20%' }" v-model:visible="state.showIcon"></nut-popup>
+    <nut-popup
+      position="bottom"
+      closeable
+      :show-title="false"
+      :style="{ height: '20%' }"
+      v-model:visible="state.showIcon"
+    ></nut-popup>
     <nut-cell :title="translate('iposition')" is-link @click="state.showIconPosition = true"></nut-cell>
     <nut-popup
       position="bottom"
       closeable
       close-icon-position="top-left"
       :style="{ height: '20%' }"
+      :show-title="false"
       v-model:visible="state.showIconPosition"
     ></nut-popup>
     <nut-cell :title="translate('cicon')" is-link @click="state.showCloseIcon = true"></nut-cell>
@@ -41,17 +69,26 @@
       close-icon-position="top-left"
       close-icon="heart"
       :style="{ height: '20%' }"
+      :show-title="false"
       v-model:visible="state.showCloseIcon"
     ></nut-popup>
     <h2>{{ translate('teleport') }}</h2>
     <nut-cell :title="translate('teleport')" is-link @click="state.showTeleport = true"></nut-cell>
-    <nut-popup :style="{ padding: '30px 50px' }" teleport="#app" v-model:visible="state.showTeleport">app</nut-popup>
+    <nut-popup
+      :style="{ padding: '30px 50px' }"
+      teleport="#app"
+      v-model:visible="state.showTeleport"
+      :show-title="false"
+      >app</nut-popup
+    >
     <h2>{{ translate('muti') }}</h2>
     <nut-cell :title="translate('muti')" is-link @click="state.showPop1 = true"></nut-cell>
-    <nut-popup :style="{ padding: '30px 50px' }" v-model:visible="state.showPop1">
+    <nut-popup :style="{ padding: '30px 50px' }" :show-title="false" v-model:visible="state.showPop1">
       <div @click="state.showPop2 = true">{{ translate('click') }}</div>
     </nut-popup>
-    <nut-popup :style="{ padding: '30px 50px' }" v-model:visible="state.showPop2">{{ translate('text') }}</nut-popup>
+    <nut-popup :style="{ padding: '30px 50px' }" :show-title="false" v-model:visible="state.showPop2">{{
+      translate('text')
+    }}</nut-popup>
   </div>
 </template>
 

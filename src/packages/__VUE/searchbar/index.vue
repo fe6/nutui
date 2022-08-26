@@ -31,7 +31,7 @@
           />
         </form>
         <view @click="handleClear" class="nut-searchbar__input-clear" v-if="clearable" v-show="modelValue.length > 0">
-          <nut-icon name="circle-close" size="12" color="#555"></nut-icon>
+          <nut-icon name="failure" size="12" color="#555"></nut-icon>
         </view>
       </view>
       <view

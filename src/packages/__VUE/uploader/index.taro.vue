@@ -13,7 +13,7 @@
           <view class="nut-uploader__preview__progress__msg">{{ item.message }}</view>
         </view>
         <view class="nut-uploader__preview__progress" v-else-if="item.status != 'success'">
-          <nut-icon color="#fff" :name="item.status == 'error' ? 'failure' : 'loading'"></nut-icon>
+          <nut-icon color="#fff" :name="item.status == 'error' ? 'failure' : 'loading1'"></nut-icon>
           <view class="nut-uploader__preview__progress__msg">{{ item.message }}</view>
         </view>
         <nut-icon v-if="isDeletable" @click="onDelete(item, index)" class="close" name="failure"></nut-icon>

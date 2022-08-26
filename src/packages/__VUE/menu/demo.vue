@@ -25,9 +25,9 @@
       <nut-menu-item v-model="state.value2" @change="handleChange" :options="options2" />
     </nut-menu>
     <h2>{{ translate('customIcons') }}</h2>
-    <nut-menu titleIcon="joy-smile">
+    <nut-menu titleIcon="menu-1">
       <nut-menu-item v-model="state.value1" :options="options1" />
-      <nut-menu-item v-model="state.value2" @change="handleChange" :options="options2" optionIcon="checklist" />
+      <nut-menu-item v-model="state.value2" @change="handleChange" :options="options2" optionIcon="arrow-down1" />
     </nut-menu>
     <h2>{{ translate('expandDirection') }}</h2>
     <nut-menu direction="up">

@@ -31,7 +31,7 @@
       :label="translate('text')"
       :placeholder="translate('icon')"
       left-icon="dongdong"
-      right-icon="ask2"
+      right-icon="ask"
     />
     <nut-input
       v-model="state.clear"
@@ -126,7 +126,7 @@
       :label="translate('click')"
       :placeholder="translate('click')"
       left-icon="dongdong"
-      right-icon="ask2"
+      right-icon="ask"
       clearable
       @update:model-value="change"
       @focus="focus"

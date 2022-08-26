@@ -6,12 +6,6 @@
       <nut-tabpane title="Tab 2"> Tab 2 </nut-tabpane>
       <nut-tabpane title="Tab 3"> Tab 3 </nut-tabpane>
     </nut-tabs>
-    <h2>{{ translate('title1') }}</h2>
-    <nut-tabs v-model="state.tab11value" type="smile">
-      <nut-tabpane title="Tab 1"> Tab 1 </nut-tabpane>
-      <nut-tabpane title="Tab 2"> Tab 2 </nut-tabpane>
-      <nut-tabpane title="Tab 3"> Tab 3 </nut-tabpane>
-    </nut-tabs>
     <h2>{{ translate('title2') }}</h2>
     <nut-tabs v-model="state.tab2value">
       <nut-tabpane title="Tab 1" pane-key="0"> Tab 1 </nut-tabpane>
@@ -46,10 +40,6 @@
       >
         Tab {{ item }}
       </nut-tabpane>
-    </nut-tabs>
-    <h2>{{ translate('title6') }}</h2>
-    <nut-tabs style="height: 300px" v-model="state.tab6value" type="smile" title-scroll direction="vertical">
-      <nut-tabpane v-for="item in state.list5" :title="'Tab ' + item"> Tab {{ item }} </nut-tabpane>
     </nut-tabs>
     <h2>{{ translate('title7') }}</h2>
     <nut-tabs v-model="state.tab1value" size="large">
@@ -99,12 +89,10 @@ const initTranslate = () =>
   useTranslate({
     'zh-CN': {
       basic: '基本用法',
-      title1: '基础用法-微笑曲线',
       title2: '通过 pane-key 匹配',
       title3: '数据异步渲染 3s',
       title4: '数量多,滚动操作',
       title5: '左右布局',
-      title6: '左右布局-微笑曲线',
       title7: '标签栏字体尺寸 large normal small',
       title8: '自定义标签栏',
       title9: 'Tabpane 自动高度',
@@ -112,12 +100,10 @@ const initTranslate = () =>
     },
     'en-US': {
       basic: 'Basic Usage',
-      title1: 'Basic Usage - Smile Curve',
       title2: 'Match by pane-key',
       title3: 'Data is rendered asynchronously for 3s',
       title4: 'A large number of scrolling operations',
       title5: 'Left and right layout',
-      title6: 'Left and Right Layout - Smile Curve',
       title7: 'tab bar font size large normal small',
       title8: 'custom tab bar',
       title9: 'Tabpane auto height',
@@ -149,11 +135,12 @@ export default createDemo({
         {
           title: translate('custom', 2),
           paneKey: 'c2',
-          icon: 'JD'
+          icon: 'github'
         },
         {
           title: translate('custom', 3),
-          paneKey: 'c3'
+          paneKey: 'c3',
+          icon: 'eye'
         }
       ])
     });

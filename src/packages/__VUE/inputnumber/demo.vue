@@ -34,7 +34,7 @@
     </nut-cell>
     <h2>{{ translate('icon') }}</h2>
     <nut-cell>
-      <nut-inputnumber icon-left="left" icon-right="right" v-model="state.val9" />
+      <nut-inputnumber icon-left="arrow-left" icon-right="arrow-right" v-model="state.val9" />
     </nut-cell>
   </div>
 </template>

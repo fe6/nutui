@@ -16,15 +16,6 @@
       @ok="onOk"
     />
 
-    <nut-cell title="底部按钮 垂直使用" @click="verticalClick"></nut-cell>
-    <nut-dialog
-      footer-direction="vertical"
-      teleport="#app"
-      title="温馨提示"
-      content="这是提示弹框。"
-      v-model:visible="visible5"
-    />
-
     <nut-cell title="异步关闭" @click="componentClick"></nut-cell>
     <nut-dialog title="异步关闭" :content="closeContent" :visible="visible4" @cancel="onCancel" @ok="onOkAsync" />
   </div>
@@ -37,7 +28,6 @@ export default {
     const visible2 = ref(false);
     const visible3 = ref(false);
     const visible4 = ref(false);
-    const visible5 = ref(false);
     const closeContent = ref('');
     const sleep = () => new Promise((resolve) => setTimeout(resolve, 1000));
     const countDown = (second: number) => `倒计时 ${second} 秒`;
@@ -81,16 +71,11 @@ export default {
       visible4.value = true;
     };
 
-    const verticalClick = () => {
-      visible5.value = true;
-    };
-
     return {
       visible1,
       visible2,
       visible3,
       visible4,
-      visible5,
       onCancel,
       onOk,
       closeContent,
@@ -98,8 +83,7 @@ export default {
       baseClick,
       noTitleClick,
       componentClick,
-      tipsClick,
-      verticalClick
+      tipsClick
     };
   }
 };

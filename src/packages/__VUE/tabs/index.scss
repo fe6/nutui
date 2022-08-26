@@ -46,9 +46,6 @@
       &-item {
         height: $tabs-vertical-titles-item-height;
         flex: none;
-        &__smile {
-          transition: width 0.3s ease;
-        }
         &__line {
           display: none;
         }
@@ -60,14 +57,6 @@
             left: 10px;
             width: 3px;
             background: $tabs-vertical-tab-line-color;
-            height: $tabs-vertical-titles-item-active-line-height;
-          }
-          .nut-tabs__titles-item__smile {
-            right: -2px;
-            bottom: 2px;
-            left: auto;
-            width: 3px;
-            transform: rotate(320deg);
             height: $tabs-vertical-titles-item-active-line-height;
           }
         }
@@ -139,16 +128,6 @@
       background: transparent;
     }
 
-    &.smile {
-      .nut-tabs__titles-item {
-        &.active {
-          .nut-tabs__titles-item__smile {
-            width: 20px;
-            height: 8px;
-          }
-        }
-      }
-    }
     &.scrollable {
       overflow-x: auto;
       overflow-y: hidden;
@@ -173,7 +152,6 @@
         }
         text-align: center;
       }
-      &__smile,
       &__line {
         position: absolute;
         transition: width 0.3s ease;

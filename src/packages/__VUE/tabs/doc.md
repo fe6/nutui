@@ -48,36 +48,6 @@ export default {
 ```
 :::
 
-### 基础用法-微笑曲线
-:::demo
-```html
-<template>
-<nut-tabs v-model="state.tab11value" type="smile">
-  <nut-tabpane title="Tab 1">
-    Tab 1
-  </nut-tabpane>
-  <nut-tabpane title="Tab 2">
-    Tab 2
-  </nut-tabpane>
-  <nut-tabpane title="Tab 3">
-    Tab 3
-  </nut-tabpane>
-</nut-tabs>
-</template>
-<script lang="ts">
-import { reactive } from 'vue';
-export default {
-  setup() {
-    const state = reactive({
-      tab11value: '0',
-    });
-    return { state };
-  }
-};
-</script>
-```
-:::
-
 ### 通过 pane-key 匹配
 
 :::demo
@@ -223,32 +193,6 @@ export default {
 ```
 :::
 
-### 左右布局-微笑曲线
-
-:::demo
-```html
-<template>
-<nut-tabs style="height:300px" v-model="state.tab6value" type="smile" title-scroll direction="vertical">
-  <nut-tabpane v-for="item in state.list5" :title="'Tab '+ item">
-    Tab {{item}}
-  </nut-tabpane>
-</nut-tabs>
-</template>
-<script lang="ts">
-import { reactive } from 'vue';
-export default {
-  setup() {
-    const state = reactive({
-      tab6value: '0',
-      list5: Array.from(new Array(2).keys()),
-    });
-    return { state };
-  }
-};
-</script>
-```
-:::
-
 ### 标签栏字体尺寸 large normal small
 :::demo
 ```html
@@ -341,7 +285,7 @@ export default {
 | color                | 标签选中色                                                                                        | string        | #1a1a1a    |
 | background           | 标签栏背景颜色                                                                                    | string        | #f5f5f5    |
 | direction            | 使用横纵方向 可选值 horizontal、vertical                                                          | string        | horizontal |
-| type                 | 选中底部展示样式 可选值 line、smile                                                               | string        | line       |
+| type                 | 选中底部展示样式 可选值 line、card                                                               | string        | line       |
 | title-scroll         | 标签栏是否可以滚动                                                                                | boolean       | false      |
 | ellipsis             | 是否省略过长的标题文字                                                                            | boolean       | true       |
 | animated-time        | 切换动画时长,单位 ms 0 代表无动画                                                                 | number,string | 300        |

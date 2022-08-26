@@ -28,11 +28,11 @@ const useComponent = (touchable: Boolean = true) => {
       },
       uncheckedIcon: {
         type: String,
-        default: 'star-n'
+        default: 'a-bianzu3'
       },
       checkedIcon: {
         type: String,
-        default: 'star-fill-n'
+        default: 'a-bianzu2'
       },
       readonly: {
         type: Boolean,

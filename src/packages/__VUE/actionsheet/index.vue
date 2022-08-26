@@ -29,7 +29,7 @@
               :key="index"
               @click="chooseItem(item, index)"
             >
-              <nut-icon v-if="item.loading" name="loading"> </nut-icon>
+              <nut-icon v-if="item.loading" name="loading1"> </nut-icon>
               <view v-else class="label"> {{ item[optionTag] }}</view>
               <view class="subdesc" v-if="item[optionSubTag]">{{ item[optionSubTag] }}</view>
             </view>

@@ -7,6 +7,7 @@
       :lock-scroll="lockScroll"
       :close-on-click-overlay="closeOnClickOverlay"
       @close="close"
+      :show-title="false"
       :round="true"
     >
       <view class="nut-picker__bar">

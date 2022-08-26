@@ -18,7 +18,7 @@ export default create({
     roundRadius: { type: [String, Number], default: '' },
     url: { type: String, default: '' },
     icon: { type: String, default: '' },
-    rightIcon: { type: String, default: 'right' },
+    rightIcon: { type: String, default: 'arrow-right' },
     card: { type: Boolean, default: false },
     center: { type: Boolean, default: false },
     border: { type: Boolean, default: true },

@@ -1,7 +1,7 @@
 <template>
   <div class="demo full">
     <h2>{{ translate('basic1') }}</h2>
-    <nut-collapse v-model:active="active1" icon="down-arrow" @change="change">
+    <nut-collapse v-model:active="active1" icon="arrow-down" @change="change">
       <nut-collapse-item :name="1">
         <template v-slot:mTitle>
           {{ translate('title1') }}
@@ -21,7 +21,7 @@
       <nut-collapse-item :title="translate('title2')" :name="2"> {{ translate('desc4') }} </nut-collapse-item>
     </nut-collapse>
     <h2>{{ translate('basic3') }}</h2>
-    <nut-collapse v-model:active="active2" :accordion="true" icon="down-arrow">
+    <nut-collapse v-model:active="active2" :accordion="true" icon="arrow-down">
       <nut-collapse-item :title="translate('title1')" :name="1"> {{ translate('desc5') }} </nut-collapse-item>
       <nut-collapse-item :title="translate('title2')" :name="2" :sub-title="translate('subtitle')">
         {{ translate('desc6') }}
@@ -31,7 +31,7 @@
       </nut-collapse-item>
     </nut-collapse>
     <h2>{{ translate('basic4') }}</h2>
-    <nut-collapse v-model:active="active3" :accordion="true" icon="arrow-right2" rotate="90">
+    <nut-collapse v-model:active="active3" :accordion="true" icon="dou-arrow-down" rotate="90">
       <nut-collapse-item :title="translate('title1')" :name="1">
         <template v-slot:sTitle> {{ translate('title4') }} </template>
         {{ translate('desc8') }}
@@ -47,7 +47,7 @@
       title-icon-color="red"
       title-icon-size="20px"
       title-icon-position="right"
-      icon="down-arrow"
+      icon="arrow-down"
       :accordion="true"
     >
       <nut-collapse-item :title="translate('title1')" :name="1"> {{ translate('desc10') }} </nut-collapse-item>
@@ -56,7 +56,7 @@
       </nut-collapse-item>
     </nut-collapse>
     <h2>{{ translate('basic6') }}</h2>
-    <nut-collapse v-model:active="active6" icon="down-arrow" :accordion="true">
+    <nut-collapse v-model:active="active6" icon="arrow-down" :accordion="true">
       <nut-collapse-item :title="translate('title1')" :name="1">
         <template v-slot:extraRender>{{ translate('title5') }}</template>
         {{ translate('desc1') }}

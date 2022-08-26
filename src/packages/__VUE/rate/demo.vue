@@ -7,7 +7,7 @@
     <nut-rate allow-half v-model="state.val1"></nut-rate>
 
     <h2>{{ translate('title2') }}</h2>
-    <nut-rate checked-icon="heart-fill1" unchecked-icon="heart" v-model="state.val2"></nut-rate>
+    <nut-rate checked-icon="a-bianzu4" unchecked-icon="bianzu" v-model="state.val2"></nut-rate>
 
     <h2>{{ translate('title3') }}</h2>
     <nut-rate :count="6" v-model="state.val3"></nut-rate>

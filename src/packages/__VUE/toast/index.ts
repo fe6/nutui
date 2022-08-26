@@ -105,11 +105,11 @@ export const ToastFunction = {
   },
   warn(msg: string, opts = {}) {
     errorMsg(msg);
-    return mountToast({ icon: 'tips', ...opts, msg, type: 'warn' });
+    return mountToast({ icon: 'issue', ...opts, msg, type: 'warn' });
   },
   loading(msg: string, opts = {}) {
     return mountToast({
-      icon: 'loading',
+      icon: 'loading1',
       ...opts,
       msg,
       type: 'loading'

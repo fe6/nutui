@@ -46,19 +46,20 @@
     display: block;
     width: 100%;
     padding-top: 16px;
-    font-size: $font-size-small;
-    color: $infiniteloading-bottom-color;
+    font-size: 14px;
     text-align: center;
 
     .bottom-box {
       .bottom-img {
-        margin-right: 5px;
-        width: 28px;
-        height: 24px;
+        color: rgba(0, 0, 0, 0.45);
+        margin-bottom: -5px;
       }
       .bottom-text {
+        padding-left: 5px;
         font-size: 10px;
-        color: $text-color;
+        line-height: 20px;
+        min-height: 20px;
+        color: rgba(0, 0, 0, 0.45);
       }
     }
   }

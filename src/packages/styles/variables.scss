@@ -374,7 +374,7 @@ $swiper-pagination-item-margin-right: 7px !default;
 $swiper-pagination-item-border-radius: 2px !default;
 
 //address
-$address-region-tab-line: linear-gradient(90deg, $primary-color 0%, rgba($primary-color, 0.15) 100%) !default;
+$address-region-tab-line: $primary-color !default;
 $address-icon-color: $primary-color !default;
 
 //steps
@@ -566,11 +566,11 @@ $tabs-titles-item-small-font-size: $font-size-1 !default;
 $tabs-titles-item-color: rgba(0, 0, 0, 0.85) !default;
 $tabs-titles-item-active-color: rgba(0, 0, 0, 0.85) !default;
 $tabs-titles-background-color: #fff !default;
-$tabs-horizontal-tab-line-color: linear-gradient(90deg, $primary-color 0%, rgba($primary-color, 0.15) 100%) !default;
+$tabs-horizontal-tab-line-color: $primary-color !default;
 $tabs-horizontal-titles-height: 56px !default;
 $tabs-horizontal-titles-item-min-width: 50px !default;
 $tabs-horizontal-titles-item-active-line-width: 40px !default;
-$tabs-vertical-tab-line-color: linear-gradient(180deg, $primary-color 0%, rgba($primary-color, 0.15) 100%) !default;
+$tabs-vertical-tab-line-color: $primary-color !default;
 $tabs-vertical-titles-item-height: 40px !default;
 $tabs-vertical-titles-item-active-line-height: 14px !default;
 $tabs-vertical-titles-width: 110px !default;

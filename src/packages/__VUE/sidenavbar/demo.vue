@@ -6,7 +6,12 @@
         ><label>{{ translate('right') }}</label></span
       >
     </nut-cell>
-    <nut-popup position="right" v-model:visible="show1" :style="{ width, height }">
+    <nut-popup
+      :show-title="false"
+      position="right"
+      v-model:visible="show1"
+      :style="{ width, height, maxHeight: '100%' }"
+    >
       <nut-sidenavbar>
         <nut-subsidenavbar :title="translate('title1')" ikey="6">
           <nut-subsidenavbar :title="translate('title2')" ikey="9">
@@ -25,7 +30,12 @@
         ><label>{{ translate('left') }}</label></span
       >
     </nut-cell>
-    <nut-popup position="left" v-model:visible="show2" :style="{ width, height }">
+    <nut-popup
+      :show-title="false"
+      position="left"
+      v-model:visible="show2"
+      :style="{ width, height, maxHeight: '100%' }"
+    >
       <nut-sidenavbar>
         <nut-subsidenavbar :title="translate('title7')" ikey="3" :open="false">
           <nut-sidenavbaritem ikey="4" :title="translate('title8')"></nut-sidenavbaritem>
@@ -44,7 +54,12 @@
           ><label>{{ translate('show') }}</label></span
         >
       </nut-cell>
-      <nut-popup position="right" v-model:visible="show3" :style="{ width, height }">
+      <nut-popup
+        :show-title="false"
+        position="right"
+        v-model:visible="show3"
+        :style="{ width, height, maxHeight: '100%' }"
+      >
         <nut-sidenavbar :show="show3">
           <nut-sidenavbaritem
             ikey="1"

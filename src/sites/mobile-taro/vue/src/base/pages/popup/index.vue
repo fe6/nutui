@@ -20,7 +20,7 @@
     <nut-cell title="右侧弹出" is-link @click="state.showRight = true"></nut-cell>
     <nut-popup position="right" :style="{ width: '20%', height: '100%' }" v-model:visible="state.showRight"></nut-popup>
     <h2>关闭图标</h2>
-    <nut-cell :title="关闭图标" is-link @click="state.showIcon = true"></nut-cell>
+    <nut-cell title="关闭图标" is-link @click="state.showIcon = true"></nut-cell>
     <nut-popup position="bottom" closeable :style="{ height: '20%' }" v-model:visible="state.showIcon"></nut-popup>
     <nut-cell title="图标位置" is-link @click="state.showIconPosition = true"></nut-cell>
     <nut-popup

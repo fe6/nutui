@@ -49,8 +49,8 @@
     </div>
     <h2>{{ translate('title5') }}</h2>
     <div class="demo-button-row2">
-      <nut-button shape="square" plain type="primary" icon="star-fill"></nut-button>
-      <nut-button shape="square" type="primary" icon="star">{{ translate('star') }}</nut-button>
+      <nut-button shape="square" plain type="primary" icon="a-bianzu4"></nut-button>
+      <nut-button shape="square" type="primary" icon="bianzu">{{ translate('star') }}</nut-button>
     </div>
 
     <h2>{{ translate('title7') }}</h2>

@@ -21,7 +21,7 @@
           class="nutui-popup__close-icon"
           :class="'nutui-popup__close-icon--' + closeIconPosition"
         >
-          <nut-icon v-bind="$attrs" :name="closeIcon" size="12px" />
+          <nut-icon v-bind="$attrs" :name="closeIcon" size="16" />
         </view>
       </view>
     </Transition>
