@@ -1,5 +1,5 @@
 <template>
-  <div class="demo">
+  <div class="demo" :style="styles">
     <h2>按钮类型</h2>
     <div class="demo-button-row">
       <nut-button type="primary">主要按钮</nut-button>
@@ -74,7 +74,11 @@ export default {
 
     return {
       isLoading,
-      changeLoading
+      changeLoading,
+      styles: `
+  --color-primary: #0f0;
+  --color-primary-end: #ff0;
+`
     };
   }
 };

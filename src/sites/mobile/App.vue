@@ -10,6 +10,7 @@
       >
       </nut-icon>
     </div>
+    <div class="theme" @click="themeChange"> 主题 </div>
   </div>
   <router-view />
   <!-- <demo-icon></demo-icon> -->
@@ -66,6 +67,15 @@ export default defineComponent({
       router.back();
     };
 
+    const themed = ref(true);
+    const themeChange = () => {
+      const themeColor = themed.value ? '#0f0' : '#f0f';
+      const themeEndColor = themed.value ? '#ff0' : '#0ff';
+      document.documentElement.style.setProperty('--color-primary', themeColor);
+      document.documentElement.style.setProperty('--color-primary-end', themeEndColor);
+      themed.value = !themed.value;
+    };
+
     // 是否显示 title
     const isShow = computed(() => {
       return title.value && title.value != '/' && !title.value.includes('-taro');
@@ -89,7 +99,7 @@ export default defineComponent({
       }
     );
 
-    return { title, isShow, goBack, translateChange };
+    return { title, isShow, goBack, translateChange, themeChange };
   }
 });
 </script>
@@ -146,6 +156,17 @@ body {
       position: absolute;
       top: 0;
       right: 0;
+      height: 100%;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .theme {
+      position: absolute;
+      top: 0;
+      right: 50px;
       height: 100%;
       width: 50px;
       display: flex;
