@@ -3,7 +3,7 @@
     <h2>{{ translate('basic') }}</h2>
     <nut-cell>
       <nut-icon name="dongdong"></nut-icon>
-      <nut-icon name="JD"></nut-icon>
+      <nut-icon name="github"></nut-icon>
     </nut-cell>
     <h2>{{ translate('imageLink') }}</h2>
     <nut-cell>
@@ -17,7 +17,7 @@
     <nut-cell>
       <nut-icon name="dongdong" color="#fa2c19"></nut-icon>
       <nut-icon name="dongdong" color="#64b578"></nut-icon>
-      <nut-icon name="JD" color="#fa2c19"></nut-icon>
+      <nut-icon name="github" color="#fa2c19"></nut-icon>
     </nut-cell>
 
     <h2>{{ translate('iconSize') }}</h2>
