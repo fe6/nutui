@@ -72,7 +72,6 @@ export default defineComponent({
       const themeColor = themed.value ? '#0f0' : '#f0f';
       const themeEndColor = themed.value ? '#ff0' : '#0ff';
       document.documentElement.style.setProperty('--color-primary', themeColor);
-      document.documentElement.style.setProperty('--color-primary-end', themeEndColor);
       themed.value = !themed.value;
     };
 

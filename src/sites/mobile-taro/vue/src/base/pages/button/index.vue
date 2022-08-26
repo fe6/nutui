@@ -77,7 +77,6 @@ export default {
       changeLoading,
       styles: `
   --color-primary: #0f0;
-  --color-primary-end: #ff0;
 `
     };
   }

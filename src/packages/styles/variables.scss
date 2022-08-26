@@ -2,7 +2,6 @@
 
 // 主色调
 $primary-color: var(--color-primary, #fa2c19) !default;
-$primary-color-end: var(--color-primary-end, #fa6419) !default;
 
 // 辅助色
 $help-color: #f5f5f5 !default;
@@ -76,7 +75,7 @@ $button-mini-line-height: 1.2 !default;
 $button-disabled-opacity: 0.68 !default;
 $button-primary-color: $white !default;
 $button-primary-border-color: $primary-color !default;
-$button-primary-background-color: linear-gradient(135deg, $primary-color 0%, $primary-color-end 100%) !default;
+$button-primary-background-color: $primary-color !default;
 $button-info-color: $white !default;
 $button-info-border-color: rgba(73, 106, 242, 1) !default;
 $button-info-background-color: linear-gradient(315deg, rgba(73, 143, 242, 1) 0%, rgba(73, 101, 242, 1) 100%) !default;
@@ -326,7 +325,7 @@ $notify-padding: 12px 0 !default;
 $notify-font-size: 14px !default;
 $notify-height: 44px !default;
 $notify-line-height: auto !default;
-$notify-base-background-color: linear-gradient(135deg, $primary-color 0%, $primary-color-end 100%) !default;
+$notify-base-background-color: $primary-color !default;
 $notify-primary-background-color: linear-gradient(
   315deg,
   rgba(73, 143, 242, 1) 0%,
@@ -362,7 +361,7 @@ $infiniteloading-bottom-color: #c8c8c8 !default;
 $range-tip-font-color: #333333 !default;
 $range-bg-color: rgba($primary-color, 0.5) !default;
 $range-bg-color-tick: #fa958c !default;
-$range-bar-bg-color: linear-gradient(135deg, $primary-color 0%, $primary-color-end 100%) !default;
+$range-bar-bg-color: $primary-color !default;
 $range-bar-btn-bg-color: $white !default;
 $range-bar-btn-width: 24px !default;
 $range-bar-btn-height: 24px !default;
@@ -436,7 +435,7 @@ $radio-icon-font-size: 18px !default;
 $fixednav-bg-color: $white !default;
 $fixednav-font-color: $black !default;
 $fixednav-index: 201 !default;
-$fixednav-btn-bg: linear-gradient(135deg, $primary-color 0%, $primary-color-end 100%) !default;
+$fixednav-btn-bg: $primary-color !default;
 $fixednav-item-active-color: $primary-color !default;
 
 // NoticeBar
@@ -504,7 +503,7 @@ $tag-border-width: 0.5px !default;
 $tag-plain-background-color: #fff !default;
 
 //badge
-$badge-background-color: linear-gradient(135deg, $primary-color 0%, $primary-color-end 100%) !default;
+$badge-background-color: $primary-color !default;
 $badge-color: #fff !default;
 $badge-font-size: $font-size-1 !default;
 $badge-border-radius: 14px !default;
@@ -524,7 +523,7 @@ $popover-primary-text-color: rgba(51, 51, 51, 1) !default;
 $popover-disable-color: rgba(154, 155, 157, 1) !default;
 
 //progress
-$progress-inner-background-color: linear-gradient(135deg, $primary-color 0%, $primary-color-end 100%) !default;
+$progress-inner-background-color: $primary-color !default;
 $progress-insidetext-background: $progress-inner-background-color !default;
 $progress-outer-background-color: #f3f3f3 !default;
 $progress-outer-border-radius: 12px !default;
@@ -551,7 +550,7 @@ $progress-large-text-top: $progress-insidetext-top !default;
 $pagination-color: $primary-color !default;
 $pagination-font-size: $font-size-2 !default;
 $pagination-item-border-color: #e4e7eb !default;
-$pagination-active-background-color: linear-gradient(135deg, $primary-color 0%, $primary-color-end 100%) !default;
+$pagination-active-background-color: $primary-color !default;
 $pagination-disable-color: rgba(116, 116, 116, 0.31) !default;
 $pagination-disable-background-color: #f7f8fa !default;
 $pagination-item-border-width: 1px !default;
@@ -671,7 +670,7 @@ $form-item-tip-text-align: left !default;
 // sku
 $sku-item-border: 1px solid $primary-color !default;
 $sku-item-disable-line: line-through !default;
-$sku-opetate-bg-default: linear-gradient(90deg, $primary-color, $primary-color-end 100%) !default;
+$sku-opetate-bg-default: $primary-color !default;
 $sku-item-active-bg: rgba($primary-color, 0.15) !default;
 $sku-opetate-bg-buy: linear-gradient(
   135deg,
