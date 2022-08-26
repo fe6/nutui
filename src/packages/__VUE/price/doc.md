@@ -115,5 +115,6 @@ app.use(Price);
 | symbol         | 符号类型                                | String           | &yen;  |
 | decimal-digits | 小数位位数                              | Number ｜ String  | 2     |
 | thousands      | 是否按照千分号形式显示                    | Boolean          | false  |
+| scribing      | 是否是划线价                    | Boolean          | false  |
 | position       | 符号显示在价格前或者后，`before`、`after`  | String           | before |
 | size           | 价格尺寸，`large`、`normal`、`small`     | String           | large |

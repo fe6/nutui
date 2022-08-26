@@ -117,3 +117,4 @@ app.use(Price);
 | thousands      | Thousands separation                                       | Boolean          | false  |
 | position       | The symbol appear before or after the price，`before`、`after` | String           | before |
 | size           | Size，`large`、`normal`、`small`                            | String           | large |
+| scribing      | 是否是划线价                    | Boolean          | false  |

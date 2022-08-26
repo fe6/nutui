@@ -1,35 +1,68 @@
 <template>
   <div class="demo">
+    <h2>当前是： {{ scribing ? '划线价' : '正常价' }}，下面开关可修改</h2>
+    <nut-cell>
+      <nut-switch v-model="scribing" />
+    </nut-cell>
     <nut-cell-group :title="translate('title1')">
       <nut-cell>
-        <nut-price :price="0" size="small" :need-symbol="true" :thousands="true" />
+        <nut-price :scribing="scribing" :price="0" size="small" :need-symbol="true" :thousands="true" />
       </nut-cell>
       <nut-cell>
-        <nut-price :price="0" size="normal" :need-symbol="true" :thousands="true" />
+        <nut-price :scribing="scribing" :price="0" size="normal" :need-symbol="true" :thousands="true" />
       </nut-cell>
       <nut-cell>
-        <nut-price :price="0" size="large" :need-symbol="true" :thousands="true" />
+        <nut-price :scribing="scribing" :price="0" size="large" :need-symbol="true" :thousands="true" />
       </nut-cell>
     </nut-cell-group>
     <h2>{{ translate('title2') }}</h2>
     <nut-cell>
-      <nut-price :price="8888" decimal-digits="0" size="normal" :need-symbol="true" :thousands="true" />
+      <nut-price
+        :scribing="scribing"
+        :price="8888"
+        decimal-digits="0"
+        size="normal"
+        :need-symbol="true"
+        :thousands="true"
+      />
     </nut-cell>
     <h2>{{ translate('title3') }}</h2>
     <nut-cell>
-      <nut-price :price="10010.01" size="normal" :need-symbol="true" :thousands="false" />
+      <nut-price :scribing="scribing" :price="10010.01" size="normal" :need-symbol="true" :thousands="false" />
     </nut-cell>
     <h2>{{ translate('title4') }}</h2>
     <nut-cell>
-      <nut-price :price="15213.1221" size="normal" :decimal-digits="3" :need-symbol="true" :thousands="true" />
+      <nut-price
+        :scribing="scribing"
+        :price="15213.1221"
+        size="normal"
+        :decimal-digits="3"
+        :need-symbol="true"
+        :thousands="true"
+      />
     </nut-cell>
     <h2>{{ translate('title5') }}</h2>
     <nut-cell>
-      <nut-price :price="8888.01" position="after" symbol="元" size="normal" :need-symbol="true" :thousands="true" />
+      <nut-price
+        :scribing="scribing"
+        :price="8888.01"
+        position="after"
+        symbol="元"
+        size="normal"
+        :need-symbol="true"
+        :thousands="true"
+      />
     </nut-cell>
     <h2>{{ translate('title6') }}</h2>
     <nut-cell>
-      <nut-price :price="price" size="normal" :decimal-digits="3" :need-symbol="true" :thousands="true" />
+      <nut-price
+        :scribing="scribing"
+        :price="price"
+        size="normal"
+        :decimal-digits="3"
+        :need-symbol="true"
+        :thousands="true"
+      />
     </nut-cell>
   </div>
 </template>
@@ -62,12 +95,14 @@ export default createDemo({
   setup() {
     initTranslate();
     const price = ref(0);
+    const scribing = ref(false);
     setInterval(() => {
       price.value = Math.random() * 10000000;
     }, 1000);
     return {
       price,
-      translate
+      translate,
+      scribing
     };
   }
 });

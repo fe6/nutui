@@ -39,6 +39,10 @@ export default create({
       type: Boolean,
       default: true
     },
+    scribing: {
+      type: Boolean,
+      default: false
+    },
     symbol: {
       type: String,
       default: '&yen;'
@@ -64,7 +68,8 @@ export default create({
   setup(props) {
     const classes = computed(() => {
       return {
-        [componentName]: true
+        [componentName]: true,
+        [`${componentName}-scribing`]: props.scribing
       };
     });
     const replaceSpecialChar = (url: string) => {
