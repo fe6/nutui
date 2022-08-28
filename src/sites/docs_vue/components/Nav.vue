@@ -75,7 +75,6 @@ export default defineComponent({
     });
     const scrollNav = () => {
       let top = document.documentElement.scrollTop;
-      // console.log('a', top)
       if (top > 64) {
         state.fixed = true;
       } else {
@@ -89,7 +88,6 @@ export default defineComponent({
 
     onBeforeRouteUpdate((to: any) => {
       let name: any = '';
-      console.log('当前路由', to);
       if (to) {
         name = to.path;
       } else {

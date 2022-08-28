@@ -12,7 +12,6 @@ const guideEnRouters: Array<RouteRecordRaw> = [];
 /** vite */
 
 const modulesPage = (import.meta as any).glob('/src/sites/docs_vue/docs/**/doc.md');
-console.log(modulesPage, 'modulesPage----');
 for (const path in modulesPage) {
   let name = (/docs_vue\/docs\/(.*)\/doc.md/.exec(path) as any[])[1];
   pagesRouter.push({
@@ -130,11 +129,5 @@ const router = createRouter({
 });
 router.afterEach((to, from) => {
   window.scrollTo(0, 0);
-  try {
-    setTimeout(() => {
-      // new Image().src = `${config.baseUrl}/openapi/point?p=${encodeURIComponent(JSON.stringify(location))}`;
-      console.log(99999, '9999');
-    }, 500);
-  } catch (error) {}
 });
 export default router;

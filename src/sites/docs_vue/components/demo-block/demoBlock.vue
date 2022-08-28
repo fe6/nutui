@@ -129,11 +129,11 @@ export default defineConfig({
       const sourceValue = decompressText(onlineCode.value.dataset.value);
       codeType.value = onlineCode.value.dataset.type;
       // console.log('onlineCode', onlineCode)
-      console.log('childNodes', onlineCode.value.childNodes[2].childNodes[0].offsetHeight);
+      // console.log('childNodes', onlineCode.value.childNodes[2].childNodes[0].offsetHeight);
       // console.log('childNodes', onlineCode.value.childNodes[2].childNodes[0])
       let o_height = onlineCode.value.childNodes[2].childNodes[0].offsetHeight;
       if (o_height > 400) {
-        console.log('4000');
+        // console.log('4000');
         scroll.value = true;
       }
       // console.log('children', onlineCode)

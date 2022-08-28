@@ -34,18 +34,6 @@
             <div class="doc-content-faq-aws" v-html="faq.answer.replace(/>[\t\s]*</gm, '><')"></div>
           </div>
         </div>
-
-        <div :class="{ 'doc-content-contributors': true }" v-if="isShow() && contributorsData.length !== 0">
-          <a
-            :href="'https://github.com/' + item.username"
-            v-for="(item, index) in contributorsData"
-            :key="index + 'Contributor'"
-          >
-            <img :src="item.url" alt="" />
-            <div class="contributors-hover">贡献者:{{ item.username }}</div>
-          </a>
-        </div>
-        <doc-footer v-if="isShow()" :showLogo="false"></doc-footer>
       </div>
       <doc-demo-preview v-if="isShow()" :url="demoUrl" :class="{ fixed: fixed }"></doc-demo-preview>
     </div>
@@ -57,13 +45,10 @@ import { demoUrl, language, nav, docs } from '@/sites/docs_vue/config/index';
 import { onBeforeRouteUpdate, RouteLocationNormalized, useRoute, useRouter } from 'vue-router';
 import Header from '@/sites/docs_vue/components/Header.vue';
 import Nav from '@/sites/docs_vue/components/Nav.vue';
-import Footer from '@/sites/docs_vue/components/Footer.vue';
 import DemoPreview from '@/sites/docs_vue/components/DemoPreview.vue';
 import Issue from '@/sites/docs_vue/components/Issue.vue';
 import { RefData } from '@/sites/docs_vue/assets/util/ref';
-// import { ApiService } from '@/service/ApiService';
 import { Button } from '@nutui/nutui';
-import { isJDT } from '@/sites/docs_vue/assets/util';
 import { useLocale } from '@/sites/docs_vue/assets/util/locale';
 
 export default defineComponent({
@@ -71,7 +56,6 @@ export default defineComponent({
   components: {
     [Header.name]: Header,
     [Nav.name]: Nav,
-    [Footer.name]: Footer,
     [DemoPreview.name]: DemoPreview,
     [Issue.name]: Issue,
     Button
@@ -104,7 +88,6 @@ export default defineComponent({
         }
       ]
     });
-    const contributorsData = ref([]); //贡献者表格
 
     const faqsList = ref([]); // 组件的faq
 
@@ -135,46 +118,6 @@ export default defineComponent({
       return configNav.value.findIndex((item) => item === routename) > -1;
     });
 
-    // 获取 FAQ 内容
-    const getFaqs = (router: RouteLocationNormalized) => {
-      const apiService = new ApiService();
-      let routename = router.path.toLocaleLowerCase().split('/').pop() || '';
-      apiService.getSingleFaq(routename.split('-')[0]).then((res) => {
-        if (res && res.state == 0) {
-          faqsList.value = res.value.data;
-        }
-      });
-    };
-
-    const getContributors = (router: RouteLocationNormalized) => {
-      // 贡献者列表接口
-      const apiService = new ApiService();
-      let routename = router.path.toLocaleLowerCase().split('/').pop() || '';
-
-      if (window.location.href.indexOf('react') != -1) {
-        // apiService.getReactContributors(routename.split('-')[0]).then((resList) => {
-        //   const githubContributors: { [key: string]: any } = {};
-        //   resList.forEach((res) => {
-        //     if (!res.data.message && res.status == 200 && Array.isArray(res?.data)) {
-        //       res.data.forEach((i) => {
-        //         const author = i.author;
-        //         if (author && author.login) {
-        //           githubContributors[author.login] = { username: author.login, url: author.avatar_url };
-        //         }
-        //       });
-        //     }
-        //   });
-        //   contributorsData.value = Object.keys(githubContributors).map((k) => githubContributors[k]) as any;
-        // });
-      } else {
-        apiService.getContributors(routename.split('-')[0]).then((res) => {
-          if (res && res.state == 0) {
-            contributorsData.value = res.value.data;
-          }
-        });
-      }
-    };
-
     const watchDemoUrl = (router: RouteLocationNormalized) => {
       const { origin, pathname } = window.location;
       RefData.getInstance().currentRoute.value = router.name as string;
@@ -201,10 +144,8 @@ export default defineComponent({
       componentTitle();
       watchDemoUrl(route);
       data.curKey = isTaro(route) ? 'taro' : 'vue';
-      getContributors(route);
 
       document.addEventListener('scroll', scrollTitle);
-      getFaqs(route);
     });
 
     const scrollTitle = () => {
@@ -245,9 +186,7 @@ export default defineComponent({
     onBeforeRouteUpdate((to) => {
       watchDemoUrl(to);
       data.curKey = isTaro(to) ? 'taro' : 'vue';
-      getContributors(to);
       componentTitle(to);
-      getFaqs(to);
     });
 
     return {
@@ -258,7 +197,6 @@ export default defineComponent({
       isShow,
       isShowTaroDoc,
       language,
-      contributorsData,
       isZh
     };
   }

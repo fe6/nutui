@@ -38,30 +38,30 @@ export const SiteReact = {
       cName: '组件',
       path: '/zh-CN/component/button',
       pathName: '/zh-CN/component/button'
-    },
+    }
     // {
     //   name: 'example',
     //   cName: '示例',
     //   path: 'demo.html'
     // },
-    {
-      name: 'resource',
-      cName: '资源',
-      path: '/zh-CN/guide/resource',
-      pathName: '/zh-CN/guide/resource'
-    },
-    {
-      name: 'notice',
-      cName: '通知',
-      path: '/zh-CN/guide/notice',
-      pathName: '/zh-CN/guide/notice'
-    },
-    {
-      name: 'joinus',
-      cName: '加入我们',
-      path: '/zh-CN/guide/joinus',
-      pathName: '/zh-CN/guide/joinus'
-    }
+    // {
+    //   name: 'resource',
+    //   cName: '资源',
+    //   path: '/zh-CN/guide/resource',
+    //   pathName: '/zh-CN/guide/resource'
+    // },
+    // {
+    //   name: 'notice',
+    //   cName: '通知',
+    //   path: '/zh-CN/guide/notice',
+    //   pathName: '/zh-CN/guide/notice'
+    // },
+    // {
+    //   name: 'joinus',
+    //   cName: '加入我们',
+    //   path: '/zh-CN/guide/joinus',
+    //   pathName: '/zh-CN/guide/joinus'
+    // }
   ],
   homePage: {
     gitstar: 'https://ghbtns.com/github-btn.html?user=jdf2e&repo=nutui-react&type=star&count=true&size=large',
@@ -110,8 +110,7 @@ export const SiteReact = {
 // Vue 官网配置
 export const SiteVue = {
   repository: {
-    git: 'https://github.com/jdf2e/nutui',
-    gitee: 'https://gitee.com/jd-platform-opensource/nutui',
+    git: 'https://github.com/fe6/nutui',
     releases: 'https://github.com/jdf2e/nutui/releases', // git 更新日志
     issues: 'https://github.com/jdf2e/nutui/issues',
     discussions: 'https://github.com/jdf2e/nutui/discussions',
@@ -158,40 +157,40 @@ export const SiteVue = {
       eName: 'Components',
       path: '/zh-CN/component/button',
       pathName: 'zh-CN/component/button'
-    },
+    }
     // {
     //   name: 'example',
     //   cName: '示例',
     //   path: 'demo.html'
     // },
-    {
-      name: '/zh-CN/guide/case',
-      cName: '案例',
-      eName: 'Cases',
-      path: '/zh-CN/guide/case',
-      pathName: 'case'
-    },
-    {
-      name: 'resource',
-      cName: '资源',
-      eName: 'Resource',
-      path: '/zh-CN/guide/resource',
-      pathName: '/zh-CN/guide/resource'
-    },
-    {
-      name: 'notice',
-      cName: '通知',
-      eName: 'Notice',
-      path: '/zh-CN/guide/notice',
-      pathName: '/zh-CN/guide/notice'
-    },
-    {
-      name: 'joinus',
-      cName: '加入我们',
-      eName: 'Join us',
-      path: '/zh-CN/guide/joinus',
-      pathName: '/zh-CN/guide/joinus'
-    }
+    // {
+    //   name: '/zh-CN/guide/case',
+    //   cName: '案例',
+    //   eName: 'Cases',
+    //   path: '/zh-CN/guide/case',
+    //   pathName: 'case'
+    // },
+    // {
+    //   name: 'resource',
+    //   cName: '资源',
+    //   eName: 'Resource',
+    //   path: '/zh-CN/guide/resource',
+    //   pathName: '/zh-CN/guide/resource'
+    // },
+    // {
+    //   name: 'notice',
+    //   cName: '通知',
+    //   eName: 'Notice',
+    //   path: '/zh-CN/guide/notice',
+    //   pathName: '/zh-CN/guide/notice'
+    // },
+    // {
+    //   name: 'joinus',
+    //   cName: '加入我们',
+    //   eName: 'Join us',
+    //   path: '/zh-CN/guide/joinus',
+    //   pathName: '/zh-CN/guide/joinus'
+    // }
   ],
   // 官网 首页
   homePage: {

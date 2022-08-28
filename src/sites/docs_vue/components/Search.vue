@@ -57,7 +57,6 @@ export default defineComponent({
         if (sVal) {
           data.searchList = data.navList.filter((item) => {
             if (item.show === false) return false;
-            // console.log('item', item);
             if (location.href.includes('react')) {
               item._name = `/component/${item.name.toLowerCase()}`;
             } else {
@@ -66,13 +65,11 @@ export default defineComponent({
             const rx = new RegExp(sVal, 'gi');
             return rx.test(item.name + ' ' + item.cName + '' + item.desc);
           });
-          console.log('rx2', data.searchList.length, data.searchList);
         } else {
           data.searchCName = '';
           data.searchIndex = 0;
           data.searchList = [];
         }
-        // console.log(data.searchList)
       }
     );
     const onfocus = (e) => {

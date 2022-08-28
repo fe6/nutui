@@ -18,56 +18,9 @@
               {{ isZh ? item.cName : item.eName }}
             </a>
           </li>
-          <li class="nav-item">
-            <div
-              @mouseenter="onMouseHover(true)"
-              @mouseleave="onMouseHover(false)"
-              tabindex="0"
-              class="header-select-box"
-              :class="[data.isShowGuid == true ? 'select-up' : 'select-down']"
-              @click.stop="data.isShowGuid = !data.isShowGuid"
-            >
-              <div class="header-select-hd">{{ data.verson }}<i class=""></i></div>
-              <div class="guild-line"></div>
-              <transition name="fade">
-                <div class="guid-data" v-show="data.isShowGuid">
-                  <div
-                    class="info"
-                    v-for="(item, indexKey) in guide"
-                    :key="indexKey"
-                    :class="{ contentKey: indexKey === 1 }"
-                  >
-                    <div class="header">
-                      <img :src="item.icon" class="icon" />
-                      <div class="type"> {{ item.type }}</div>
-                    </div>
-                    <div
-                      class="content"
-                      v-for="(info, index) in item.data"
-                      :key="index"
-                      @click.stop="checkGuidTheme(info)"
-                      :class="{
-                        active: (info.name === 'vue 3.x' || info.name === '1.x') && item.type.toLowerCase() == language
-                      }"
-                    >
-                      <div class="version"> {{ info.name }}</div>
-                      <div class="list">
-                        <div class="lang" v-for="(lang, index) in info.language" :key="index"
-                          ><div class="name">{{ lang }}</div>
-                        </div></div
-                      >
-
-                      <div class="app"> {{ info.app }}</div>
-                    </div>
-                  </div>
-                </div>
-              </transition>
-            </div>
-          </li>
           <li v-if="language == 'vue'" class="nav-item" @click="translate">En/中</li>
           <li class="nav-item">
             <a class="user-link" target="_blank" v-if="repository.git" :href="repository.git"></a>
-            <a class="user-link gitee" target="_blank" v-if="repository.gitee" :href="repository.gitee"></a>
           </li>
         </ul>
       </div>
@@ -77,7 +30,7 @@
 <script lang="ts">
 import { defineComponent, reactive, computed, onMounted } from 'vue';
 import Search from './Search.vue';
-import { header, versions, version, nav, repository, language, guide } from '@/sites/docs_vue/config/index';
+import { header, version, nav, repository, language } from '@/sites/docs_vue/config/index';
 import { RefData } from '@/sites/docs_vue/assets/util/ref';
 import { useRouter } from 'vue-router';
 import { useLocale } from '@/sites/docs_vue/assets/util/locale';
@@ -116,10 +69,6 @@ export default defineComponent({
       }
     };
 
-    const handleFocus = () => {
-      console.log(1);
-    };
-
     const handleGuidFocusOut = () => {
       data.isShowGuid = false;
     };
@@ -137,7 +86,6 @@ export default defineComponent({
     };
 
     const toLink = (item: any) => {
-      console.log(item, 'item');
       if (item) {
         if (isEn.value) {
           item.path = item.path.replace('zh-CN', 'en-US');
@@ -181,7 +129,6 @@ export default defineComponent({
 
     return {
       header,
-      versions,
       version,
       repository,
       data,
@@ -191,10 +138,8 @@ export default defineComponent({
       isActive,
       checkGuidTheme,
       themeName,
-      handleFocus,
       handleGuidFocusOut,
       onMouseHover,
-      guide,
       toLink,
       translate,
       isZh
@@ -345,47 +290,6 @@ export default defineComponent({
     }
   }
 }
-.header-select {
-  &-box {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    outline: 0;
-  }
-  &-hd {
-    min-width: 77px;
-    height: 28px;
-    padding: 0 30px 0 15px;
-    line-height: 26px;
-    font-size: 14px;
-    color: $theme-red-word;
-    background-position: right 15px top 12px;
-    background-size: 8px 5px;
-    background-repeat: no-repeat;
-    border-radius: 14px;
-  }
-  &-bd {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    margin-left: -60px;
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  &-item {
-    width: 120px;
-    height: 28px;
-    padding: 0 12px;
-    line-height: 26px;
-    font-size: 14px;
-    border-width: 0px 1px 1px;
-    border-style: solid;
-    cursor: pointer;
-    &:first-of-type {
-      border-top-width: 1px;
-    }
-  }
-}
 // 颜色
 .doc-header {
   // 红色
@@ -461,107 +365,6 @@ export default defineComponent({
           width: 77px;
           right: 0%;
           background: transparent;
-        }
-        .guid-data {
-          position: absolute;
-          top: 40px;
-          right: 0%;
-          margin-left: -60px;
-          border-radius: 3px;
-          overflow: hidden;
-          padding-left: 29px;
-          padding-right: 29px;
-          width: 336px;
-          background: $theme-black-nav-select-bg;
-          border: 1px solid $theme-black-nav-select-border;
-          border-radius: 12px;
-          z-index: 3;
-          .info {
-            padding-top: 16px;
-            padding-bottom: 22px;
-            &:first-child {
-              border-bottom: 1px solid $theme-black-nav-select-border;
-            }
-            .header {
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-              line-height: 24px;
-              .icon {
-                width: 22px;
-                height: 19px;
-                margin-right: 9px;
-              }
-            }
-            .content {
-              padding-top: 6px;
-              padding-bottom: 6px;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              line-height: 24px;
-              margin-top: 2px;
-              margin-bottom: 2px;
-              border-radius: 4px;
-              &.active {
-                background-color: $theme-black-nav-select-active-bg;
-              }
-              &:hover {
-                background-color: $theme-black-nav-select-hover-bg;
-              }
-              .version {
-                width: 91px;
-                text-align: center;
-              }
-              .list {
-                width: 95px;
-                height: 24px;
-                align-items: center;
-                justify-content: flex-start;
-                display: flex;
-                .lang {
-                  height: 24px;
-                  background: $doc-nav-icon-bg1;
-                  border-radius: 4px;
-                  margin-right: 4px;
-                  &:nth-child(2) {
-                    background: $doc-nav-icon-bg2;
-                    .name {
-                      color: $doc-nav-icon-color2;
-                    }
-                  }
-                  .name {
-                    padding-left: 6px;
-                    padding-right: 6px;
-                    font-size: 14px;
-                    font-family: PingFangSC;
-                    font-weight: normal;
-                    color: $doc-nav-icon-color1;
-                  }
-                }
-              }
-              .app {
-                display: flex;
-                justify-content: flex-start;
-                width: 64px;
-                margin-left: 18px;
-                margin-right: 19px;
-              }
-            }
-          }
-          .contentKey {
-            @extend .info;
-            .content {
-              .list {
-                .lang {
-                  background: $doc-nav-icon-bg2;
-                  .name {
-                    color: $doc-nav-icon-color2;
-                  }
-                }
-              }
-            }
-          }
         }
       }
       &-hd {
