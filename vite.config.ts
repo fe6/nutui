@@ -9,7 +9,12 @@ import { compressText } from './src/sites/doc/components/demo-block/basedUtil';
 const resolve = path.resolve;
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/3x/',
+  // base: '/3x/',
+  define: {
+    'process.env': {
+      TARO_ENV: 'h5'
+    }
+  },
   server: {
     port: 2021,
     host: '0.0.0.0',
@@ -94,7 +99,7 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       input: {
-        // doc: resolve(__dirname, 'index.html'),
+        doc: resolve(__dirname, 'index.html'),
         mobile: resolve(__dirname, 'demo.html')
       },
       output: {
