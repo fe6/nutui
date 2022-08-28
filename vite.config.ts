@@ -32,14 +32,17 @@ export default defineConfig({
     }
   },
   resolve: {
-    alias: [{ find: '@', replacement: resolve(__dirname, './src') }]
+    alias: [
+      { find: '@', replacement: resolve(__dirname, './src') },
+      { find: '@nutui/nutui', replacement: resolve(__dirname, './src/packages/nutui.vue.ts') }
+    ]
   },
   css: {
     preprocessorOptions: {
       scss: {
         // example : additionalData: `@import "./src/design/styles/variables";`
         // dont need include file extend .scss
-        additionalData: `@import "@/packages/styles/variables.scss";@import "@/sites/assets/styles/variables.scss";`
+        additionalData: `@import "@/sites/docs_vue/assets/styles/variables.scss";@import "@/packages/styles/variables.scss";@import "@/sites/assets/styles/variables.scss";`
       }
     },
     postcss: {
@@ -99,7 +102,7 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       input: {
-        doc: resolve(__dirname, 'index.html'),
+        doc: resolve(__dirname, 'site.html'),
         mobile: resolve(__dirname, 'demo.html')
       },
       output: {
