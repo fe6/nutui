@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.2](https://github.com/fe6/nutui/compare/v0.1.1...v0.1.2)
+`2022-08-29`
+
+
+### Bug Fixes
+
+* **searchbar:** remove other code ([e697517](https://github.com/fe6/nutui/commit/e6975173a6442d815809738eb054a92da8d177d7))
+* **taro:** taro error in h5 ([b8d47c4](https://github.com/fe6/nutui/commit/b8d47c476bb3c1a5676e90955fc14181a33b974a))
+
 ### 0.1.1 (2022-08-27)
 
 
