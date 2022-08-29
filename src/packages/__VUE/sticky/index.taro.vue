@@ -128,7 +128,8 @@ export default create({
           state.fixed = offset.value > rootRect.top;
         }
       } else if (position === 'bottom') {
-        const clientHeight = Taro.getSystemInfoSync().windowHeight;
+        const clientHeight =
+          Taro.getEnv() == 'WEB' ? document.body.clientHeight : Taro.getSystemInfoSync().windowHeight;
         if (container) {
           const containerRect = await useTaroRect(container, Taro);
           const diff = clientHeight - containerRect.top - +offset.value - state.height;

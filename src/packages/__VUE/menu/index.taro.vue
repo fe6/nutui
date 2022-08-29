@@ -119,7 +119,10 @@ export default create({
               if (props.direction === 'down') {
                 offset.value = rect.bottom;
               } else {
-                offset.value = Taro.getSystemInfoSync().windowHeight - rect.top;
+                offset.value =
+                  Taro.getEnv() == 'WEB'
+                    ? document.body.clientHeight
+                    : Taro.getSystemInfoSync().windowHeight - rect.top;
               }
             })
             .exec();

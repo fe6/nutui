@@ -76,7 +76,7 @@ export default create({
         [prefixCls]: true
       };
     });
-    const domElem = Taro.getSystemInfoSync();
+    const domElem = Taro.getEnv() == 'WEB' ? { screenWidth: 0, screenHeight: 0 } : Taro.getSystemInfoSync();
     function getInfo() {
       const query = Taro.createSelectorQuery();
       query
@@ -89,8 +89,8 @@ export default create({
         .exec();
       // console.log(domElem.windowWidth);
 
-      state.screenWidth = domElem.screenWidth;
-      state.screenHeight = domElem.screenHeight;
+      state.screenWidth = Taro.getEnv() == 'WEB' ? document.body.clientHeight : domElem.screenWidth;
+      state.screenHeight = Taro.getEnv() == 'WEB' ? document.body.clientWidth : domElem.screenHeight;
     }
 
     function goLeft() {

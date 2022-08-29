@@ -34,7 +34,7 @@ export default create({
     },
     containerHeight: {
       type: [Number],
-      default: Taro.getSystemInfoSync().windowHeight || 667
+      default: (Taro.getEnv() == 'WEB' ? window.screen.height : Taro.getSystemInfoSync().windowHeight) || 667
     }
   },
   emits: ['scroll', 'scroll-bottom'],
