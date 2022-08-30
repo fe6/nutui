@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.3](https://github.com/fe6/nutui/compare/v0.1.2...v0.1.3)
+`2022-08-30`
+
+
+### Bug Fixes
+
+* **button:** update type default ([bfb8b34](https://github.com/fe6/nutui/commit/bfb8b3458d005a527d50ae3b05aaddf2c58d8811))
+
 ## [0.1.2](https://github.com/fe6/nutui/compare/v0.1.1...v0.1.2)
 `2022-08-29`
 
