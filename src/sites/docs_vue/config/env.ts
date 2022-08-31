@@ -27,7 +27,7 @@ switch ((import.meta as any).env.MODE) {
      * 线上环境 => npm run build
      */
     config.isPrd = true;
-    config.baseUrl = 'https://nutui.jd.com';
+    config.baseUrl = 'http://47.94.37.123:30201';
     break;
 }
 export default config;

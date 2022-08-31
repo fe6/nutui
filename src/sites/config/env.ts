@@ -30,8 +30,8 @@ switch (import.meta.env.MODE) {
      * 线上环境 => npm run build
      */
     config.isPrd = true;
-    config.baseUrl = 'https://nutui.jd.com';
-    config.themeUrl = 'https://nutui.jd.com/theme/source';
+    config.baseUrl = 'http://47.94.37.123:30201';
+    config.themeUrl = 'http://47.94.37.123:30201/theme/source';
     break;
 }
 export default config;
