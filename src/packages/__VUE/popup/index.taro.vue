@@ -12,7 +12,14 @@
       @click="onClickOverlay"
     />
     <Transition :name="transitionName" @after-enter="onOpened" @after-leave="onClosed">
-      <view :id="`popup-${refRandomId}`" v-show="visible" :class="classes" :style="popStyle" @click="onClick">
+      <view
+        :id="`popup-${refRandomId}`"
+        v-show="visible"
+        :class="classes"
+        :style="popStyle"
+        @click="onClick"
+        ref="popupRef"
+      >
         <view class="nutui-popup__title" v-if="showTitle">{{ title }}</view>
         <view class="nutui-popup__content-wrapper" v-show="showSlot" :style="wrapperStyle"><slot></slot></view>
         <view
@@ -117,6 +124,7 @@ export default create({
   },
   emits: ['click', 'click-close-icon', 'open', 'close', 'opend', 'closed', 'update:visible', 'click-overlay'],
   setup(props, { emit }) {
+    const popupRef = ref();
     const refRandomId = Math.random().toString(36).slice(-8);
     const state = reactive({
       zIndex: props.zIndex ? (props.zIndex as number) : _zIndex,
@@ -219,17 +227,23 @@ export default create({
       (value) => {
         if (value) {
           open();
-          setTimeout(() => {
-            const query = Taro.createSelectorQuery();
-            query
-              .select(`#popup-${refRandomId}`)
-              .boundingClientRect()
-              .exec((rec) => {
-                if (rec.length > 0 && rec[0].height > 0) {
-                  wrapperStyle.value = { height: props.showTitle ? `${rec[0].height - 64}px` : 'auto' };
-                }
-              });
-          }, Number(props.duration) + 10);
+          if (Taro.getEnv() === 'WEB') {
+            setTimeout(() => {
+              wrapperStyle.value = { height: props.showTitle ? `${popupRef.value.clientHeight - 64}px` : 'auto' };
+            }, Number(props.duration) + 10);
+          } else {
+            setTimeout(() => {
+              const query = Taro.createSelectorQuery();
+              query
+                .select(`#popup-${refRandomId}`)
+                .boundingClientRect()
+                .exec((rec) => {
+                  if (rec.length > 0 && rec[0].height > 0) {
+                    wrapperStyle.value = { height: props.showTitle ? `${rec[0].height - 64}px` : 'auto' };
+                  }
+                });
+            }, Number(props.duration) + 10);
+          }
         } else {
           close();
         }
@@ -257,7 +271,8 @@ export default create({
       onClickOverlay,
       onOpened,
       onClosed,
-      wrapperStyle
+      wrapperStyle,
+      popupRef
     };
   }
 });
