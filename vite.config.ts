@@ -20,12 +20,12 @@ export default defineConfig({
     host: '0.0.0.0',
     proxy: {
       '/devServer': {
-        target: 'https://nutui.jd.com',
+        target: 'http://47.94.37.123:30201',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/devServer/, '')
       },
       '/devTheme': {
-        target: 'https://nutui.jd.com/theme/source',
+        target: 'http://47.94.37.123:30201/theme/source',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/devTheme/, '')
       }
