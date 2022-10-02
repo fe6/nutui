@@ -7,6 +7,7 @@
       v-model="add1.values"
       v-model:address="add1.address"
       :options="theTree"
+      @change="change"
     ></nut-address>
 
     <h2>数据动态写入</h2>
@@ -28,6 +29,10 @@ const { createDemo } = createComponent('address');
 export default createDemo({
   props: {},
   setup() {
+    const change = (val: any, items: any) => {
+      // add1.status=false;
+      console.log(val, items, '改变了');
+    };
     const add1 = reactive({
       status: false,
       values: [],
@@ -69,7 +74,8 @@ export default createDemo({
       showAdd1,
       add2,
       showAdd2,
-      theTree
+      theTree,
+      change
     };
   }
 });

@@ -113,6 +113,8 @@ onMounted(() => {
 
 # API
 
+## Props
+
 | 字段 | 说明 | 类型 | 默认值
 |----- | ----- | ----- | ----- 
 | v-model:modelValue | 省市区编码 | Number[] | []
@@ -121,3 +123,9 @@ onMounted(() => {
 | closeable | 是否显示关闭按钮  | Boolean | true
 | options | 三级选择的数据      | Array        | []      
 | fieldNames | 三级选择的数据      | Object        | {key: 'code',items: 'items',label: 'name',value: 'code'}
+
+## Events
+
+| 方法 | 描述 | 返回 |
+| ----- | ----- | ----- |
+| change | 点击选择触发 | values,items |

@@ -133,6 +133,7 @@ export default create({
         }
         theNowList.value = oneItem[theFields.value.items].slice();
       }
+      emit('change', theValues.value, oneItem);
     };
 
     const tabsChange = () => {
