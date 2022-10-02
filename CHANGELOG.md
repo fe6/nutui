@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.5](https://github.com/fe6/nutui/compare/v0.1.4...v0.1.5)
+`2022-10-02`
+
+
+### Features
+
+* **address:** add change emit ([bfe9386](https://github.com/fe6/nutui/commit/bfe9386775096eb74b3a92602c751b202b11852f))
+
 ## [0.1.3](https://github.com/fe6/nutui/compare/v0.1.2...v0.1.3)
 `2022-08-30`
 
