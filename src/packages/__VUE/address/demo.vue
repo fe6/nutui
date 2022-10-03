@@ -10,12 +10,21 @@
       @change="change"
     ></nut-address>
 
-    <h2>数据动态写入</h2>
+    <h2>编辑的情况</h2>
     <nut-cell title="编辑的情况" :desc="add2.address.join(',')" is-link @click="showAdd2"></nut-cell>
     <nut-address
       v-model:visible="add2.status"
       v-model="add2.values"
       v-model:address="add2.address"
+      :options="theTree"
+    ></nut-address>
+
+    <h2>不限</h2>
+    <nut-cell title="不限" :desc="add3.address.join(',')" is-link @click="showAdd3"></nut-cell>
+    <nut-address
+      v-model:visible="add3.status"
+      v-model="add3.values"
+      v-model:address="add3.address"
       :options="theTree"
     ></nut-address>
   </div>
@@ -33,7 +42,7 @@ export default createDemo({
       // add1.status=false;
       console.log(val, items, '改变了');
     };
-    const add1 = reactive({
+    const add1 = reactive<any>({
       status: false,
       values: [],
       address: []
@@ -50,14 +59,42 @@ export default createDemo({
     const showAdd2 = () => {
       add2.status = true;
     };
+    const add3 = reactive<any>({
+      status: false,
+      values: [100000, 100000, 100000],
+      address: ['不限', '不限', '不限']
+    });
+    const showAdd3 = () => {
+      add1.status = true;
+    };
 
     const theTree = ref([]);
+    const theTree3 = ref<any>([]);
     const getTree = async () => {
       fetch('https://api.dev.mosh.cn/public/region/tree')
         .then((response) => response.json())
         .then((body) => {
           if (body.code === 10000) {
             theTree.value = body.data;
+            theTree3.value = [
+              {
+                code: 100000,
+                name: '不限',
+                items: [
+                  {
+                    code: 100000,
+                    name: '不限',
+                    items: [
+                      {
+                        code: 100000,
+                        name: '不限',
+                        items: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ].concat(body.data);
           }
         });
     };
@@ -75,6 +112,9 @@ export default createDemo({
       add2,
       showAdd2,
       theTree,
+      add3,
+      showAdd3,
+      theTree3,
       change
     };
   }

@@ -865,34 +865,34 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@tarojs/api@3.5.3":
-  version "3.5.3"
-  resolved "https://registry.npmmirror.com/@tarojs/api/-/api-3.5.3.tgz#ab39087c292826a65bac4b5aa5313e5726f5333d"
-  integrity sha512-c0wUxpKo+rhMyZTNcy9R0RP6/TZEnQPuTVldaoPP0ZXARGByv7fqxKuHfYlLnJs2kuCTvVcQ73OmUKg0YXzscw==
+"@tarojs/api@3.5.6":
+  version "3.5.6"
+  resolved "https://registry.yarnpkg.com/@tarojs/api/-/api-3.5.6.tgz#9dac5c4ce47899bec7414524b849ee1c210ccf73"
+  integrity sha512-xqurkDz4/Cy8yaeUEEquogo9UogjhCjZWJmdE6Gx/CCooHLiuifyDZ2R2RaM6plQAJzue/MiTA5c6caBmZHCmQ==
   dependencies:
     "@babel/runtime" "^7.14.5"
-    "@tarojs/runtime" "3.5.3"
+    "@tarojs/runtime" "3.5.6"
 
-"@tarojs/runtime@3.5.3":
-  version "3.5.3"
-  resolved "https://registry.npmmirror.com/@tarojs/runtime/-/runtime-3.5.3.tgz#923a1208d7e35c75cea64ba92fc4ad8044a7cbbf"
-  integrity sha512-kbGNSnKsgEiLiYh54ZQVEweaC6D39St6vYam9dLS1AgimsoToxKggQwJEWtV+BGwDd2zhSLrCenOuyjtIofJHw==
+"@tarojs/runtime@3.5.6":
+  version "3.5.6"
+  resolved "https://registry.yarnpkg.com/@tarojs/runtime/-/runtime-3.5.6.tgz#dc8de7703525cc7cdd271e558a6591546daf6738"
+  integrity sha512-Ll+dI9WzLsX1BsqN6TD9qJE1LjPjNdmKMYyAemxWNIpDWTPJf18nuSm1gd7nk9XTxtTpbgkyd7JzAddnan7Z/A==
   dependencies:
-    "@tarojs/shared" "3.5.3"
+    "@tarojs/shared" "3.5.6"
     lodash-es "4.17.21"
 
-"@tarojs/shared@3.5.3":
-  version "3.5.3"
-  resolved "https://registry.npmmirror.com/@tarojs/shared/-/shared-3.5.3.tgz#fda1eae237495007ede06dc025ff5c4679f31b69"
-  integrity sha512-gASldzLtDrXpGD4gFmBr6TyaCmQJohFTNx0k32/emXAjPbA40Rek4FLC8RMr3AJrScwKVO69xC3qoYDJBrN68g==
+"@tarojs/shared@3.5.6":
+  version "3.5.6"
+  resolved "https://registry.yarnpkg.com/@tarojs/shared/-/shared-3.5.6.tgz#19b61872fcae5062fd2ad3ee80e9304b766f867d"
+  integrity sha512-KA34ZwJzWsAdaQ6C/c7PBUG1CIkJ1PpqcniO7DuGeirgYF5YVTntAGR2LOATmZfVN/VdRCSW7ld9P2c6img36Q==
 
-"@tarojs/taro@^3.4.0":
-  version "3.5.3"
-  resolved "https://registry.npmmirror.com/@tarojs/taro/-/taro-3.5.3.tgz#29dda7dcfe31635c4c77c236add64c7c2e69ac09"
-  integrity sha512-ZNxu1b9lN/DkmPp5YHDRkX0Q5WKbpjwaljznQ5N1zTBEANPYv6L/Kpvt5jo7IuZQBeOvCF7eqoWmJEzLpIXojg==
+"@tarojs/taro@^3.5.6":
+  version "3.5.6"
+  resolved "https://registry.yarnpkg.com/@tarojs/taro/-/taro-3.5.6.tgz#a3427585436d28aaf7648d2f4a4639345a2e78ed"
+  integrity sha512-dq2RH2EaROjMXafgxIMRTycll289QhtzWeu8WZQiXwL3Ven5vRV7OKCVxiJjb/vdBQ8jsXQcBT4Hg9ZfNOUsYA==
   dependencies:
-    "@tarojs/api" "3.5.3"
-    "@tarojs/runtime" "3.5.3"
+    "@tarojs/api" "3.5.6"
+    "@tarojs/runtime" "3.5.6"
 
 "@tootallnate/once@1":
   version "1.1.2"
