@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.6](https://github.com/fe6/nutui/compare/v0.1.5...v0.1.6)
+`2022-10-15`
+
+
+### Bug Fixes
+
+* **taro:** version 356 ([c6c4fbb](https://github.com/fe6/nutui/commit/c6c4fbba2239cbf0973a846443c270c46f89cd9f))
+
 ## [0.1.5](https://github.com/fe6/nutui/compare/v0.1.4...v0.1.5)
 `2022-10-02`
 
