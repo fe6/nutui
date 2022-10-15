@@ -7,7 +7,7 @@
 
 ## 组件库
 
-- `yarn build`
+- `yarn build:taro:vue`
 - `yarn release`
 - `git push --follow-tags origin next && npm publish`
 

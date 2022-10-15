@@ -88,10 +88,6 @@ export const popupProps = {
     type: Boolean,
     default: true
   },
-  teleport: {
-    type: [String, Element],
-    default: 'body'
-  },
   overlay: {
     type: Boolean,
     default: true
