@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://github.com/fe6/nutui/compare/v0.1.11...v0.1.12) (2022-10-15)
+
+
+### Bug Fixes
+
+* **weapp:** popup body error ([10aca21](https://github.com/fe6/nutui/commit/10aca215d57c6a9bdd5c9361df96a291ee10e97e))
+
 ### [0.1.11](https://github.com/fe6/nutui/compare/v0.1.10...v0.1.11) (2022-10-15)
 
 ### [0.1.10](https://github.com/fe6/nutui/compare/v0.1.9...v0.1.10) (2022-10-15)
