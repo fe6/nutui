@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.8](https://github.com/fe6/nutui/compare/v0.1.7...v0.1.8)
+`2022-10-15`
+
+
+### Bug Fixes
+
+* **build:** h5 error ([598993b](https://github.com/fe6/nutui/commit/598993b2f174bfbf8c7dbd691ab951e62fcbf497))
+
 ## [0.1.7](https://github.com/fe6/nutui/compare/v0.1.6...v0.1.7)
 `2022-10-15`
 
