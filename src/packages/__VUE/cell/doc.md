@@ -245,7 +245,7 @@ app.use(Cell).use(CellGroup).use(Icon);
 |-------------------------|------------------------------------------------------------------------------------------------|------------------|------------------|
 | title                   | 标题名称                                                                                       | String           | -                |
 | sub-title               | 左侧副标题                                                                                     | String           | -                |
-| descTextWidth`v0.2.0`                    | 右侧宽度                                                                                       | String           | 39%                |
+| descTextWidth`v0.1.17`                    | 右侧宽度                                                                                       | String           | 39%                |
 | desc                    | 右侧描述                                                                                       | String\|Slot           | -                |
 | desc-text-align         | 右侧描述文本对齐方式 [text-align](https://www.w3school.com.cn/cssref/pr_text_text-align.asp)   | String           | right            |
 | is-link                 | 是否展示右侧箭头并开启点击反馈                                                                 | Boolean          | false            |
