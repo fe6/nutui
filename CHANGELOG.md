@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/fe6/nutui/compare/v0.1.13...v0.1.14) (2022-10-17)
+
+
+### Features
+
+* **cell:** add desc slot ([984fcdf](https://github.com/fe6/nutui/commit/984fcdf50410e7602c1c43a2f54890ee216cd4a1))
+
 ### [0.1.13](https://github.com/fe6/nutui/compare/v0.1.12...v0.1.13) (2022-10-17)
 
 
