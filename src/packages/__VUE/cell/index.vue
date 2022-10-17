@@ -22,7 +22,9 @@ export default create({
     card: { type: Boolean, default: false },
     center: { type: Boolean, default: false },
     border: { type: Boolean, default: true },
-    ellipsis: { type: Boolean, default: true }
+    ellipsis: { type: Boolean, default: true },
+    alignItems: { type: String, default: 'start' },
+    descTextWidth: { type: String, default: '39%' }
   },
   emits: ['click'],
   setup(props, { emit }) {

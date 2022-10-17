@@ -20,6 +20,19 @@ app.use(Cell).use(CellGroup).use(Icon);
 
 ```html
 <template>
+  <nut-cell :title="translate('title')" desc-text-align="left" descTextWidth="78%">
+      <template #desc>
+        <div style="color:red">{{translate('desc')}}</div>
+      </template>
+    </nut-cell>
+    <nut-cell :title="translate('title')" alignItems="center" desc-text-align="left" descTextWidth="63%">
+      <template #desc>
+        <div style="color:red">{{translate('desc')}}</div>
+      </template>
+      <template v-slot:link>
+        <nut-switch v-model="switchChecked" />
+      </template>
+    </nut-cell>
   <nut-cell title="我是标题" desc="描述文字"></nut-cell>
   <nut-cell title="我是标题" sub-title="副标题描述" desc="描述文字"></nut-cell>
   <nut-cell title="点击测试" @click="testClick"></nut-cell>
@@ -69,6 +82,31 @@ app.use(Cell).use(CellGroup).use(Icon);
 
 :::
 
+
+:::demo
+
+```html
+<template>
+  <nut-cell title="我是标题">
+    <template #desc>
+      <div style="color:red">描述文字</div>
+    </template>
+  </nut-cell>
+</template>
+<script>
+  import { ref } from 'vue';
+  import { Toast } from '@nutui/nutui';
+  export default {
+    setup() {
+      const switchChecked = ref(true);
+      const testClick = (event) => {
+        Toast.text('点击事件');
+      };
+      return { testClick, switchChecked };
+    }
+  };
+</script>
+```
 
 
 ### 直接使用插槽(slot title)
@@ -199,6 +237,7 @@ app.use(Cell).use(CellGroup).use(Icon);
 |-------|----------|--------|--------|
 | title | 分组标题 | String | -      |
 | desc  | 分组描述 | String | -      |
+| alignItems  | 水平对齐方式 | String | -      |
 
 ### Cell Prop
 
@@ -206,18 +245,19 @@ app.use(Cell).use(CellGroup).use(Icon);
 |-------------------------|------------------------------------------------------------------------------------------------|------------------|------------------|
 | title                   | 标题名称                                                                                       | String           | -                |
 | sub-title               | 左侧副标题                                                                                     | String           | -                |
-| desc                    | 右侧描述                                                                                       | String           | -                |
+| descTextWidth`v0.2.0`                    | 右侧宽度                                                                                       | String           | 39%                |
+| desc                    | 右侧描述                                                                                       | String\|Slot           | -                |
 | desc-text-align         | 右侧描述文本对齐方式 [text-align](https://www.w3school.com.cn/cssref/pr_text_text-align.asp)   | String           | right            |
 | is-link                 | 是否展示右侧箭头并开启点击反馈                                                                 | Boolean          | false            |
 | icon                    | 左侧 [图标名称](#/icon) 或图片链接                                                             | String           | -                |
-| right-icon`v3.2.1`      | 右侧箭头 [图标名称](#/icon) 或图片链接                                                         | String           | right            |
+| right-icon`v0.1.0`      | 右侧箭头 [图标名称](#/icon) 或图片链接                                                         | String           | right            |
 | round-radius            | 圆角半径                                                                                       | Number           | 6px              |
 | url `小程序不支持`      | 点击后跳转的链接地址                                                                           | String           | -                |
 | to `小程序不支持`       | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) 属性 | String ｜ Object | -                |
 | replace `小程序不支持`  | 是否在跳转时替换当前页面历史                                                                   | Boolean          | false            |
-| center`v3.1.21`         | 是否使内容垂直居中                                                                             | Boolean          | false            |
-| font-class-name`v3.2.1` | 自定义icon 字体基础类名                                                                        | string           | `nutui-iconfont` |
-| class-prefix`v3.2.1`    | 自定义icon 类名前缀，用于使用自定义图标                                                        | string           | `nut-icon`       |
+| center`v0.1.0`         | 是否使内容垂直居中                                                                             | Boolean          | false            |
+| font-class-name`v0.1.0` | 自定义icon 字体基础类名                                                                        | string           | `nutui-iconfont` |
+| class-prefix`v0.1.0`    | 自定义icon 类名前缀，用于使用自定义图标                                                        | string           | `nut-icon`       |
 | border    | 是否有边框 | boolean           | true      |
 
 
@@ -231,14 +271,14 @@ app.use(Cell).use(CellGroup).use(Icon);
 
 | 名称            | 说明                  |
 |-----------------|-----------------------|
-| icon `v3.1.4`   | 自定义左侧`icon`区域  |
+| icon `v0.1.0`   | 自定义左侧`icon`区域  |
 | default         | 自定义内容            |
 | link            | 自定义右侧`link`区域  |
-| title `v3.1.22` | 自定义`title`标题区域 |
+| title `v0.1.0` | 自定义`title`标题区域 |
 
 ## CellGroup Slots
 
 | 名称            | 说明                  |
 |-----------------|-----------------------|
-| title `v3.1.10` | 自定义`title`标题区域 |
-| desc `v3.1.12`  | 自定义`desc`描述区域  |
+| title `v0.1.0` | 自定义`title`标题区域 |
+| desc `v0.1.0`  | 自定义`desc`描述区域  |

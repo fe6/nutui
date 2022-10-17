@@ -213,7 +213,7 @@ app.use(Popup).use(OverLay)
 | destroy-on-close       | Will the contents of `slot` be cleared after the bullet layer is closed   | Boolean        | `true`        |
 | round                  | Show fillet                                                | Boolean        | `false`       |
 | teleport               | Specify the mount node (`not supported by miniProgram')   | String         | `"body"`      |
-| safe-area-inset-bottom `v3.1.19`	| Whether to enable iPhone series full screen bottom safety zone adaptation, which is only valid when `position` is  `bottom` |	Boolean	|`false`     |
+| safe-area-inset-bottom `v0.1.0`	| Whether to enable iPhone series full screen bottom safety zone adaptation, which is only valid when `position` is  `bottom` |	Boolean	|`false`     |
 
 ### Events
 

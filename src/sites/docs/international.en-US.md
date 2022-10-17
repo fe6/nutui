@@ -21,11 +21,11 @@ Locale.use('en-US', enUS);
 
 | Language         | Filename | Version      |
 |--------------|--------|-----------|
-| English         | en-US  | `v3.1.19` |
-| Indonesian | id-ID  | `v3.1.21` |
+| English         | en-US  | `v0.1.0` |
+| Indonesian | id-ID  | `v0.1.0` |
 | Thai         | th-TH  | Need PR   |
-| Chinese     | zh-CN  | `v3.1.19` |
-| Traditional Chinese     | zh-TW  | `v3.1.19` |
+| Chinese     | zh-CN  | `v0.1.0` |
+| Traditional Chinese     | zh-TW  | `v0.1.0` |
 
 > View all language configs [Here](https://github.com/jdf2e/nutui/tree/next/src/packages/locale/lang).
 

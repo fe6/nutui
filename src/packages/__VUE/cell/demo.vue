@@ -1,6 +1,19 @@
 <template>
   <div class="demo" style="padding: 57px 0 15px">
     <h2>{{ translate('basic') }}</h2>
+    <nut-cell :title="translate('title')" desc-text-align="left" descTextWidth="78%">
+      <template #desc>
+        <div style="color: red">{{ translate('desc') }}</div>
+      </template>
+    </nut-cell>
+    <nut-cell :title="translate('title')" alignItems="center" desc-text-align="left" descTextWidth="63%">
+      <template #desc>
+        <div style="color: red">{{ translate('desc') }}</div>
+      </template>
+      <template v-slot:link>
+        <nut-switch v-model="switchChecked" />
+      </template>
+    </nut-cell>
     <nut-cell :title="translate('title')" :desc="translate('desc')"></nut-cell>
     <nut-cell :title="translate('title')" :sub-title="translate('title1')" :desc="translate('desc')"></nut-cell>
     <nut-cell :title="translate('title3')" @click="testClick"></nut-cell>

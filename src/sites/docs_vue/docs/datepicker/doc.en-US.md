@@ -372,12 +372,12 @@ app.use(OverLay);
 | is-show-chinese | Show Chinese                                  | Boolean | `false`  |
 | min-date        | Start date                                         | Date    | `Ten years ago on January 1` |
 | max-date        | End date                                          | Date    | `Ten years later on December 31` |
-| formatter `v3.1.18`  | Option text formatter                                          | (type: string, option: PickerOption) => PickerOption    |  |
-| filter  `v3.1.18`  | Option filter                                         | (type: string, option: PickerOption) => PickerOption[]    |  |
+| formatter `v0.1.0`  | Option text formatter                                          | (type: string, option: PickerOption) => PickerOption    |  |
+| filter  `v0.1.0`  | Option filter                                         | (type: string, option: PickerOption) => PickerOption[]    |  |
 | title           | Title                                          | String  | `null`   |
 | ok-text           | Text of confirm button                                      | String  | confirm   |
 | cancel-text           | Text of cancel button                                          | String  | cancel   |
-| three-dimensional  `v3.1.23`          | Turn on 3D effects               | Boolean  | true   |
+| three-dimensional  `v0.1.0`          | Turn on 3D effects               | Boolean  | true   |
 
 ### Events
 

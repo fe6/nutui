@@ -119,12 +119,12 @@ export default {
 | text-align             | 文字对齐方向，可选值同css的text-align                         | String                   | "center"   |
 | close-on-popstate      | 是否在页面回退时自动关闭                                      | Boolean                  | false      |
 | lock-scroll            | 背景是否锁定                                                  | Boolean                  | false      |
-| overlay-class`v3.1.22` | 自定义遮罩类名                                                | String                   | -          |
-| overlay-style`v3.1.22` | 自定义遮罩样式                                                | CSSProperties            | -          |
-| pop-class  `v3.1.22`   | 自定义popup弹框类名                                           | String                   | -          |
-| pop-style  `v3.1.22`   | 自定义popup弹框样式                                           | CSSProperties            | -          |
-| custom-class`v3.1.22`  | 自定义class                                                   | String                   | -          |
-| before-close`v3.1.22`  | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 `Promise` | Function(action: string) | -          |
+| overlay-class`v0.1.0` | 自定义遮罩类名                                                | String                   | -          |
+| overlay-style`v0.1.0` | 自定义遮罩样式                                                | CSSProperties            | -          |
+| pop-class  `v0.1.0`   | 自定义popup弹框类名                                           | String                   | -          |
+| pop-style  `v0.1.0`   | 自定义popup弹框样式                                           | CSSProperties            | -          |
+| custom-class`v0.1.0`  | 自定义class                                                   | String                   | -          |
+| before-close`v0.1.0`  | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 `Promise` | Function(action: string) | -          |
 
 
 ## Events

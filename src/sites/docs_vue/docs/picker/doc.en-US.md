@@ -427,8 +427,8 @@ Slots are arranged at the bottom and top respectively for custom Settings
 | title                  | Toolbar title                   | String  | -      |
 | cancel-text            | Text of cancel button               | String  | cancel   |
 | ok-text                | Text of confirm button               | String  | confirm   |
-| three-dimensional `v3.1.23`          | Turn on 3D effects      | Boolean  | true   |
-| swipe-duration`v3.2.2`          | Duration of the momentum animation        | Number、String  | 1000   |
+| three-dimensional `v0.1.0`          | Turn on 3D effects      | Boolean  | true   |
+| swipe-duration`v0.1.0`          | Duration of the momentum animation        | Number、String  | 1000   |
 
 ### Data Structure of Columns
 

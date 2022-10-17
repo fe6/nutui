@@ -126,7 +126,7 @@ export default {
 | class-name | 自定义类名                                            | String/Number | 1        |
 | position | 自定义位置                                           | String | 'top'        |
 
-> 组件式调用在 `v3.1.20` 版本后支持。
+> 组件式调用在 `v0.1.0` 版本后支持。
 ### Events
 
 | 事件名 | 说明         | 回调参数 |

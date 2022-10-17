@@ -233,7 +233,7 @@ left          # 左侧中间位置
 right         # 右侧中间位置
 bottom        # 底部中间位置
 ```
-自 `v3.1.21` 起新增
+自 `v0.1.0` 起新增
 ```
 top-start     # 顶部左侧位置
 top-end       # 顶部右侧位置 
@@ -291,9 +291,9 @@ export default {
 | visible      | 是否展示气泡弹出层                 | boolean  | false     |
 | theme          | 主题风格，可选值为 dark            | string   | `light`   |
 | location       | 弹出位置  | string   | `bottom`  |
-| offset `v3.1.21`       | 出现位置的偏移量  | [number, number]   | [0, 12]  |
-| show-arrow `v3.1.21`       | 是否显示小箭头  | boolean  | true  |
-| custom-class `v3.1.21`       | 自定义 class 值  | string  | ''  |
+| offset `v0.1.0`       | 出现位置的偏移量  | [number, number]   | [0, 12]  |
+| show-arrow `v0.1.0`       | 是否显示小箭头  | boolean  | true  |
+| custom-class `v0.1.0`       | 自定义 class 值  | string  | ''  |
 
 ### List 数据结构  
 
@@ -304,7 +304,7 @@ List 属性是一个由对象构成的数组，数组中的每个对象配置一
 | name           | 选项文字               | string   | -      |
 | icon           | nut-icon 图标名称      | string   | -      |
 | disabled       | 是否为禁用状态          | boolean  | false  | 
-| className `v3.1.21`      | 为对应选项添加额外的类名          | string/Array/object  | -  | 
+| className `v0.1.0`      | 为对应选项添加额外的类名          | string/Array/object  | -  | 
 
 
 ### Slots

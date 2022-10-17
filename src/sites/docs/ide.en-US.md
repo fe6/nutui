@@ -32,7 +32,7 @@ In order to provide developers a better development experience, NutUI provides c
 
 Install `vetur` plugin, you can preview component `props` introduction, instead of go to official website.
 
-> Attention: be sure to install `vetur` plugin and `NutUI` version must be `v3.1.19` or above.
+> Attention: be sure to install `vetur` plugin and `NutUI` version must be `v0.1.0` or above.
 
 <img width="80%" src="https://img14.360buyimg.com/imagetools/jfs/t1/118540/18/21049/172147/6268fc36E2c78bca3/e0d5731a5a425c71.png" />
 <br />

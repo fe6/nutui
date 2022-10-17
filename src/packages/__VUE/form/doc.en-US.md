@@ -374,7 +374,7 @@ Use the `rules` attribute of FormItem to define verification rules. The optional
 | Name            | Description         |
 |-----------------|---------------------|
 | default         | Default slot        |
-| label `v3.1.22` | Custom `label` slot |
+| label `v0.1.0` | Custom `label` slot |
 
 
 ``` html
@@ -392,4 +392,4 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html#template-refs) t
 |-------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------|--------------|
 | submit            | Method of submitting form for verification                                                                        | -                           | Promise      |
 | reset             | Clear verification results                                                                                        | -                           | -            |
-| validate`v3.1.13` | Active trigger verification is used to trigger when the user customizes the scene, such as blur and change events | Same as FormItem prop value | -            |
+| validate`v0.1.0` | Active trigger verification is used to trigger when the user customizes the scene, such as blur and change events | Same as FormItem prop value | -            |

@@ -233,7 +233,7 @@ left          # Left middle
 right         # Right middle 
 bottom        # Bottom middle 
 ```
-New since `v3.1.21`
+New since `v0.1.0`
 ```
 top-start     # Top left
 top-end       # Top right 
@@ -291,9 +291,9 @@ export default {
 | visible      | whether to show                 | boolean  | false     |
 | theme          | Theme style, can be set to `dark` `light`          | string   | `light`   |
 | location       | pop-up location  | string   | `bottom`  |
-| offset `v3.1.21`       | the offset of the occurrence position  | [number, number]   | [0, 12]  |
-| show-arrow `v3.1.21`       | whether to show small arrows  | boolean  | true  |
-| custom-class `v3.1.21`       | custom class   | string  | ''  |
+| offset `v0.1.0`       | the offset of the occurrence position  | [number, number]   | [0, 12]  |
+| show-arrow `v0.1.0`       | whether to show small arrows  | boolean  | true  |
+| custom-class `v0.1.0`       | custom class   | string  | ''  |
 
 ### List data structure  
 
@@ -304,7 +304,7 @@ The List property is an array of objects, each object in the array is configured
 | name           | option text               | string   | -      |
 | icon           | `nut-icon` name      | string   | -      |
 | disabled       | whether to disable          | boolean  | false  | 
-| className `v3.1.21`      | Add extra class names for corresponding options          | string/Array/object  | -  | 
+| className `v0.1.0`      | Add extra class names for corresponding options          | string/Array/object  | -  | 
 
 
 ### Slots

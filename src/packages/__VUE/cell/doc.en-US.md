@@ -207,14 +207,14 @@ You can center the left and right contents of the cell vertically through the 'c
 | desc-text-align         | Right description text alignment [text-align](https://www.w3school.com.cn/cssref/pr_text_text-align.asp) | String           | right            |
 | is-link                 | Whether to show the right arrow and turn on click feedback                                               | Boolean          | false            |
 | icon                    | Left [icon name](#/icon) or image url                                                                    | String           | -                |
-| right-icon`v3.2.1`      | Right [icon name](#/icon) or image url                                                                   | String           | right            |
+| right-icon`v0.1.0`      | Right [icon name](#/icon) or image url                                                                   | String           | right            |
 | round-radius            | Corner radius                                                                                            | Number           | 6px              |
 | url                     | Link URL                                                                                                 | String           | -                |
 | to                      | Target route of the link, same as to of vue-router                                                       | String ｜ Object | -                |
 | replace                 | If true, the navigation will not leave a history record                                                  | Boolean          | false            |
-| center`v3.1.21`         | Whether to center content vertically                                                                     | Boolean          | false            |
-| font-class-name`v3.2.1` | Custom icon font base class name                                                                         | String           | `nutui-iconfont` |
-| class-prefix`v3.2.1`    | Custom icon class name prefix for using custom icons                                                     | String           | `nut-icon`       |
+| center`v0.1.0`         | Whether to center content vertically                                                                     | Boolean          | false            |
+| font-class-name`v0.1.0` | Custom icon font base class name                                                                         | String           | `nutui-iconfont` |
+| class-prefix`v0.1.0`    | Custom icon class name prefix for using custom icons                                                     | String           | `nut-icon`       |
 | border    | has border | boolean           | true      |
 
 ### Cell Event
@@ -227,14 +227,14 @@ You can center the left and right contents of the cell vertically through the 'c
 
 | Name            | Description        |
 |-----------------|--------------------|
-| icon `v3.1.4`   | Custom Left `icon` |
+| icon `v0.1.0`   | Custom Left `icon` |
 | default         | Default slot       |
 | link            | Custom Right`link` |
-| title `v3.1.22` | Custom`title`slot  |
+| title `v0.1.0` | Custom`title`slot  |
 
 ## CellGroup Slots
 
 | Name            | Description       |
 |-----------------|-------------------|
-| title `v3.1.10` | Custom`title`slot |
-| desc `v3.1.12`  | Custom`desc`slot  |
+| title `v0.1.0` | Custom`title`slot |
+| desc `v0.1.0`  | Custom`desc`slot  |

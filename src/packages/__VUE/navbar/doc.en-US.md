@@ -191,15 +191,15 @@ export default {
 |  Attribute          | Description                                   | Type    | Default |
 |---------------------|-----------------------------------------------|---------|---------|
 | title               | Title                                         | String  | -       |
-| left-text `v3.1.21` | Left Text                                     | String  | -       |
+| left-text `v0.1.0` | Left Text                                     | String  | -       |
 | desc                | Desc                                          | String  | -       |
 | left-show           | Whether to show the left arrow                | Boolean | false   |
 | tit-icon            | Insert icon in title                          | String  | -       | 
-| border `v3.1.21`    | Whether to show bottom border                     | Boolean  | false  |
+| border `v0.1.0`    | Whether to show bottom border                     | Boolean  | false  |
 | fixed               | Is it pinned to the top                       | Boolean | false    |
-| placeholder `v3.1.21` | Whether to generate a placeholder element when fixed   | Boolean  | false   |
+| placeholder `v0.1.0` | Whether to generate a placeholder element when fixed   | Boolean  | false   |
 | safe-area-inset-top | Whether to enable top safety zone adaptation  | Boolean | false    |
-| z-index `v3.1.21` | Z-index                                            | Number ｜ String  | -       |
+| z-index `v0.1.0` | Z-index                                            | Number ｜ String  | -       |
 
 ### Events
 | Event           | Description              | Arguments    |

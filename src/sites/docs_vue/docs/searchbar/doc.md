@@ -189,7 +189,7 @@ app.use(SearchBar).use(Icon);
 | 参数         | 说明                             | 类型   | 默认值           |
 |--------------|----------------------------------|--------|------------------|
 | v-model	         | 当前输入的值   | Number / String | ''      |
-| label `v3.1.21`| 搜索框左侧文本 | String | '' |
+| label `v0.1.0`| 搜索框左侧文本 | String | '' |
 | shape | 搜索框形状，可选值为 round | String | square |
 | max-length         | 最大输入长度   | [Number,String] | '9999'      |
 | input-type    | 输入框类型   | String | 'text'      |
@@ -199,10 +199,10 @@ app.use(SearchBar).use(Icon);
 | input-background   | 输入框内部背景 | String |   '#f7f7f7'   |
 | confirm-type   | 键盘右下角按钮的文字（`仅支持小程序`），仅在`type='text'`时生效,可选值 `send`：发送、`search`：搜索、`next`：下一个、`go`：前往、`done`：完成 | String |   `done`   |
 | input-background   | 输入框内部背景 | String |   '#f7f7f7'   |
-| autofocus `v3.1.21` | 是否自动聚焦 | boolean | false |
-| disabled `v3.1.21` | 是否禁用输入框 | boolean | false |
-| readonly `v3.1.21`| 输入框只读 | boolean | false |
-| input-align `v3.1.21`| 对齐方式，可选`center` `right` | string | `left` |
+| autofocus `v0.1.0` | 是否自动聚焦 | boolean | false |
+| disabled `v0.1.0` | 是否禁用输入框 | boolean | false |
+| readonly `v0.1.0`| 输入框只读 | boolean | false |
+| input-align `v0.1.0`| 对齐方式，可选`center` `right` | string | `left` |
 
 
 
@@ -215,9 +215,9 @@ app.use(SearchBar).use(Icon);
 | blur  | 失焦时触发 | val, event |
 | clear  | 点击清空时触发 | val |
 | search  | 按下 ENTER 键时触发 | val, event |
-| click-input `v3.1.21`|	点击输入区域时触发	 |	event |
-| click-left-icon `v3.1.21`|	点击左侧图标时触发 |	val, event |
-| click-right-icon `v3.1.21`|	点击右侧图标时触发 |	val, event |
+| click-input `v0.1.0`|	点击输入区域时触发	 |	event |
+| click-left-icon `v0.1.0`|	点击左侧图标时触发 |	val, event |
+| click-right-icon `v0.1.0`|	点击右侧图标时触发 |	val, event |
 
 ## Slots
 

@@ -98,7 +98,7 @@ body {
 |--------------|----------------------------------|--------|------------------|
 | height         | The height of the list item               | Number | `50`                |
 | list-data         | List data               | any[] | `[]`                |
-| container-height `v3.1.19`        | Container height              | Number | `Visual area height`                |
+| container-height `v0.1.0`        | Container height              | Number | `Visual area height`                |
 
 ### Slot
 
@@ -112,4 +112,4 @@ body {
 | Event | Description           | Arguments     |
 |--------|----------------|--------------|
 | scroll(Will be abandoned), `scroll-bottom` replaced  | Triggered when scrolling to the bottom | - |
-| scroll-bottom `v3.1.21`   | Triggered when scrolling to the bottom | - |
+| scroll-bottom `v0.1.0`   | Triggered when scrolling to the bottom | - |
