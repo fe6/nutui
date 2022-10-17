@@ -20,6 +20,29 @@ app.use(Cell).use(CellGroup).use(Icon);
 
 ```html
 <template>
+  <nut-cell title="我是标题" desc-text-align="left" descTextWidth="72%" is-link>
+    <template #desc>
+      <div style="color: red">描述文字</div>
+    </template>
+  </nut-cell>
+  <nut-cell title="我是标题" desc-text-align="left" descTextWidth="72%" is-link>
+    <template #desc>
+      <div>描述文字</div>
+    </template>
+  </nut-cell>
+<nut-cell title="我是标题" desc-text-align="left" descTextWidth="78%">
+    <template #desc>
+      <div style="color:red">描述文字</div>
+    </template>
+  </nut-cell>
+  <nut-cell title="我是标题" alignItems="center" desc-text-align="left" descTextWidth="63%">
+    <template #desc>
+      <div style="color:red">描述文字</div>
+    </template>
+    <template v-slot:link>
+      <nut-switch v-model="switchChecked" />
+    </template>
+  </nut-cell>
   <nut-cell title="我是标题" desc="描述文字"></nut-cell>
   <nut-cell title="我是标题" sub-title="副标题描述" desc="描述文字"></nut-cell>
   <nut-cell title="点击测试" @click="testClick"></nut-cell>
