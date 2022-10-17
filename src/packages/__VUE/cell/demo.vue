@@ -1,6 +1,16 @@
 <template>
   <div class="demo" style="padding: 57px 0 15px">
     <h2>{{ translate('basic') }}</h2>
+    <nut-cell :title="translate('title')" desc-text-align="left" descTextWidth="72%" is-link>
+      <template #desc>
+        <div style="color: red">{{ translate('desc') }}</div>
+      </template>
+    </nut-cell>
+    <nut-cell :title="translate('title')" desc-text-align="left" descTextWidth="72%" is-link>
+      <template #desc>
+        <div>{{ translate('desc') }}</div>
+      </template>
+    </nut-cell>
     <nut-cell :title="translate('title')" desc-text-align="left" descTextWidth="78%">
       <template #desc>
         <div style="color: red">{{ translate('desc') }}</div>
