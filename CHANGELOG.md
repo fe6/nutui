@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.13](https://github.com/fe6/nutui/compare/v0.1.12...v0.1.13) (2022-10-17)
+
+
+### Bug Fixes
+
+* **picker:** prop error ([7b47933](https://github.com/fe6/nutui/commit/7b47933c0ff86925128bca38efc94f1bf1887684))
+
 ### [0.1.12](https://github.com/fe6/nutui/compare/v0.1.11...v0.1.12) (2022-10-15)
 
 
