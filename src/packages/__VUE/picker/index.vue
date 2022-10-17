@@ -3,7 +3,6 @@
     <nut-popup
       position="bottom"
       v-model:visible="show"
-      :teleport="teleport"
       :lock-scroll="lockScroll"
       :close-on-click-overlay="closeOnClickOverlay"
       @close="close"

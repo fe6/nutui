@@ -3,7 +3,6 @@
     <nut-popup
       position="bottom"
       v-model:visible="show"
-      :teleport="teleport"
       :lock-scroll="lockScroll"
       :close-on-click-overlay="closeOnClickOverlay"
       @close="close"
@@ -223,7 +222,6 @@ export default create({
     };
 
     onMounted(() => {
-      console.log('更新');
       if (props.visible) state.show = props.visible;
     });
 
