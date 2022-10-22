@@ -37,6 +37,7 @@ import { useTaroRect } from '@/packages/utils/useTaroRect';
 import { useTouch } from '@/packages/utils/useTouch';
 const { create } = createComponent('picker-column');
 import Taro from '@tarojs/taro';
+import { hasOwn } from '@vue/shared';
 
 export default create({
   props: {
@@ -283,7 +284,10 @@ export default create({
 
     const getReference = async () => {
       const refe = await useTaroRect(listbox, Taro);
-      state.lineSpacing = refe.height ? refe.height : 36;
+      // FIX 微信小程序 TypeError: Cannot read property 'height' of null
+      if (refe) {
+        state.lineSpacing = hasOwn(refe, 'height') ? refe.height : 36;
+      }
       modifyStatus(true);
     };
 
