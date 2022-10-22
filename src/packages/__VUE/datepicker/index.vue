@@ -9,7 +9,6 @@
     @change="changeHandler"
     :title="title"
     @confirm="confirm"
-    :isWrapTeleport="isWrapTeleport"
     :threeDimensional="threeDimensional"
   >
     <template #top>

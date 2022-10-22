@@ -9,7 +9,6 @@
     @change="changeHandler"
     :title="title"
     @confirm="confirm"
-    :isWrapTeleport="isWrapTeleport"
   >
     <template #top>
       <slot name="top"></slot>

@@ -7,7 +7,6 @@
       :close-on-click-overlay="closeOnClickOverlay"
       @close="close"
       :round="true"
-      :isWrapTeleport="isWrapTeleport"
       :showTitle="false"
     >
       <view class="nut-picker__bar">

@@ -22,11 +22,11 @@
 
   &--decimal-large {
     display: inline-block;
-    font-size: $price-decimal-big-size;
+    font-size: $price-big-size;
   }
   &--symbol-large {
     display: inline-block;
-    font-size: $price-symbol-big-size;
+    font-size: $price-big-size;
   }
   &--normal {
     display: inline-block;
@@ -34,11 +34,11 @@
   }
   &--decimal-normal {
     display: inline-block;
-    font-size: $price-decimal-medium-size;
+    font-size: $price-medium-size;
   }
   &--symbol-normal {
     display: inline-block;
-    font-size: $price-symbol-medium-size;
+    font-size: $price-medium-size;
   }
   &--small {
     display: inline-block;
