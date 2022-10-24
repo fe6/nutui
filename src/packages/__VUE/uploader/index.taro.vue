@@ -68,7 +68,7 @@ import { createComponent } from '@/packages/utils/create';
 import { Uploader, UploadOptions } from './uploader';
 import { FileItem } from './type';
 const { componentName, create, translate } = createComponent('uploader');
-import Taro from '@tarojs/taro';
+import Taro, { chooseImage as chooseImageTaro } from '@tarojs/taro';
 export default create({
   props: {
     name: { type: String, default: 'file' },
@@ -143,7 +143,7 @@ export default create({
       if (props.disabled) {
         return;
       }
-      Taro.chooseImage({
+      chooseImageTaro({
         // 选择数量
         count: (props.maximum as number) * 1 - props.fileList.length,
         // 可以指定是原图还是压缩图，默认二者都有
