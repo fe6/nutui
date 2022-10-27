@@ -172,7 +172,7 @@ export default create({
       distance: 0,
       timer: null,
       keepAlive: false,
-      isCanScroll: null,
+      isCanScroll: false,
       id: Math.round(Math.random() * 100000)
     });
 
@@ -263,38 +263,58 @@ export default create({
       if (state.showNoticeBar == false) {
         return;
       }
-      setTimeout(() => {
-        if (!wrap.value || !content.value) {
-          return;
-        }
-        let wrapWidth = 0;
-        let offsetWidth = 0;
+      if (Taro.getEnv() === 'WEB') {
+        setTimeout(() => {
+          if (!wrap.value || !content.value) {
+            return;
+          }
+          const wrapWidth = wrap.value.getBoundingClientRect().width;
+          const offsetWidth = content.value.getBoundingClientRect().width;
+          state.isCanScroll = props.scrollable == null ? offsetWidth > wrapWidth : props.scrollable;
+          if (state.isCanScroll) {
+            state.wrapWidth = wrapWidth;
+            state.offsetWidth = offsetWidth;
 
-        Taro.createSelectorQuery()
-          .select(`.wrap${state.id}`)
-          .boundingClientRect((rect) => {
-            if (rect.width > 0) wrapWidth = rect.width;
-          })
-          .exec();
-        Taro.createSelectorQuery()
-          .select(`.content${state.id}`)
-          .boundingClientRect((rect) => {
-            if (rect.width > 0) offsetWidth = rect.width;
+            state.duration = offsetWidth / props.speed;
+            state.animationClass = 'play';
+          } else {
+            state.animationClass = '';
+          }
+        }, 0);
+      } else {
+        setTimeout(() => {
+          if (!wrap.value || !content.value) {
+            return;
+          }
+          let wrapWidth = 0;
+          let offsetWidth = 0;
 
-            state.isCanScroll = props.scrollable == null ? offsetWidth > wrapWidth : props.scrollable;
+          Taro.createSelectorQuery()
+            .select(`.wrap${state.id}`)
+            .boundingClientRect((rect) => {
+              if (rect.width > 0) wrapWidth = rect.width;
+            })
+            .exec();
+          Taro.createSelectorQuery()
+            .select(`.content${state.id}`)
+            .boundingClientRect((rect) => {
+              if (rect.width > 0) offsetWidth = rect.width;
 
-            if (state.isCanScroll) {
-              state.wrapWidth = wrapWidth;
-              state.offsetWidth = offsetWidth;
+              state.isCanScroll = props.scrollable == null ? offsetWidth > wrapWidth : props.scrollable;
 
-              state.duration = offsetWidth / props.speed;
-              state.animationClass = 'play';
-            } else {
-              state.animationClass = '';
-            }
-          })
-          .exec();
-      }, 100);
+              if (state.isCanScroll) {
+                state.wrapWidth = wrapWidth;
+                state.offsetWidth = offsetWidth;
+
+                state.duration = offsetWidth / props.speed;
+                state.animationClass = 'play';
+              } else {
+                state.animationClass = '';
+              }
+            })
+            .exec();
+        }, 100);
+      }
     };
     const handleClick = (event: Event) => {
       emit('click', event);
