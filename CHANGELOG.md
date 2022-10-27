@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.22](https://github.com/fe6/nutui/compare/v0.1.21...v0.1.22) (2022-10-27)
+
+
+### Bug Fixes
+
+* **noticebar:** web error ([dec1bac](https://github.com/fe6/nutui/commit/dec1bacc71b1d2e6ee2f2450a750ff49132eeec7))
+
 ### [0.1.21](https://github.com/fe6/nutui/compare/v0.1.20...v0.1.21) (2022-10-24)
 
 
