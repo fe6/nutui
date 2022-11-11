@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.23](https://github.com/fe6/nutui/compare/v0.1.22...v0.1.23) (2022-11-11)
+
+
+### Bug Fixes
+
+* **error:** wechat build error ([eaa676d](https://github.com/fe6/nutui/commit/eaa676def2d2c093edceadb431d239e4663bf02b))
+
 ### [0.1.22](https://github.com/fe6/nutui/compare/v0.1.21...v0.1.22) (2022-10-27)
 
 
