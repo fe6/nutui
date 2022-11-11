@@ -30,7 +30,6 @@ export default create({
 
   setup(props, { emit, slots }) {
     const root = ref<HTMLElement>();
-    const query = Taro.createSelectorQuery();
     const refRandomId = Math.random().toString(36).slice(-8);
     const state = reactive({
       width: 0,
@@ -73,19 +72,34 @@ export default create({
       const el = unref(elementRef);
       if (!el) return false;
       return new Promise((resolve, reject) => {
-        query
-          .select(`#${el.id}`)
-          .fields(
-            {
-              computedStyle: ['display', 'position']
-            },
-            (res) => {
-              const hidden = res.display === 'none';
-              const parentHidden = el.offsetParent === null && res.position !== 'fixed';
-              resolve(hidden || parentHidden);
-            }
-          )
-          .exec();
+        if (Taro.getEnv() === 'WEB') {
+          const el: any = unref(elementRef);
+          if (!el) {
+            resolve(false);
+          }
+
+          const style = window.getComputedStyle(el);
+          const hidden = style.display === 'none';
+
+          const parentHidden = el.offsetParent === null && style.position !== 'fixed';
+
+          resolve(hidden || parentHidden);
+        } else {
+          const query = Taro.createSelectorQuery();
+          query
+            .select(`#${el.id}`)
+            .fields(
+              {
+                computedStyle: ['display', 'position']
+              },
+              (res) => {
+                const hidden = res.display === 'none';
+                const parentHidden = el.offsetParent === null && res.position !== 'fixed';
+                resolve(hidden || parentHidden);
+              }
+            )
+            .exec();
+        }
       });
     };
 

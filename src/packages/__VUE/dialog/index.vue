@@ -1,6 +1,5 @@
 <template>
   <nut-popup
-    :teleport="teleport"
     v-model:visible="showPopup"
     :close-on-click-overlay="closeOnClickOverlay"
     :lock-scroll="lockScroll"

@@ -8,8 +8,6 @@
     @click-overlay="closePopup('overlay')"
     @close="closePopup('close')"
     style="height: 75%"
-    :isWrapTeleport="isWrapTeleport"
-    :teleport="teleport"
     :showTitle="false"
   >
     <view class="nut-sku">

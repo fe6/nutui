@@ -3,12 +3,10 @@
     <nut-popup
       position="bottom"
       v-model:visible="show"
-      :teleport="teleport"
       :lock-scroll="lockScroll"
       :close-on-click-overlay="closeOnClickOverlay"
       @close="close"
       :round="true"
-      :isWrapTeleport="isWrapTeleport"
     >
       <view class="nut-oldpicker__bar">
         <view class="nut-oldpicker__cancel nut-oldpicker__left nut-oldpicker__button" @click="close">{{

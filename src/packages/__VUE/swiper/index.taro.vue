@@ -426,7 +426,8 @@ export default create({
     useExpose({
       prev,
       next,
-      to
+      to,
+      init
     });
 
     onDeactivated(() => {

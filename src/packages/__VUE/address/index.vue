@@ -3,7 +3,6 @@
     position="bottom"
     :lock-scroll="lockScroll"
     v-model:visible="showPopup"
-    :teleport="teleport"
     round
     popClass="nut-address-popup"
     @closed="closePopup"
