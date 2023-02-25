@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.24](https://github.com/fe6/nutui/compare/v0.1.23...v0.1.24) (2023-02-25)
+
+
+### Bug Fixes
+
+* **infiniteloading:** h5 error ([dafb6ac](https://github.com/fe6/nutui/commit/dafb6ac98ac291fd418dbe2ec4d59c9938328a30))
+* **swiper:** id undefine ([2e00f34](https://github.com/fe6/nutui/commit/2e00f34b2022ea7d9bb9112977179570c86fed64))
+
 ### [0.1.23](https://github.com/fe6/nutui/compare/v0.1.22...v0.1.23) (2022-11-11)
 
 
