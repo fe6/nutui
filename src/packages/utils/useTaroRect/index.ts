@@ -46,11 +46,13 @@ export const useTaroRect = (elementRef: (Element | Window | any) | Ref<Element |
         height: 0
       });
     } else {
-      const query = Taro.createSelectorQuery();
-      query.select(`#${(element as any).id}`) && query.select(`#${(element as any).id}`).boundingClientRect();
-      query.exec(function (res: any) {
-        resolve(res[0]);
-      });
+      if ((element as any)?.id) {
+        const query = Taro.createSelectorQuery();
+        query.select(`#${(element as any)?.id}`) && query.select(`#${(element as any)?.id}`).boundingClientRect();
+        query.exec(function (res: any) {
+          resolve(res[0]);
+        });
+      }
     }
   });
 };
