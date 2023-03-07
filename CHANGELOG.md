@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.25](https://github.com/fe6/nutui/compare/v0.1.24...v0.1.25) (2023-03-07)
+
+
+### Bug Fixes
+
+* **popup:** scroll lock error in min ([7ac9d6f](https://github.com/fe6/nutui/commit/7ac9d6f2d944027c15638f8d979f8824cb3ac10a))
+
 ### [0.1.24](https://github.com/fe6/nutui/compare/v0.1.23...v0.1.24) (2023-02-25)
 
 
