@@ -1,5 +1,5 @@
 <template>
-  <view :catch-move="lockScroll">
+  <view :catch-move="lockScroll" :catchtouchmove="lockScroll">
     <nut-overlay
       v-if="overlay"
       :visible="visible"
