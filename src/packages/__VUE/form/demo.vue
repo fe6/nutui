@@ -164,7 +164,7 @@
 
 <script lang="ts">
 import { Toast } from '@/packages/nutui.vue';
-import { reactive, ref } from 'vue';
+import { reactive, ref, onBeforeMount } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { createDemo, translate } = createComponent('form');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
@@ -308,22 +308,29 @@ export default createDemo({
       rate: 3,
       range: 30,
       address: '',
-      defaultFileList: [
-        {
-          name: 'file 1.png',
-          url: 'https://m.360buyimg.com/babel/jfs/t1/164410/22/25162/93384/616eac6cE6c711350/0cac53c1b82e1b05.gif',
-          status: 'success',
-          message: translate('success'),
-          type: 'image'
-        },
-        {
-          name: 'file 2.png',
-          url: 'https://m.360buyimg.com/babel/jfs/t1/164410/22/25162/93384/616eac6cE6c711350/0cac53c1b82e1b05.gif',
-          status: 'uploading',
-          message: translate('uploading'),
-          type: 'image'
-        }
-      ]
+      defaultFileList: []
+    });
+
+    onBeforeMount(() => {
+      setTimeout(() => {
+        formData2.defaultFileList = [
+          {
+            name: 'file 1.png',
+            url: 'https://m.360buyimg.com/babel/jfs/t1/164410/22/25162/93384/616eac6cE6c711350/0cac53c1b82e1b05.gif',
+            status: 'success',
+            message: translate('success'),
+            type: 'image'
+          },
+          {
+            name: 'file 2.png',
+            url: 'https://m.360buyimg.com/babel/jfs/t1/164410/22/25162/93384/616eac6cE6c711350/0cac53c1b82e1b05.gif',
+            status: 'uploading',
+            message: translate('uploading'),
+            type: 'image'
+          }
+        ];
+        console.log(1222);
+      }, 1000);
     });
 
     const addressModule = reactive({

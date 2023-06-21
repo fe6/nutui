@@ -2,12 +2,12 @@
   <view :class="classes">
     <view class="nut-uploader__slot" v-if="$slots.default">
       <slot></slot>
-      <template v-if="maximum - fileList.length">
+      <template v-if="maximum - theFileList.length">
         <nut-button class="nut-uploader__input" @click="chooseImage" />
       </template>
     </view>
 
-    <view class="nut-uploader__preview" :class="[listType]" v-for="(item, index) in fileList" :key="item.uid">
+    <view class="nut-uploader__preview" :class="[listType]" v-for="(item, index) in theFileList" :key="item.uid">
       <view class="nut-uploader__preview-img" v-if="listType == 'picture' && !$slots.default">
         <view class="nut-uploader__preview__progress" v-if="item.status == 'ready'">
           <view class="nut-uploader__preview__progress__msg">{{ item.message }}</view>
@@ -54,7 +54,7 @@
     <view
       class="nut-uploader__upload"
       :class="[listType]"
-      v-if="listType == 'picture' && !$slots.default && maximum - fileList.length"
+      v-if="listType == 'picture' && !$slots.default && maximum - theFileList.length"
     >
       <nut-icon v-bind="$attrs" :size="uploadIconSize" color="rgba(0,0,0,0.45)" :name="uploadIcon"></nut-icon>
       <nut-button class="nut-uploader__input" @click="chooseImage" />
@@ -63,7 +63,7 @@
 </template>
 
 <script lang="ts">
-import { computed, PropType, reactive } from 'vue';
+import { computed, PropType, reactive, ref, watch } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 import { Uploader, UploadOptions } from './uploader';
 import { FileItem } from './type';
@@ -129,7 +129,7 @@ export default create({
     'file-item-click'
   ],
   setup(props, { emit }) {
-    const fileList = reactive(props.fileList) as Array<import('./type').FileItem>;
+    const theFileList = ref<any>(props.fileList);
     let uploadQueue: Promise<Uploader>[] = [];
 
     const classes = computed(() => {
@@ -192,7 +192,7 @@ export default create({
           option,
           fileItem
         });
-        emit('update:fileList', fileList);
+        emit('update:fileList', theFileList.value);
       };
       uploadOption.onFailure = (data: Taro.uploadFile.SuccessCallbackResult, option: UploadOptions) => {
         fileItem.status = 'error';
@@ -257,7 +257,7 @@ export default create({
         if (props.isPreview) {
           fileItem.url = file.path;
         }
-        fileList.push(fileItem);
+        theFileList.value.push(fileItem);
         executeUpload(fileItem, index);
       });
     };
@@ -277,7 +277,7 @@ export default create({
       if (oversizes.length) {
         emit('oversize', oversizes);
       }
-      let currentFileLength = files.length + fileList.length;
+      let currentFileLength = files.length + theFileList.value.length;
       if (currentFileLength > maximum) {
         files.splice(files.length - (currentFileLength - maximum));
       }
@@ -285,11 +285,11 @@ export default create({
     };
     const onDelete = (file: import('./type').FileItem, index: number) => {
       clearUploadQueue(index);
-      if (props.beforeDelete(file, fileList)) {
-        fileList.splice(index, 1);
+      if (props.beforeDelete(file, theFileList.value)) {
+        theFileList.value.splice(index, 1);
         emit('delete', {
           file,
-          fileList,
+          fileList: theFileList.value,
           index
         });
       } else {
@@ -312,13 +312,23 @@ export default create({
       }
 
       emit('change', {
-        fileList
+        fileList: theFileList.value
       });
     };
 
+    watch(
+      () => props.fileList,
+      () => {
+        theFileList.value = props.fileList;
+      },
+      {
+        deep: true
+      }
+    );
+
     return {
       onDelete,
-      fileList,
+      theFileList,
       classes,
       chooseImage,
       fileItemClick,
