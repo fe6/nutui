@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.27](https://github.com/fe6/nutui/compare/v0.1.26...v0.1.27) (2023-06-28)
+
+
+### Features
+
+* **addresslist:** add radio config ([0a172e3](https://github.com/fe6/nutui/commit/0a172e3f83155e197aa11b537688aa3d85a28f23))
+
 ### [0.1.26](https://github.com/fe6/nutui/compare/v0.1.25...v0.1.26) (2023-06-21)
 
 
