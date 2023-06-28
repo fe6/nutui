@@ -3,7 +3,11 @@
     <div class="nut-item-contents__info">
       <div class="nut-item-contents__info-contact">
         <slot name="contentTop">
-          <div class="nut-item-contents__info-contact-name">{{ item.addressName }}</div>
+          <div
+            class="nut-item-contents__info-contact-name"
+            :class="radioEdition ? 'nut-item-contents__info-contact-name-radio' : ''"
+            >{{ item.addressName }}</div
+          >
           <div class="nut-item-contents__info-contact-tel">{{ item.phone }}</div>
           <nut-tag type="primary" class="nut-item-contents__info-contact-default" v-if="item.defaultAddress">{{
             translate('default')
@@ -39,6 +43,10 @@ export default create({
     item: {
       type: Object,
       default: {}
+    },
+    radioEdition: {
+      type: Boolean,
+      default: false
     }
   },
   components: {},

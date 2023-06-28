@@ -10,6 +10,21 @@
       :dataMapOptions="dataMapOptions"
     >
     </nut-addresslist>
+    <h2>{{ translate('title3') }}</h2>
+    <nut-addresslist
+      :data="data"
+      v-model:radioId="theRadioId"
+      :radioEdition="true"
+      :showBottomButton="false"
+      @handelDelIcon="delClick"
+      @handelEditIcon="editClick"
+      @handelItem="itemClick"
+      @longPressCopyClick="copyClick"
+      @longPressSetClick="setClick"
+      @longPressDelClick="delClick"
+      :dataMapOptions="dataMapOptions"
+    >
+    </nut-addresslist>
     <h2>{{ translate('title1') }}</h2>
     <nut-addresslist
       :data="data"
@@ -42,7 +57,7 @@
 
 <script lang="ts">
 import { createComponent } from '@/packages/utils/create';
-import { toRefs, reactive, onMounted, ref } from 'vue';
+import { toRefs, reactive, onMounted, ref, shallowRef } from 'vue';
 const { createDemo, translate } = createComponent('addresslist');
 import { useTranslate } from '@/sites/assets/util/useTranslate';
 const initTranslate = () =>
@@ -50,12 +65,14 @@ const initTranslate = () =>
     'zh-CN': {
       basic: '基本用法',
       title1: '长按功能',
-      title2: '滑动功能'
+      title2: '滑动功能',
+      title3: '单选功能'
     },
     'en-US': {
       basic: 'Basic Usage',
       title1: 'Long Press Function',
-      title2: 'Swipe Function'
+      title2: 'Swipe Function',
+      title3: '单选功能'
     }
   });
 export default createDemo({
@@ -63,6 +80,7 @@ export default createDemo({
   setup() {
     // const data = ref([]);
     initTranslate();
+    const theRadioId = shallowRef('');
     const data = ref([
       {
         testid: 3,
@@ -121,6 +139,12 @@ export default createDemo({
     const addAddress = () => {
       console.log('Click To Add');
     };
+
+    onMounted(() => {
+      setTimeout(() => {
+        theRadioId.value = '3';
+      }, 300);
+    });
     return {
       itemClick,
       holdDownClick,
@@ -131,7 +155,8 @@ export default createDemo({
       setClick,
       addAddress,
       dataMapOptions,
-      translate
+      translate,
+      theRadioId
     };
   }
 });

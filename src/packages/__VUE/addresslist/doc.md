@@ -85,6 +85,73 @@ export default {
 </script>
 ```
 
+### 单选用法
+
+:::demo
+
+```html
+<template>
+  <nut-addresslist
+    :data="data"
+    :radioEdition="true"
+    @handelDelIcon="delClick"
+    @handelEditIcon="editClick"
+    @handelItem="itemClick"
+    :show-bottom-button="false"
+    :dataMapOptions="dataMapOptions"
+  >
+  </nut-addresslist>
+</template>
+<script lang="ts">
+import { ref, reactive } from 'vue';
+export default {
+  setup() {
+    const data = ref([
+      {
+        testid:3,
+        testaddressName:'姓名',
+        phone:'123****4567',
+        defaultAddress:false,
+        fullAddress:'北京市通州区测试测试测试测试测试测试测试测试测试'
+      },
+      {
+        testid:4,
+        testaddressName:'姓名',
+        phone:'123****4567',
+        defaultAddress:true,
+        fullAddress:'北京市通州区测试测试测试测试测试测试测试测试测试'
+      },
+    ]);
+    const dataMapOptions = reactive({
+      id: 'testid',
+      addressDetail:'testaddressDetail',
+      addressName:'testaddressName'
+    });
+    const itemClick = ()=>{
+      Toast.text('Click To Address');
+    }
+    const delClick = ()=>{
+      Toast.text('Click To Delete');
+    }
+    const editClick = ()=>{
+      Toast.text('Click To Edit');
+    }
+    return {
+      itemClick,
+      holdDownClick,
+      data,
+      delClick,
+      editClick,
+      copyClick,
+      setClick,
+      addAddress,
+      dataMapOptions
+    };
+  }
+};
+</script>
+```
+
 :::
 ### 长按功能
 
@@ -250,6 +317,10 @@ export default {
 | data               | 地址数组         | Array   | -      |
 | long-press-edition | 长按功能         | Boolean | false  |
 | swipe-edition      | 右滑功能         | Boolean | false  |
+| radio-edition[0.1.27新增]      | 单选功能         | Boolean | false  |
+| radio-key[0.1.27新增]      | 单选的value         | String | id  |
+| radioId(v-model)[0.1.27新增]      | 单选选中         | String | -  |
+
 | show-bottom-button | 是否展示底部按钮 | Boolean | true   |
 
 ### Events
@@ -265,6 +336,7 @@ export default {
 | longPressSetClick  | 点击设置默认按钮     | event: Event,item | 长按功能下点击事件 |
 | longPressDelClick  | 点击删除地址按钮     | event: Event,item | 长按功能下点击事件 |
 | swipeDelClick      | 默认右滑删除按钮     | event: Event,item | 滑动功能下点击事件 |
+| radioChange[0.1.27新增]      | 更改单选     | id | 修改单选触发 |
 
 ### Slots
 

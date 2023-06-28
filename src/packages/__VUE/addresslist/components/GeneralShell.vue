@@ -1,7 +1,9 @@
 <template>
   <div class="nut-general-shell">
+    <nut-radio :label="item[radioKey]" v-if="radioEdition" />
     <item-contents
       :item="item"
+      :radioEdition="radioEdition"
       @delIconClick="delShellClick"
       @editIconClick="editShellClick"
       @itemClick="itemShellClick"
@@ -19,9 +21,8 @@
   </div>
 </template>
 <script lang="ts">
-import { ref, watch, reactive, toRefs, onMounted, useSlots } from 'vue';
 import { createComponent } from '@/packages/utils/create';
-const { componentName, create } = createComponent('general-shell');
+const { create } = createComponent('general-shell');
 import ItemContents from './ItemContents.vue';
 
 export default create({
@@ -29,6 +30,14 @@ export default create({
     item: {
       type: Object,
       default: {}
+    },
+    radioEdition: {
+      type: Boolean,
+      default: false
+    },
+    radioKey: {
+      type: String,
+      default: 'id'
     }
   },
   emits: ['handleDelIcon', 'handleEditIcon', 'handleItemContent', 'handelSwipeDel'],

@@ -1,7 +1,7 @@
 <template>
   <div class="nut-addresslist">
     <general-shell
-      v-if="!longPressEdition && !swipeEdition"
+      v-if="!longPressEdition && !swipeEdition && !radioEdition"
       v-for="(item, index) of dataArray"
       :key="'general' + index"
       :item="item"
@@ -11,6 +11,19 @@
       @handelSwipeDel="clickSwipeDel"
     >
     </general-shell>
+    <nut-radiogroup v-model="theRadioVal" v-if="!longPressEdition && !swipeEdition && radioEdition">
+      <general-shell
+        v-for="(item, index) of dataArray"
+        :key="'general' + index"
+        :item="item"
+        :radioKey="radioKey"
+        :radioEdition="true"
+        @handleDelIcon="clickDelIcon"
+        @handleEditIcon="clickEditIcon"
+        @handleItemContent="clickContentItem"
+        @handelSwipeDel="clickSwipeDel"
+      />
+    </nut-radiogroup>
     <long-press-shell
       v-if="longPressEdition && !swipeEdition"
       v-for="(item, index) of dataArray"
@@ -65,9 +78,9 @@
   </div>
 </template>
 <script lang="ts">
-import { toRefs, reactive, onMounted, ref, watch } from 'vue';
+import { reactive, onMounted, ref, watch, shallowRef } from 'vue';
 import { createComponent } from '@/packages/utils/create';
-const { componentName, create, translate } = createComponent('addresslist');
+const { create, translate } = createComponent('addresslist');
 import LongPressShell from './components/LongPressShell.vue';
 import SwipeShell from './components/SwipeShell.vue';
 import GeneralShell from './components/GeneralShell.vue';
@@ -93,6 +106,18 @@ export default create({
     dataMapOptions: {
       type: Object,
       default: {}
+    },
+    radioEdition: {
+      type: Boolean,
+      default: false
+    },
+    radioKey: {
+      type: String,
+      default: 'id'
+    },
+    radioId: {
+      type: [String, Number],
+      default: ''
     }
   },
   components: {
@@ -103,6 +128,8 @@ export default create({
   emits: [
     'handelDelIcon',
     'handelEditIcon',
+    'update:radioId',
+    'radioChange',
     'handelItem',
     'longPressCopyClick',
     'longPressSetClick',
@@ -112,7 +139,8 @@ export default create({
   ],
 
   setup(props, { emit }) {
-    const dataArray = ref([]);
+    const dataArray = ref<any>([]);
+    const theRadioVal = shallowRef('');
     const dataInfo = reactive({
       id: 2,
       addressName: '姓名',
@@ -145,8 +173,14 @@ export default create({
       event.stopPropagation();
     };
     const clickContentItem = (event, item) => {
-      emit('handelItem', event, item);
       event.stopPropagation();
+      if (props.radioEdition) {
+        theRadioVal.value = item[props.radioKey];
+        emit('update:radioId', theRadioVal.value);
+        emit('radioChange', theRadioVal.value);
+        return;
+      }
+      emit('handelItem', event, item);
     };
     const clickLongCopy = (event, item) => {
       emit('longPressCopyClick', event, item);
@@ -181,7 +215,8 @@ export default create({
       clickSwipeDel,
       addAddress,
       dataArray,
-      translate
+      translate,
+      theRadioVal
     };
   }
 });
