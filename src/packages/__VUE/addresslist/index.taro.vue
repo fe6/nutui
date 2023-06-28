@@ -78,7 +78,7 @@
   </div>
 </template>
 <script lang="ts">
-import { reactive, onMounted, ref, watch, shallowRef } from 'vue';
+import { reactive, onMounted, ref, watch, shallowRef, watchEffect } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { create, translate } = createComponent('addresslist');
 import LongPressShell from './components/LongPressShell.vue';
@@ -204,6 +204,9 @@ export default create({
     };
     onMounted(() => {
       trowelData();
+    });
+    watchEffect(() => {
+      theRadioVal.value = String(props.radioId);
     });
     return {
       clickDelIcon,
