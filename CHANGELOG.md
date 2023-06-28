@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.28](https://github.com/fe6/nutui/compare/v0.1.27...v0.1.28) (2023-06-28)
+
+
+### Bug Fixes
+
+* **addresslist:** modal render error ([b923573](https://github.com/fe6/nutui/commit/b9235737b309651c245327d1f684128ab4a2e01f))
+
 ### [0.1.27](https://github.com/fe6/nutui/compare/v0.1.26...v0.1.27) (2023-06-28)
 
 
