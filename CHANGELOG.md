@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.29](https://github.com/fe6/nutui/compare/v0.1.28...v0.1.29) (2023-06-29)
+
+
+### Features
+
+* **addresslist:** delete display ([93c8dbf](https://github.com/fe6/nutui/commit/93c8dbf6e6246778574be0b079af8c350775d0fb))
+
 ### [0.1.28](https://github.com/fe6/nutui/compare/v0.1.27...v0.1.28) (2023-06-28)
 
 
