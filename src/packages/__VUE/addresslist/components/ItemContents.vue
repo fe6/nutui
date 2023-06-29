@@ -16,7 +16,12 @@
       </div>
       <div class="nut-item-contents__info-handle">
         <slot name="contentIcon">
-          <nut-icon name="del" class="nut-item-contents__info-handle-del" @click="delClick"></nut-icon>
+          <nut-icon
+            name="del"
+            class="nut-item-contents__info-handle-del"
+            v-if="deleteEdition"
+            @click="delClick"
+          ></nut-icon>
           <nut-icon name="a-bianzu31" class="nut-item-contents__info-handle-edit" @click="editClick"></nut-icon>
         </slot>
       </div>
@@ -29,9 +34,8 @@
   </div>
 </template>
 <script lang="ts">
-import { toRefs, reactive, onMounted, ref, watch } from 'vue';
 import { createComponent } from '@/packages/utils/create';
-const { componentName, create } = createComponent('item-contents');
+const { create } = createComponent('item-contents');
 const { translate } = createComponent('addresslist');
 
 export default create({
@@ -47,6 +51,10 @@ export default create({
     radioEdition: {
       type: Boolean,
       default: false
+    },
+    deleteEdition: {
+      type: Boolean,
+      default: true
     }
   },
   components: {},

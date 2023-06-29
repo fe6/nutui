@@ -4,6 +4,7 @@
     <item-contents
       :item="item"
       :radioEdition="radioEdition"
+      :deleteEdition="deleteEdition"
       @delIconClick="delShellClick"
       @editIconClick="editShellClick"
       @itemClick="itemShellClick"
@@ -38,6 +39,10 @@ export default create({
     radioKey: {
       type: String,
       default: 'id'
+    },
+    deleteEdition: {
+      type: Boolean,
+      default: true
     }
   },
   emits: ['handleDelIcon', 'handleEditIcon', 'handleItemContent', 'handelSwipeDel'],

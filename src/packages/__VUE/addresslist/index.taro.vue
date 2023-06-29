@@ -5,6 +5,7 @@
       v-for="(item, index) of dataArray"
       :key="'general' + index"
       :item="item"
+      :deleteEdition="deleteEdition"
       @handleDelIcon="clickDelIcon"
       @handleEditIcon="clickEditIcon"
       @handleItemContent="clickContentItem"
@@ -18,6 +19,7 @@
         :item="item"
         :radioKey="radioKey"
         :radioEdition="true"
+        :deleteEdition="deleteEdition"
         @handleDelIcon="clickDelIcon"
         @handleEditIcon="clickEditIcon"
         @handleItemContent="clickContentItem"
@@ -118,6 +120,10 @@ export default create({
     radioId: {
       type: [String, Number],
       default: ''
+    },
+    deleteEdition: {
+      type: Boolean,
+      default: true
     }
   },
   components: {

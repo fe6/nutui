@@ -320,6 +320,7 @@ export default {
 | radio-edition[0.1.27新增]      | 单选功能         | Boolean | false  |
 | radio-key[0.1.27新增]      | 单选的value         | String | id  |
 | radioId(v-model)[0.1.27新增]      | 单选选中         | String | -  |
+| delete-edition[0.1.28新增]      | 删除按钮的显示         | Boolean | true  |
 
 | show-bottom-button | 是否展示底部按钮 | Boolean | true   |
 

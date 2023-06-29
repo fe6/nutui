@@ -5,6 +5,7 @@
       v-for="(item, index) of dataArray"
       :key="'general' + index"
       :item="item"
+      :deleteEdition="deleteEdition"
       @handleDelIcon="clickDelIcon"
       @handleEditIcon="clickEditIcon"
       @handleItemContent="clickContentItem"
@@ -17,6 +18,7 @@
         :key="'general' + index"
         :item="item"
         :radioEdition="true"
+        :deleteEdition="deleteEdition"
         @handleDelIcon="clickDelIcon"
         @handleEditIcon="clickEditIcon"
         @handleItemContent="clickContentItem"
@@ -77,9 +79,9 @@
   </div>
 </template>
 <script lang="ts">
-import { toRefs, reactive, onMounted, ref, watch, shallowRef, watchEffect } from 'vue';
+import { reactive, onMounted, ref, watch, shallowRef, watchEffect } from 'vue';
 import { createComponent } from '@/packages/utils/create';
-const { componentName, create, translate } = createComponent('addresslist');
+const { create, translate } = createComponent('addresslist');
 import LongPressShell from './components/LongPressShell.vue';
 import SwipeShell from './components/SwipeShell.vue';
 import GeneralShell from './components/GeneralShell.vue';
@@ -117,6 +119,10 @@ export default create({
     radioId: {
       type: [String, Number],
       default: ''
+    },
+    deleteEdition: {
+      type: Boolean,
+      default: true
     }
   },
   components: {
