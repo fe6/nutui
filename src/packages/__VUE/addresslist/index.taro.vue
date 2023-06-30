@@ -12,7 +12,11 @@
       @handelSwipeDel="clickSwipeDel"
     >
     </general-shell>
-    <nut-radiogroup v-model="theRadioVal" v-if="!longPressEdition && !swipeEdition && radioEdition">
+    <nut-radiogroup
+      v-model="theRadioVal"
+      v-if="!longPressEdition && !swipeEdition && radioEdition"
+      @click="onRadioGroupChange"
+    >
       <general-shell
         v-for="(item, index) of dataArray"
         :key="'general' + index"
@@ -208,6 +212,11 @@ export default create({
       emit('addAddressClick', event);
       event.stopPropagation();
     };
+    const onRadioGroupChange = (event) => {
+      emit('update:radioId', theRadioVal.value);
+      emit('radioChange', theRadioVal.value);
+      event.stopPropagation();
+    };
     onMounted(() => {
       trowelData();
     });
@@ -225,7 +234,8 @@ export default create({
       addAddress,
       dataArray,
       translate,
-      theRadioVal
+      theRadioVal,
+      onRadioGroupChange
     };
   }
 });
