@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.30](https://github.com/fe6/nutui/compare/v0.1.29...v0.1.30) (2023-06-30)
+
+
+### Bug Fixes
+
+* **addresslist:** radio click error ([0e6e270](https://github.com/fe6/nutui/commit/0e6e270c5485082da56fc29c47ff16951e4b4820))
+
 ### [0.1.29](https://github.com/fe6/nutui/compare/v0.1.28...v0.1.29) (2023-06-29)
 
 
