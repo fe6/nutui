@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.32](https://github.com/fe6/nutui/compare/v0.1.31...v0.1.32) (2023-08-11)
+
+
+### Bug Fixes
+
+* **elevator:** h5 error ([02bfd93](https://github.com/fe6/nutui/commit/02bfd93509881398c7c3cdb836346a6ca991d10f))
+
 ### [0.1.31](https://github.com/fe6/nutui/compare/v0.1.30...v0.1.31) (2023-06-30)
 
 
