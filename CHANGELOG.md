@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.33](https://github.com/fe6/nutui/compare/v0.1.32...v0.1.33) (2023-08-13)
+
+
+### Bug Fixes
+
+* **elevator:** query node error ([cee6368](https://github.com/fe6/nutui/commit/cee63680884e6426d8ca79dd1450cbb20b0a78d2))
+
 ### [0.1.32](https://github.com/fe6/nutui/compare/v0.1.31...v0.1.32) (2023-08-11)
 
 
