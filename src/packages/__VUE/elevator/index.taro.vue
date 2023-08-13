@@ -107,6 +107,7 @@ export default create({
       },
       scrollStart: false,
       currentIndex: 0,
+      query: Taro.getEnv() === 'WEB' ? null : Taro.createSelectorQuery(),
       scrollTop: 0,
       currentData: {} as ElevatorData,
       currentKey: '',
@@ -153,13 +154,17 @@ export default create({
       state.listHeight.push(height);
       for (let i = 0; i < state.listGroup.length; i++) {
         if (Taro.getEnv() === 'WEB') {
-          state.listHeight.push(state.listGroup[i].clientHeight);
+          let item = state.listGroup[i];
+          height += item.clientHeight;
+          state.listHeight.push(height);
         } else {
-          Taro.createSelectorQuery().selectAll(`.elevator__item__${i}`).boundingClientRect();
-          Taro.createSelectorQuery().exec((res: any) => {
-            height += res[i][0].height;
-            state.listHeight.push(height);
-          });
+          if (state.query) {
+            state.query.selectAll(`.elevator__item__${i}`).boundingClientRect();
+            state.query.exec((res: any) => {
+              height += res[i][0].height;
+              state.listHeight.push(height);
+            });
+          }
         }
       }
     };
