@@ -99,6 +99,7 @@ body {
 | height         | 列表项的高度               | Number | `50`                |
 | list-data         | 列表数据               | any[] | `[]`                |
 | container-height `v0.1.0`        | 容器高度              | Number | `可视区高度`                |
+| insetHeight `v0.1.34`        | 列表项的高度使用数据中的高度              | Boolean | false                |
 
 ### Slot
 

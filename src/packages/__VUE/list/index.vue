@@ -2,7 +2,12 @@
   <view :class="classes" @scroll.passive="handleScrollEvent" ref="list">
     <div class="nut-list-phantom" :style="{ height: listHeight + 'px' }"></div>
     <div class="nut-list-container" :style="{ transform: getTransform }">
-      <div class="nut-list-item" :style="{ height: height + 'px' }" v-for="(item, index) in visibleData" :key="item">
+      <div
+        class="nut-list-item"
+        :style="{ height: (insetHeight?((item as any)?.[insetProps]||height):height) + 'px' }"
+        v-for="(item, index) in visibleData"
+        :key="item"
+      >
         <slot :item="item" :index="index"></slot>
       </div>
     </div>
@@ -14,6 +19,14 @@ import { createComponent } from '@/packages/utils/create';
 const { componentName, create } = createComponent('list');
 export default create({
   props: {
+    insetHeight: {
+      type: Boolean,
+      default: false
+    },
+    insetProps: {
+      type: String,
+      default: 'height'
+    },
     height: {
       type: [Number],
       default: 50
