@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.34](https://github.com/fe6/nutui/compare/v0.1.33...v0.1.34) (2023-09-19)
+
+
+### Features
+
+* **list:** add prop ([cd03ec0](https://github.com/fe6/nutui/commit/cd03ec0707646752502c20fc3e7ddad0cdec2c09))
+
 ### [0.1.33](https://github.com/fe6/nutui/compare/v0.1.32...v0.1.33) (2023-08-13)
 
 
