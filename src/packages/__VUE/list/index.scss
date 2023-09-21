@@ -4,6 +4,9 @@
   overflow: scroll;
   position: relative;
   -webkit-overflow-scrolling: touch;
+  &-h5 {
+    display: block;
+  }
   &-phantom {
     position: absolute;
     left: 0;

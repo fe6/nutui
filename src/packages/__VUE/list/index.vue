@@ -1,5 +1,5 @@
 <template>
-  <view :class="classes" @scroll.passive="handleScrollEvent" ref="list">
+  <view :class="classes" @scroll.passive="handleScrollEvent" ref="list" :style="{ height: containerHeight + 'px' }">
     <div class="nut-list-phantom" :style="{ height: listHeight + 'px' }"></div>
     <div class="nut-list-container" :style="{ transform: getTransform }">
       <div
@@ -17,6 +17,7 @@
 import { reactive, toRefs, computed, ref, Ref, watch } from 'vue';
 import { createComponent } from '@/packages/utils/create';
 const { componentName, create } = createComponent('list');
+
 export default create({
   props: {
     insetHeight: {
@@ -67,7 +68,8 @@ export default create({
     const classes = computed(() => {
       const prefixCls = componentName;
       return {
-        [prefixCls]: true
+        [prefixCls]: true,
+        [`${prefixCls}-h5`]: true
       };
     });
 
@@ -82,7 +84,7 @@ export default create({
     const handleScrollEvent = () => {
       const scrollTop = list.value?.scrollTop as number;
       state.start = Math.floor(scrollTop / props.height);
-      if (end.value > state.list.length) {
+      if (end.value >= state.list.length) {
         emit('scroll');
         emit('scroll-bottom');
       }
