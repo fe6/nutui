@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.35](https://github.com/fe6/nutui/compare/v0.1.34...v0.1.35) (2023-09-21)
+
+
+### Bug Fixes
+
+* **list:** scroll bottom no trigger ([fc3b003](https://github.com/fe6/nutui/commit/fc3b003bae62d86f7346f8dbd85d76602d328e2a))
+
 ### [0.1.34](https://github.com/fe6/nutui/compare/v0.1.33...v0.1.34) (2023-09-19)
 
 
