@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.36](https://github.com/fe6/nutui/compare/v0.1.35...v0.1.36) (2023-09-21)
+
+
+### Bug Fixes
+
+* **elevator:** 没有数据的时候获取报错 ([93134cf](https://github.com/fe6/nutui/commit/93134cf1fd154adb4dc2a18fa6b32b60f050cf76))
+
 ### [0.1.35](https://github.com/fe6/nutui/compare/v0.1.34...v0.1.35) (2023-09-21)
 
 
