@@ -13,14 +13,15 @@
       <view
         :class="['nut-elevator__list__item', `elevator__item__${index}`]"
         v-for="(item, index) in indexList"
-        :key="item[acceptKey]"
+        :key="item?.[acceptKey]"
         :ref="setListGroup"
       >
-        <view class="nut-elevator__list__item__code">{{ item[acceptKey] }}</view>
+        <view class="nut-elevator__list__item__code">{{ item?.[acceptKey] }}</view>
         <view
           class="nut-elevator__list__item__name"
           :class="{
-            'nut-elevator__list__item__name--highcolor': currentData.id === subitem.id && currentKey === item[acceptKey]
+            'nut-elevator__list__item__name--highcolor':
+              currentData.id === subitem.id && currentKey === item?.[acceptKey]
           }"
           v-for="subitem in item.list"
           :key="subitem['id']"
@@ -31,22 +32,22 @@
         </view>
       </view>
       <view class="nut-elevator__list__fixed" :style="fixedStyle" v-show="scrollY > 0" v-if="isSticky">
-        <span class="fixed-title">{{ indexList[currentIndex][acceptKey] }}</span>
+        <span class="fixed-title">{{ indexList?.[currentIndex]?.[acceptKey] }}</span>
       </view>
     </scroll-view>
     <view class="nut-elevator__code--current" v-show="scrollStart" v-if="indexList.length > 0">
-      {{ indexList[codeIndex][acceptKey] }}
+      {{ indexList?.[codeIndex]?.[acceptKey] }}
     </view>
     <view class="nut-elevator__bars" @touchstart="touchStart" @touchmove.stop.prevent="touchMove" @touchend="touchEnd">
       <view class="nut-elevator__bars__inner">
         <view
           class="nut-elevator__bars__inner__item"
-          :class="{ active: item[acceptKey] === indexList[currentIndex][acceptKey] }"
+          :class="{ active: item?.[acceptKey] === indexList?.[currentIndex]?.[acceptKey] }"
           :data-index="index"
           v-for="(item, index) in indexList"
-          :key="item[acceptKey]"
-          @click="handleClickIndex(item[acceptKey])"
-          >{{ item[acceptKey] }}</view
+          :key="item?.[acceptKey]"
+          @click="handleClickIndex(item?.[acceptKey])"
+          >{{ item?.[acceptKey] }}</view
         >
       </view>
     </view>
