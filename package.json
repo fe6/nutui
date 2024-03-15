@@ -151,9 +151,5 @@
   "lint-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,vue,scss}": "prettier --write"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fe6/nutui.git"
   }
 }
