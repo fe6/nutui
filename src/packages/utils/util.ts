@@ -104,3 +104,11 @@ export const deepMerge = (target: any, newObj: any) => {
   });
   return target;
 };
+
+export const padZero = (num: number | string, length = 2): string => {
+  num += '';
+  while ((num as string).length < length) {
+    num = '0' + num;
+  }
+  return num.toString();
+};

@@ -1,13 +1,17 @@
 <template>
   <nut-picker
     v-model="selectedValue"
-    :visible="show"
-    :okText="okText"
-    :cancelText="cancelText"
-    @close="closeHandler"
+    :ok-text="okText"
+    :cancel-text="cancelText"
     :columns="columns"
-    @change="changeHandler"
     :title="title"
+    :three-dimensional="threeDimensional"
+    :swipe-duration="swipeDuration"
+    :show-toolbar="showToolbar"
+    :visible-option-num="visibleOptionNum"
+    :option-height="optionHeight"
+    @cancel="closeHandler"
+    @change="changeHandler"
     @confirm="confirm"
   >
     <template #top>
@@ -19,15 +23,17 @@
 <script lang="ts">
 import { toRefs, watch, computed, reactive, onBeforeMount } from 'vue';
 import type { PropType } from 'vue';
-import nutPicker from '../picker/index.taro.vue';
-import { popupProps } from '../popup/index.vue';
+import NutPicker from '../picker/index.taro.vue';
+import { PickerOption } from '../picker/types';
 import { createComponent } from '@/packages/utils/create';
-import { padZero } from './utils';
-const { componentName, create } = createComponent('datepicker');
+import { Formatter, Filter } from './type';
+import { padZero, isDate as isDateU } from '@/packages/utils/util';
+import { nextTick } from '@tarojs/taro';
+const { create } = createComponent('datepicker');
 
 const currentYear = new Date().getFullYear();
 function isDate(val: Date): val is Date {
-  return Object.prototype.toString.call(val) === '[object Date]' && !isNaN(val.getTime());
+  return isDateU(val) && !isNaN(val.getTime());
 }
 
 const zhCNType: {
@@ -42,10 +48,9 @@ const zhCNType: {
 };
 export default create({
   components: {
-    nutPicker
+    NutPicker
   },
   props: {
-    ...popupProps,
     modelValue: null,
     title: {
       type: String,
@@ -82,19 +87,40 @@ export default create({
       validator: isDate
     },
     formatter: {
-      type: Function as PropType<import('./type').Formatter>,
+      type: Function as PropType<Formatter>,
       default: null
     },
-    filter: Function as PropType<import('./type').Filter>
+    // 是否开启3D效果
+    threeDimensional: {
+      type: Boolean,
+      default: true
+    },
+    // 惯性滚动 时长
+    swipeDuration: {
+      type: [Number, String],
+      default: 1000
+    },
+    filter: Function as PropType<Filter>,
+    showToolbar: {
+      type: Boolean,
+      default: true
+    },
+    visibleOptionNum: {
+      type: [Number, String],
+      default: 7
+    },
+    optionHeight: {
+      type: [Number, String],
+      default: 36
+    }
   },
-  emits: ['click', 'update:visible', 'change', 'confirm', 'update:moduleValue'],
+  emits: ['click', 'cancel', 'change', 'confirm', 'update:modelValue'],
 
   setup(props, { emit }) {
     const state = reactive({
-      show: props.visible,
       currentDate: new Date(),
       title: props.title,
-      selectedValue: []
+      selectedValue: [] as Array<any>
     });
     const formatValue = (value: Date) => {
       if (!isDate(value)) {
@@ -110,7 +136,7 @@ export default create({
       return 32 - new Date(year, month - 1, 32).getDate();
     }
     const getBoundary = (type: string, value: Date) => {
-      const boundary = props[`${type}Date`];
+      const boundary = type == 'min' ? props.minDate : props.maxDate;
       const year = boundary.getFullYear();
       let month = 1;
       let date = 1;
@@ -123,7 +149,7 @@ export default create({
         hour = 23;
         minute = 59;
       }
-      const seconds = minute;
+      let seconds = minute;
       if (value.getFullYear() === year) {
         month = boundary.getMonth() + 1;
         if (value.getMonth() + 1 === month) {
@@ -132,11 +158,13 @@ export default create({
             hour = boundary.getHours();
             if (value.getHours() === hour) {
               minute = boundary.getMinutes();
+              if (value.getMinutes() === minute) {
+                seconds = boundary.getSeconds();
+              }
             }
           }
         }
       }
-
       return {
         [`${type}Year`]: year,
         [`${type}Month`]: month,
@@ -178,28 +206,7 @@ export default create({
           range: [minSeconds, maxSeconds]
         }
       ];
-
-      switch (props.type) {
-        case 'date':
-          result = result.slice(0, 3);
-          break;
-        case 'datetime':
-          result = result.slice(0, 5);
-          break;
-        case 'time':
-          result = result.slice(3, 6);
-          break;
-        case 'year-month':
-          result = result.slice(0, 2);
-          break;
-        case 'month-day':
-          result = result.slice(1, 3);
-          break;
-        case 'datehour':
-          result = result.slice(0, 4);
-          break;
-      }
-      return result;
+      return generateList(result);
     });
 
     const columns = computed(() => {
@@ -216,34 +223,37 @@ export default create({
     }: {
       columnIndex: number;
       selectedValue: (string | number)[];
-      selectedOptions: import('../picker/types').PickerOption[];
+      selectedOptions: PickerOption[];
     }) => {
-      if (['date', 'datetime', 'datehour', 'month-day', 'year-month'].includes(props.type)) {
-        let formatDate: (number | string)[] = [];
-        selectedValue.forEach((item) => {
-          formatDate.push(item);
-        });
-        if (props.type == 'month-day') {
-          formatDate.unshift(new Date(props.modelValue || props.minDate || props.maxDate).getFullYear());
-        }
-        if (props.type == 'year-month' && formatDate.length < 3) {
-          formatDate.push(new Date(props.modelValue || props.minDate || props.maxDate).getDate());
-        }
-
-        const year = Number(formatDate[0]);
-        const month = Number(formatDate[1]) - 1;
-        const day = Math.min(Number(formatDate[2]), getMonthEndDay(Number(formatDate[0]), Number(formatDate[1])));
-        let date: Date | null = null;
-
-        if (props.type === 'date' || props.type === 'month-day' || props.type === 'year-month') {
-          date = new Date(year, month, day);
-        } else if (props.type === 'datetime') {
-          date = new Date(year, month, day, Number(formatDate[3]), Number(formatDate[4]));
-        } else if (props.type === 'datehour') {
-          date = new Date(year, month, day, Number(formatDate[3]));
-        }
-        state.currentDate = formatValue(date as Date);
+      let formatDate: (number | string)[] = [];
+      selectedValue.forEach((item) => {
+        formatDate.push(item);
+      });
+      if (props.type == 'month-day' && formatDate.length < 3) {
+        formatDate.unshift(new Date(state.currentDate || props.minDate || props.maxDate).getFullYear());
       }
+      if (props.type == 'year-month' && formatDate.length < 3) {
+        formatDate.push(new Date(state.currentDate || props.minDate || props.maxDate).getDate());
+      }
+
+      const year = Number(formatDate[0]);
+      const month = Number(formatDate[1]) - 1;
+      const day = Math.min(Number(formatDate[2]), getMonthEndDay(Number(formatDate[0]), Number(formatDate[1])));
+      let date: Date | null = null;
+      if (props.type === 'date' || props.type === 'month-day' || props.type === 'year-month') {
+        date = new Date(year, month, day);
+      } else if (props.type === 'datetime') {
+        date = new Date(year, month, day, Number(formatDate[3]), Number(formatDate[4]));
+      } else if (props.type === 'datehour') {
+        date = new Date(year, month, day, Number(formatDate[3]));
+      } else if (props.type === 'hour-minute' || props.type === 'time') {
+        date = new Date(state.currentDate);
+        const year = date.getFullYear();
+        const month = date.getMonth();
+        const day = date.getDate();
+        date = new Date(year, month, day, Number(formatDate[0]), Number(formatDate[1]), Number(formatDate[2] || 0));
+      }
+      state.currentDate = formatValue(date as Date);
       emit('change', { columnIndex, selectedValue, selectedOptions });
     };
 
@@ -261,9 +271,9 @@ export default create({
       return fOption;
     };
 
+    // min 最小值  max 最大值  val  当前显示的值   type 类型（year、month、day、time）
     const generateValue = (min: number, max: number, val: number | string, type: string, columnIndex: number) => {
-      // if (!(max > min)) return;
-      const arr: Array<import('../picker/types').PickerOption> = [];
+      const arr: Array<PickerOption> = [];
       let index = 0;
       while (min <= max) {
         arr.push(formatterOption(type, min));
@@ -274,11 +284,10 @@ export default create({
           min++;
         }
 
-        if (min <= val) {
+        if (min <= Number(val)) {
           index++;
         }
       }
-
       (state.selectedValue as any)[columnIndex] = arr[index].value;
       return props.filter ? props.filter(type, arr) : arr;
     };
@@ -300,24 +309,79 @@ export default create({
       return 0;
     };
 
-    const closeHandler = () => {
-      emit('update:visible', false);
+    const closeHandler = (val: any) => {
+      emit('cancel', val);
     };
 
-    const confirm = (val: Event) => {
-      emit('update:visible', false);
+    const confirm = (val: any) => {
       emit('confirm', val);
     };
 
+    const generateList = (list: Array<any>) => {
+      switch (props.type) {
+        case 'date':
+          list = list.slice(0, 3);
+          break;
+        case 'datetime':
+          list = list.slice(0, 5);
+          break;
+        case 'time':
+          list = list.slice(3, 6);
+          break;
+        case 'year-month':
+          list = list.slice(0, 2);
+          break;
+        case 'month-day':
+          list = list.slice(1, 3);
+          break;
+        case 'datehour':
+          list = list.slice(0, 4);
+          break;
+        case 'hour-minute':
+          list = list.slice(3, 5);
+          break;
+      }
+      return list;
+    };
+
+    const getSelectedValue = (time: Date) => {
+      const res = [
+        time.getFullYear(),
+        time.getMonth() + 1,
+        time.getDate(),
+        time.getHours(),
+        time.getMinutes(),
+        time.getSeconds()
+      ];
+      return generateList(res.map((i) => String(i)));
+    };
+
     onBeforeMount(() => {
-      console.log('平铺展示');
       state.currentDate = formatValue(props.modelValue);
     });
 
     watch(
       () => props.modelValue,
       (value) => {
-        state.currentDate = formatValue(value);
+        const newValues = formatValue(value);
+        const isSameValue = JSON.stringify(newValues) === JSON.stringify(state.currentDate);
+        if (!isSameValue) {
+          state.currentDate = newValues;
+          state.selectedValue = getSelectedValue(newValues);
+        }
+      }
+    );
+
+    watch(
+      () => state.currentDate,
+      (newValues) => {
+        const isSameValue = JSON.stringify(newValues) === JSON.stringify(props.modelValue);
+        if (!isSameValue) {
+          emit('update:modelValue', newValues);
+          nextTick(() => {
+            state.selectedValue = getSelectedValue(newValues);
+          });
+        }
       }
     );
 
@@ -325,13 +389,6 @@ export default create({
       () => props.title,
       (val) => {
         state.title = val;
-      }
-    );
-
-    watch(
-      () => props.visible,
-      (val) => {
-        state.show = val;
       }
     );
 

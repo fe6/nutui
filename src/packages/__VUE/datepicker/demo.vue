@@ -3,6 +3,9 @@
     <nut-cell-group :title="translate('basic')">
       <nut-cell :title="translate('showChinese')" :desc="desc1" @click="show = true"></nut-cell>
     </nut-cell-group>
+    <nut-cell-group :title="'hour-minute'">
+      <nut-cell :title="'hour-minute'" :desc="desca" @click="showa = true"></nut-cell>
+    </nut-cell-group>
 
     <nut-cell-group :title="translate('mmdd')">
       <nut-cell :title="translate('setStartEnd')" :desc="desc2" @click="show2 = true"></nut-cell>
@@ -27,7 +30,16 @@
     <nut-cell-group :title="translate('filter')">
       <nut-cell :title="translate('chooseTime')" :desc="desc7" @click="show7 = true"></nut-cell>
     </nut-cell-group>
-
+    <nut-datepicker
+      v-model="vala"
+      :title="'hour-minute'"
+      v-model:visible="showa"
+      type="hour-minute"
+      :min-date="mina"
+      :max-date="maxa"
+      :three-dimensional="false"
+      @confirm="confirma"
+    ></nut-datepicker>
     <!-- 选择年月日 -->
     <nut-datepicker
       v-model="currentDate"
@@ -303,7 +315,22 @@ export default createDemo({
       show5.value = false;
       desc5.value = translate('forever');
     };
+    const showa = ref(false);
+    const mina = new Date(2020, 1, 1, 10, 40);
+    const maxa = new Date(2020, 1, 1, 23, 29);
+    const vala = ref(new Date(2020, 1, 1, 15, 30));
+    const desca = ref('15:30');
+    const confirma = ({ selectedValue }) => {
+      console.log(selectedValue);
+      desca.value = `${selectedValue[0]}:${selectedValue[1]}`;
+    };
     return {
+      mina,
+      maxa,
+      vala,
+      confirma,
+      desca,
+      showa,
       show,
       show2,
       show3,

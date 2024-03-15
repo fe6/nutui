@@ -21,6 +21,50 @@ app.use(OverLay);
 ```
     
 ## 代码演示
+
+### hour-minute
+:::demo
+```html
+<template>
+  <nut-cell-group :title="'hour-minute'">
+    <nut-cell :title="'hour-minute'" :desc="desca" @click="showa = true"></nut-cell>
+  </nut-cell-group>
+  <nut-datepicker
+    v-model="vala"
+    :title="'hour-minute'"
+    v-model:visible="showa"
+    type="hour-minute"
+    :min-date="mina"
+    :max-date="maxa"
+    :three-dimensional="false"
+    @confirm="confirma"
+  ></nut-datepicker>
+</template>
+<script>
+  import { ref } from 'vue';
+  export default {
+    setup(props) {
+      const showa = ref(false);
+      const mina = new Date(2020, 1, 1, 10, 40);
+      const maxa = new Date(2020, 1, 1, 23, 29);
+      const vala = ref(new Date(2020, 1, 1, 15, 30));
+      const desca = ref('15:30');
+      const confirma = ({ selectedValue }) => {
+        desca.value = `${selectedValue[0]}:${selectedValue[1]}`
+      };
+      return {
+        mina,
+        maxa,
+        vala,
+        confirma,
+        desca,
+        showa,
+      };
+    }
+  };
+</script>
+```
+:::
 ### 选择年月日
 :::demo
 
